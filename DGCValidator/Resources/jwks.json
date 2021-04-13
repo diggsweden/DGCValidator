@@ -1,0 +1,56 @@
+﻿{
+  "keys": [
+    {
+      "crv": "P-256",
+      "kid": "qzdNABzMSjM",
+      "kty": "EC",
+      "x": "rHm-cdu-8bSTdzJYgBlvBtUr3ddvF0C8N78O0fAYyGI",
+      "x5a": {
+        "issuer": "CN=issuer1,OU=hcert,O=Kirei AB,C=SE",
+        "serial": 16144159659917190784,
+        "subject": "CN=issuer1,OU=hcert,O=Kirei AB,C=SE"
+      },
+      "x5t#S256": "qzdNABzMSjOcuTTeObubt1pGplf4k0InA7-LztKQlbQ",
+      "y": "4NzjaPmOuU5HS1nNjL-_ge1FL4y9l7mqk11aC3BTjEs"
+    },
+    {
+      "crv": "P-256",
+      "kid": "aPYe7cOxfUY",
+      "kty": "EC",
+      "x": "z4xKkuVT_qxM3DttDxOdhJoZ22G1MHiGxSZKoYQ9l88",
+      "x5a": {
+        "issuer": "CN=issuer2,OU=hcert,O=Kirei AB,C=SE",
+        "serial": 14899813586408605536,
+        "subject": "CN=issuer2,OU=hcert,O=Kirei AB,C=SE"
+      },
+      "x5t#S256": "aPYe7cOxfUYf23z-zLtjY2JevLUvKiiwppxF0jYCKtY",
+      "y": "J7RLLNbeF5H7beurzRJRzlxLcckCDcOJyG04Hh7WFys"
+    },
+    {
+      "crv": "P-256",
+      "kid": "QVqs6bpQBDw",
+      "kty": "EC",
+      "x": "m2Vy6CkP7RwP0otHyUXeSvGzmor480XsiaHoM0J8bMw",
+      "x5a": {
+        "issuer": "CN=issuer3,OU=hcert,O=Kirei AB,C=SE",
+        "serial": 12721972572249658801,
+        "subject": "CN=issuer3,OU=hcert,O=Kirei AB,C=SE"
+      },
+      "x5t#S256": "QVqs6bpQBDwYxFxCbMLahTBYOw2vh6Ykf2HEF9M7tLU",
+      "y": "e_74O5rvnicRLtTq73x7xRJJxY5y8I1y97Ece4Q3PY0"
+    },
+    {
+      "crv": "P-256",
+      "kid": "pXHhQ57LqXg",
+      "kty": "EC",
+      "x": "NuvsKbmRP4vYpeSTscpC3pu7kwsquzotLMjXpLhgHEM",
+      "x5a": {
+        "issuer": "CN=issuer4,OU=hcert,O=Kirei AB,C=SE",
+        "serial": 16640713515573473024,
+        "subject": "CN=issuer4,OU=hcert,O=Kirei AB,C=SE"
+      },
+      "x5t#S256": "pXHhQ57LqXgTLBElX2zwG2rLgeuSaamD7CN3ezQZr88",
+      "y": "dNrw3xi3JlbkKbctHkr7qpni2Snvcy4dfzddEM-QDRg"
+    }
+  ]
+}

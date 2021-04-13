@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95848D9E-3E8A-4324-BAFA-1D273CCBA6EA}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DGCValidator.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>DGCValidator.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
+    <Description>Validation of EUs Health Certificate</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Distribution: Sondaica Technology AB (2Q9643BKQ5)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>DGCValidator</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\QRScanningService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.9" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="PeterO.Cbor">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>3.1.0-beta2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DGCValidator\DGCValidator.csproj">
+      <Project>{E3084931-0489-422D-BFBF-BAE07FBB1BA1}</Project>
+      <Name>DGCValidator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scan.png" />
+    <BundleResource Include="..\DGCValidator\Resources\Flags\se.png">
+      <Link>Resources\se.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tg.png">
+      <Link>Resources\tg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_African-Union.png">
+      <Link>Resources\_African-Union.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\me.png">
+      <Link>Resources\me.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\la.png">
+      <Link>Resources\la.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mr.png">
+      <Link>Resources\mr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ni.png">
+      <Link>Resources\ni.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lv.png">
+      <Link>Resources\lv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\om.png">
+      <Link>Resources\om.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\af.png">
+      <Link>Resources\af.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cy.png">
+      <Link>Resources\cy.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bj.png">
+      <Link>Resources\bj.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\aq.png">
+      <Link>Resources\aq.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cn.png">
+      <Link>Resources\cn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\co.png">
+      <Link>Resources\co.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cx.png">
+      <Link>Resources\cx.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ag.png">
+      <Link>Resources\ag.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ms.png">
+      <Link>Resources\ms.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\md.png">
+      <Link>Resources\md.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\zm.png">
+      <Link>Resources\zm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\vn.png">
+      <Link>Resources\vn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tf.png">
+      <Link>Resources\tf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\td.png">
+      <Link>Resources\td.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\yt.png">
+      <Link>Resources\yt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lb.png">
+      <Link>Resources\lb.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mf.png">
+      <Link>Resources\mf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lu.png">
+      <Link>Resources\lu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mq.png">
+      <Link>Resources\mq.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cz.png">
+      <Link>Resources\cz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ae.png">
+      <Link>Resources\ae.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cm.png">
+      <Link>Resources\cm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bi.png">
+      <Link>Resources\bi.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ar.png">
+      <Link>Resources\ar.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Arab-League.png">
+      <Link>Resources\_Arab-League.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Wales.png">
+      <Link>Resources\_Wales.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\as.png">
+      <Link>Resources\as.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bh.png">
+      <Link>Resources\bh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cl.png">
+      <Link>Resources\cl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ad.png">
+      <Link>Resources\ad.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mp.png">
+      <Link>Resources\mp.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lt.png">
+      <Link>Resources\lt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mg.png">
+      <Link>Resources\mg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lc.png">
+      <Link>Resources\lc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tr.png">
+      <Link>Resources\tr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ua.png">
+      <Link>Resources\ua.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tv.png">
+      <Link>Resources\tv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\vi.png">
+      <Link>Resources\vi.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Kosovo.png">
+      <Link>Resources\_Kosovo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mt.png">
+      <Link>Resources\mt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\no.png">
+      <Link>Resources\no.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mc.png">
+      <Link>Resources\mc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ch.png">
+      <Link>Resources\ch.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bl.png">
+      <Link>Resources\bl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\aw.png">
+      <Link>Resources\aw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Northern-Cyprus.png">
+      <Link>Resources\_Northern-Cyprus.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Northern-Ireland.png">
+      <Link>Resources\_Northern-Ireland.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Somaliland.png">
+      <Link>Resources\_Somaliland.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bz.png">
+      <Link>Resources\bz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bm.png">
+      <Link>Resources\bm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ci.png">
+      <Link>Resources\ci.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mu.png">
+      <Link>Resources\mu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\us.png">
+      <Link>Resources\us.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tw.png">
+      <Link>Resources\tw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ye.png">
+      <Link>Resources\ye.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mw.png">
+      <Link>Resources\mw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nl.png">
+      <Link>Resources\nl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ls.png">
+      <Link>Resources\ls.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bo.png">
+      <Link>Resources\bo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\at.png">
+      <Link>Resources\at.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ck.png">
+      <Link>Resources\ck.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_United-Nations.png">
+      <Link>Resources\_United-Nations.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\by.png">
+      <Link>Resources\by.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_WTO.png">
+      <Link>Resources\_WTO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\au.png">
+      <Link>Resources\au.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bn.png">
+      <Link>Resources\bn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ma.png">
+      <Link>Resources\ma.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nz.png">
+      <Link>Resources\nz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lr.png">
+      <Link>Resources\lr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mv.png">
+      <Link>Resources\mv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tc.png">
+      <Link>Resources\tc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ug.png">
+      <Link>Resources\ug.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tt.png">
+      <Link>Resources\tt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pl.png">
+      <Link>Resources\pl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\rs.png">
+      <Link>Resources\rs.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\in.png">
+      <Link>Resources\in.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ge.png">
+      <Link>Resources\ge.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gr.png">
+      <Link>Resources\gr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gs.png">
+      <Link>Resources\gs.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Scotland.png">
+      <Link>Resources\_Scotland.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gd.png">
+      <Link>Resources\gd.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\io.png">
+      <Link>Resources\io.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\hk.png">
+      <Link>Resources\hk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kp.png">
+      <Link>Resources\kp.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kg.png">
+      <Link>Resources\kg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pm.png">
+      <Link>Resources\pm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sv.png">
+      <Link>Resources\sv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Quebec.png">
+      <Link>Resources\_Quebec.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\re.png">
+      <Link>Resources\re.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sa.png">
+      <Link>Resources\sa.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sc.png">
+      <Link>Resources\sc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\st.png">
+      <Link>Resources\st.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ke.png">
+      <Link>Resources\ke.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\im.png">
+      <Link>Resources\im.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kr.png">
+      <Link>Resources\kr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gf.png">
+      <Link>Resources\gf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\dj.png">
+      <Link>Resources\dj.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gq.png">
+      <Link>Resources\gq.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gp.png">
+      <Link>Resources\gp.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\dk.png">
+      <Link>Resources\dk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gg.png">
+      <Link>Resources\gg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_OPEC.png">
+      <Link>Resources\_OPEC.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\il.png">
+      <Link>Resources\il.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pn.png">
+      <Link>Resources\pn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sb.png">
+      <Link>Resources\sb.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\py.png">
+      <Link>Resources\py.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ru.png">
+      <Link>Resources\ru.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kw.png">
+      <Link>Resources\kw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\do.png">
+      <Link>Resources\do.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gt.png">
+      <Link>Resources\gt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Olimpic-Movement.png">
+      <Link>Resources\_Olimpic-Movement.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_UNESCO.png">
+      <Link>Resources\_UNESCO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gb.png">
+      <Link>Resources\gb.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gu.png">
+      <Link>Resources\gu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\je.png">
+      <Link>Resources\je.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\hm.png">
+      <Link>Resources\hm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sg.png">
+      <Link>Resources\sg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pk.png">
+      <Link>Resources\pk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sr.png">
+      <Link>Resources\sr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_England.png">
+      <Link>Resources\_England.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_UNICEF.png">
+      <Link>Resources\_UNICEF.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\jp.png">
+      <Link>Resources\jp.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Tristan-da-Cunha.png">
+      <Link>Resources\_Tristan-da-Cunha.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gw.png">
+      <Link>Resources\gw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\eh.png">
+      <Link>Resources\eh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Islamic-Conference.png">
+      <Link>Resources\_Islamic-Conference.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\dz.png">
+      <Link>Resources\dz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ga.png">
+      <Link>Resources\ga.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fr.png">
+      <Link>Resources\fr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\dm.png">
+      <Link>Resources\dm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_NATO.png">
+      <Link>Resources\_NATO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\hn.png">
+      <Link>Resources\hn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sd.png">
+      <Link>Resources\sd.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\rw.png">
+      <Link>Resources\rw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ph.png">
+      <Link>Resources\ph.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ss.png">
+      <Link>Resources\ss.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\qa.png">
+      <Link>Resources\qa.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pe.png">
+      <Link>Resources\pe.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pr.png">
+      <Link>Resources\pr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\si.png">
+      <Link>Resources\si.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_WHO.png">
+      <Link>Resources\_WHO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ht.png">
+      <Link>Resources\ht.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\es.png">
+      <Link>Resources\es.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gl.png">
+      <Link>Resources\gl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gm.png">
+      <Link>Resources\gm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\er.png">
+      <Link>Resources\er.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fi.png">
+      <Link>Resources\fi.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ee.png">
+      <Link>Resources\ee.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kn.png">
+      <Link>Resources\kn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\hu.png">
+      <Link>Resources\hu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\iq.png">
+      <Link>Resources\iq.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ky.png">
+      <Link>Resources\ky.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sh.png">
+      <Link>Resources\sh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ps.png">
+      <Link>Resources\ps.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_CARICOM.png">
+      <Link>Resources\_CARICOM.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pf.png">
+      <Link>Resources\pf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sj.png">
+      <Link>Resources\sj.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Red-Cross.png">
+      <Link>Resources\_Red-Cross.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\rn.png">
+      <Link>Resources\rn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\id.png">
+      <Link>Resources\id.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\is.png">
+      <Link>Resources\is.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\eg.png">
+      <Link>Resources\eg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fk.png">
+      <Link>Resources\fk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fj.png">
+      <Link>Resources\fj.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gn.png">
+      <Link>Resources\gn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gy.png">
+      <Link>Resources\gy.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ir.png">
+      <Link>Resources\ir.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\km.png">
+      <Link>Resources\km.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ie.png">
+      <Link>Resources\ie.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kz.png">
+      <Link>Resources\kz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Catalonia.png">
+      <Link>Resources\_Catalonia.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ro.png">
+      <Link>Resources\ro.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sk.png">
+      <Link>Resources\sk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pg.png">
+      <Link>Resources\pg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pt.png">
+      <Link>Resources\pt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\so.png">
+      <Link>Resources\so.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sx.png">
+      <Link>Resources\sx.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\hr.png">
+      <Link>Resources\hr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ki.png">
+      <Link>Resources\ki.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\jm.png">
+      <Link>Resources\jm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_OAS.png">
+      <Link>Resources\_OAS.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ec.png">
+      <Link>Resources\ec.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\et.png">
+      <Link>Resources\et.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fo.png">
+      <Link>Resources\fo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\kh.png">
+      <Link>Resources\kh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sy.png">
+      <Link>Resources\sy.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sn.png">
+      <Link>Resources\sn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pw.png">
+      <Link>Resources\pw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sl.png">
+      <Link>Resources\sl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Basque-Country.png">
+      <Link>Resources\_Basque-Country.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\fm.png">
+      <Link>Resources\fm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gi.png">
+      <Link>Resources\gi.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\de.png">
+      <Link>Resources\de.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\gh.png">
+      <Link>Resources\gh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\jo.png">
+      <Link>Resources\jo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\it.png">
+      <Link>Resources\it.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\pa.png">
+      <Link>Resources\pa.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sz.png">
+      <Link>Resources\sz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\sm.png">
+      <Link>Resources\sm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_IAEA.png">
+      <Link>Resources\_IAEA.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_OECD.png">
+      <Link>Resources\_OECD.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ml.png">
+      <Link>Resources\ml.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cg.png">
+      <Link>Resources\cg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ax.png">
+      <Link>Resources\ax.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ao.png">
+      <Link>Resources\ao.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bt.png">
+      <Link>Resources\bt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_ASEAN.png">
+      <Link>Resources\_ASEAN.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\an.png">
+      <Link>Resources\an.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bb.png">
+      <Link>Resources\bb.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cf.png">
+      <Link>Resources\cf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mm.png">
+      <Link>Resources\mm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\li.png">
+      <Link>Resources\li.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\na.png">
+      <Link>Resources\na.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mz.png">
+      <Link>Resources\mz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\to.png">
+      <Link>Resources\to.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\vg.png">
+      <Link>Resources\vg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ve.png">
+      <Link>Resources\ve.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tz.png">
+      <Link>Resources\tz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tm.png">
+      <Link>Resources\tm.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mx.png">
+      <Link>Resources\mx.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nc.png">
+      <Link>Resources\nc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mo.png">
+      <Link>Resources\mo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\lk.png">
+      <Link>Resources\lk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cd.png">
+      <Link>Resources\cd.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\al.png">
+      <Link>Resources\al.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bw.png">
+      <Link>Resources\bw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_CIS.png">
+      <Link>Resources\_CIS.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cr.png">
+      <Link>Resources\cr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bv.png">
+      <Link>Resources\bv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\am.png">
+      <Link>Resources\am.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\az.png">
+      <Link>Resources\az.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ba.png">
+      <Link>Resources\ba.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mn.png">
+      <Link>Resources\mn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nu.png">
+      <Link>Resources\nu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\my.png">
+      <Link>Resources\my.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tl.png">
+      <Link>Resources\tl.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ws.png">
+      <Link>Resources\ws.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\th.png">
+      <Link>Resources\th.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nf.png">
+      <Link>Resources\nf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ly.png">
+      <Link>Resources\ly.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ai.png">
+      <Link>Resources\ai.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\br.png">
+      <Link>Resources\br.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cv.png">
+      <Link>Resources\cv.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\be.png">
+      <Link>Resources\be.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ca.png">
+      <Link>Resources\ca.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_FAO.png">
+      <Link>Resources\_FAO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bd.png">
+      <Link>Resources\bd.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cw.png">
+      <Link>Resources\cw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bs.png">
+      <Link>Resources\bs.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ng.png">
+      <Link>Resources\ng.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mk.png">
+      <Link>Resources\mk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\np.png">
+      <Link>Resources\np.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_IHO.png">
+      <Link>Resources\_IHO.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\va.png">
+      <Link>Resources\va.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\uz.png">
+      <Link>Resources\uz.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\um.png">
+      <Link>Resources\um.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tk.png">
+      <Link>Resources\tk.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\vc.png">
+      <Link>Resources\vc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\zw.png">
+      <Link>Resources\zw.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\nr.png">
+      <Link>Resources\nr.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\ne.png">
+      <Link>Resources\ne.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cu.png">
+      <Link>Resources\cu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bq.png">
+      <Link>Resources\bq.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bf.png">
+      <Link>Resources\bf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Galicia.png">
+      <Link>Resources\_Galicia.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_European-Union.png">
+      <Link>Resources\_European-Union.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Commonwealth.png">
+      <Link>Resources\_Commonwealth.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\bg.png">
+      <Link>Resources\bg.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\cc.png">
+      <Link>Resources\cc.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\_Alderney.png">
+      <Link>Resources\_Alderney.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\mh.png">
+      <Link>Resources\mh.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\za.png">
+      <Link>Resources\za.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\uy.png">
+      <Link>Resources\uy.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\wf.png">
+      <Link>Resources\wf.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\vu.png">
+      <Link>Resources\vu.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Flags\tj.png">
+      <Link>Resources\tj.png</Link>
+    </BundleResource>
+    <BundleResource Include="Resources\jwks.json" />
+  </ItemGroup>
+</Project>

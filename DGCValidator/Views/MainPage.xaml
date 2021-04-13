@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:DGCValidator.Resources"
+             xmlns:local="clr-namespace:DGCValidator"
+             xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
+             x:Class="DGCValidator.Views.MainPage">
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="VaccineTemplate">
+                <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       >
+                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label x:Name="headerVac" Text="Vaccination" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="headerVac1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="labelVac1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                    </StackLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="RecoveredTemplate">
+                <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       >
+                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label x:Name="headerRec" Text="Recovered" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="headerRec1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="labelRec1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                    </StackLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="TestTemplate">
+                <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       >
+                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                        <Label x:Name="headerTest" Text="Tested" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="headerTst1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                        <Label x:Name="labelTst1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
+                    </StackLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <local:CertTypeTemplateSelector x:Key="CertTypeTemplateSelector"
+                VaccineTemplate="{StaticResource VaccineTemplate}"
+                RecoveredTemplate="{StaticResource RecoveredTemplate}"
+                TestTemplate="{StaticResource TestTemplate}"/>
+            <viewModels:LabelColorConverter x:Key="LabelColorConverter"></viewModels:LabelColorConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Spacing="10" BackgroundColor="White">
+        <Label Text="{x:Static resource:AppResources.InformationText}" FontSize="16" Padding="30,20,30,10" TextColor="Black"/>
+        <ImageButton Source="scan.png" HeightRequest="80" WidthRequest="80" Command="{Binding ScanCommand}" HorizontalOptions="Center"/>
+        <Label Text="{x:Static resource:AppResources.ScanButtonText}" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ScanCommand}" NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+        <ScrollView>
+            <StackLayout Spacing="10" BackgroundColor="White">
+                <Label x:Name="labelResult" Text="{Binding ResultText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0"/>
+                <FlexLayout Direction="Row"
+                    AlignItems="Center"
+                    JustifyContent="SpaceEvenly">
+                    <Image x:Name="nationFlag" Source="{Binding Signature.IssuerCountryImage}" HeightRequest="80" WidthRequest="80" HorizontalOptions="Start" Margin="30,0,30,0" />
+                    <StackLayout>
+                        <Label x:Name="labelIssuedDate" Text="{Binding Signature.IssuedDate}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                        <Label x:Name="labelExpirationDate" Text="{Binding Signature.ExpriationDate}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                    </StackLayout>
+                </FlexLayout>
+                <Label x:Name="labelName" Text="{Binding Subject.Name}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                <Label x:Name="labelPin" Text="{Binding Subject.Identifier}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                <CarouselView 
+                    x:Name="CertTypeCarouselView" 
+                    ItemsSource="{Binding Certs}"
+                    ItemTemplate="{StaticResource CertTypeTemplateSelector}"
+                    IndicatorView="indicatorView"/>
+                <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

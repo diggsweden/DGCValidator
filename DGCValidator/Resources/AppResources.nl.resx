@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="HeaderText" xml:space="preserve">
+        <value>Vaccinatie validator</value>
+    </data>
+	<data name="InformationHeader" xml:space="preserve">
+        <value>Valideer vaccinatiebewijs</value>
+    </data>
+	<data name="InformationText" xml:space="preserve">
+        <value>Hier kunt u een vaccinatiebewijs valideren door het met de camera te scannen!</value>
+    </data>
+	<data name="ScanButtonText" xml:space="preserve">
+        <value>Scannen</value>
+    </data>
+	<data name="ScanTopText" xml:space="preserve">
+        <value>Scan bewijs</value>
+    </data>
+    <data name="ScanBottomText" xml:space="preserve">
+        <value></value>
+    </data>
+    <data name="ScanFlashText" xml:space="preserve">
+        <value>Flash</value>
+    </data>
+    <data name="ScanCancelText" xml:space="preserve">
+        <value>Annuleer</value>
+    </data>
+    <data name="IssuedDateLabel" xml:space="preserve">
+        <value>Issued: </value>
+    </data>
+    <data name="ExpireDateLabel" xml:space="preserve">
+        <value>Expire: </value>
+    </data>
+    <data name="VaccinatedText" xml:space="preserve">
+        <value>Gevaccineerd</value>
+    </data>
+    <data name="ErrorReadingText" xml:space="preserve">
+        <value>Fout tijdens het lezen</value>
+    </data>
+
+    <!-- Subject Resources -->
+    <data name="NameLabel" xml:space="preserve">
+        <value>Naam: </value>
+    </data>
+    <data name="BirthDateLabel" xml:space="preserve">
+        <value>Geboortedatum: </value>
+    </data>
+    <data name="PinLabel" xml:space="preserve">
+        <value>PIN: </value>
+    </data>
+    <data name="PasLabel" xml:space="preserve">
+        <value>PAS: </value>
+    </data>
+    <data name="NidLabel" xml:space="preserve">
+        <value>NID: </value>
+    </data>
+
+    <!-- Common Resources -->
+    <data name="DiseaseLabel" xml:space="preserve">
+        <value>Disease: </value>
+    </data>
+    <data name="CountryLabel" xml:space="preserve">
+        <value>Country: </value>
+    </data>
+    <data name="TestDateLabel" xml:space="preserve">
+        <value>Positive date: </value>
+    </data>
+
+    <!-- Test Resources -->
+    <data name="TestTypeLabel" xml:space="preserve">
+        <value>Test type: </value>
+    </data>
+    <data name="TestNameLabel" xml:space="preserve">
+        <value>Test name: </value>
+    </data>
+    <data name="TestManifacturerLabel" xml:space="preserve">
+        <value>Test manifacturer: </value>
+    </data>
+    <data name="TestSampleOriginLabel" xml:space="preserve">
+        <value>Sample origin: </value>
+    </data>
+    <data name="TestResultLabel" xml:space="preserve">
+        <value>Test result: </value>
+    </data>
+    <data name="TestingCentreLabel" xml:space="preserve">
+        <value>Test centre: </value>
+    </data>
+
+    <!-- Recovered Resources -->
+
+    <!-- Vaccination Resources -->
+    <data name="DoseText" xml:space="preserve">
+        <value>Dosis </value>
+    </data>
+    <data name="VaccineDescriptionLabel" xml:space="preserve">
+        <value>Beschrijving: </value>
+    </data>
+    <data name="VaccineNameLabel" xml:space="preserve">
+        <value>Naam: </value>
+    </data>
+    <data name="VaccineAuthLabel" xml:space="preserve">
+        <value>Vergunninghouder: </value>
+    </data>
+    <data name="VaccineLotLabel" xml:space="preserve">
+        <value>Partij: </value>
+    </data>
+    <data name="VaccinationDateLabel" xml:space="preserve">
+        <value>Datum: </value>
+    </data>
+    <data name="VaccinationProviderLabel" xml:space="preserve">
+        <value>Verantwoordelijk: </value>
+    </data>
+</root>
