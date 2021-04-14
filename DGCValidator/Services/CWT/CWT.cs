@@ -15,7 +15,9 @@ namespace DGCValidator.Services.CWT
     public class CWT
     {
         /** HCERT message tag. */
-        public static int HCERT_CLAIM_KEY = -65537;
+        public static int HCERT_CLAIM_KEY = -260;
+        public static int HCERT_CLAIM_KEY_TEMP = -65537;
+
 
         /** The message tag for eu_hcert_v1 that is added under the HCERT claim. */
         public static int EU_HCERT_V1_MESSAGE_TAG = 1;
@@ -156,9 +158,13 @@ namespace DGCValidator.Services.CWT
             CBORObject hcert = cwtObject[HCERT_CLAIM_KEY];
             if (hcert == null)
             {
-                return null;
+                hcert = cwtObject[HCERT_CLAIM_KEY_TEMP];
+                if (hcert == null)
+                {
+                    return null;
+                }
             }
-            return hcert[EU_HCERT_V1_MESSAGE_TAG].GetByteString();
+            return hcert[EU_HCERT_V1_MESSAGE_TAG].EncodeToBytes(); //GetByteString();
         }
 
 

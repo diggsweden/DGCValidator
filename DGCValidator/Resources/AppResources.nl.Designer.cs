@@ -244,5 +244,11 @@ namespace DGCValidator.Resources {
                 return ResourceManager.GetString("VaccinationProviderLabel", resourceCulture);
             }
         }
+        
+        public static string AboutText {
+            get {
+                return ResourceManager.GetString("AboutText", resourceCulture);
+            }
+        }
     }
 }

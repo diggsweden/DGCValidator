@@ -1010,5 +1010,8 @@
       <Link>Resources\tj.png</Link>
     </BundleResource>
     <BundleResource Include="Resources\jwks.json" />
+    <BundleResource Include="..\DGCValidator\Resources\digg_centered.png">
+      <Link>Resources\digg_centered.png</Link>
+    </BundleResource>
   </ItemGroup>
 </Project>

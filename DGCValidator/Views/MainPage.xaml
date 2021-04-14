@@ -17,7 +17,7 @@
                        CornerRadius="5"
                        Margin="20"
                        >
-                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Spacing="10" BackgroundColor="White">
                         <Label x:Name="headerVac" Text="Vaccination" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="headerVac1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="labelVac1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
@@ -32,7 +32,7 @@
                        CornerRadius="5"
                        Margin="20"
                        >
-                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Spacing="10" BackgroundColor="White">
                         <Label x:Name="headerRec" Text="Recovered" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="headerRec1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="labelRec1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
@@ -47,7 +47,7 @@
                        CornerRadius="5"
                        Margin="20"
                        >
-                    <StackLayout Spacing="10" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout Spacing="10" BackgroundColor="White">
                         <Label x:Name="headerTest" Text="Tested" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="headerTst1" Text="{Binding Header}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
                         <Label x:Name="labelTst1" Text="{Binding Info}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="10,0,30,0"/>
@@ -60,6 +60,7 @@
                 RecoveredTemplate="{StaticResource RecoveredTemplate}"
                 TestTemplate="{StaticResource TestTemplate}"/>
             <viewModels:LabelColorConverter x:Key="LabelColorConverter"></viewModels:LabelColorConverter>
+            <viewModels:LabelVisibleConverter x:Key="LabelVisibleConverter"></viewModels:LabelVisibleConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout Spacing="10" BackgroundColor="White">
@@ -89,12 +90,13 @@
                     x:Name="CertTypeCarouselView" 
                     ItemsSource="{Binding Certs}"
                     ItemTemplate="{StaticResource CertTypeTemplateSelector}"
-                    IndicatorView="indicatorView"/>
+                    IndicatorView="indicatorView"
+                     />
                 <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   HorizontalOptions="Center" />
+                <Label Text="Flag Icons from www.icondrawer.com" FontSize="12" Padding="30,20,30,10" TextColor="Black" IsVisible="{Binding IsResultOK, Converter={StaticResource LabelVisibleConverter}}"/>
             </StackLayout>
         </ScrollView>
     </StackLayout>

@@ -121,4 +121,9 @@
     <data name="VaccinationProviderLabel" xml:space="preserve">
         <value>Vaccinatör: </value>
     </data>
+
+    <data name="AboutText" xml:space="preserve">
+        <value>Verifieringsapp för Digital Green Certificate utvecklad av DIGG.</value>
+    </data>
+
 </root>

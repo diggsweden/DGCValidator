@@ -121,4 +121,9 @@
     <data name="VaccinationProviderLabel" xml:space="preserve">
         <value>Verantwoordelijk: </value>
     </data>
+
+    <data name="AboutText" xml:space="preserve">
+        <value>Verificatie-app voor digitaal groencertificaat ontwikkeld door DIGG.</value>
+    </data>
+
 </root>

@@ -121,4 +121,9 @@
     <data name="VaccinationProviderLabel" xml:space="preserve">
         <value>Responsible: </value>
     </data>
+
+    <data name="AboutText" xml:space="preserve">
+        <value>Verification App for Digital Green Certificate developed by DIGG.</value>
+    </data>
+
 </root>
