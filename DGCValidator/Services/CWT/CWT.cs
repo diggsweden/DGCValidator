@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using PeterO.Cbor;
 
 namespace DGCValidator.Services.CWT
@@ -16,7 +17,7 @@ namespace DGCValidator.Services.CWT
     {
         /** HCERT message tag. */
         public static int HCERT_CLAIM_KEY = -260;
-        public static int HCERT_CLAIM_KEY_TEMP = -65537;
+        public static int HCERT_CLAIM_KEY_OLD = -65537; // Remove after interop tests
 
 
         /** The message tag for eu_hcert_v1 that is added under the HCERT claim. */
@@ -26,13 +27,13 @@ namespace DGCValidator.Services.CWT
         private static CBORDateTimeConverter dateTimeConverter = new CBORDateTimeConverter();
 
         /** The CBOR representation of the CWT. */
-        private CBORObject cwtObject;
+        private CBORObject CwtObject;
 
         /**
             * Constructor creating an empty CWT.
             */
         public CWT() {
-            cwtObject = CBORObject.NewMap();
+            CwtObject = CBORObject.NewMap();
         }
 
         /**
@@ -48,7 +49,7 @@ namespace DGCValidator.Services.CWT
             if (obj.Type != CBORType.Map) {
                 throw new CBORException("Not a valid CWT");
             }
-            cwtObject = obj;
+            CwtObject = obj;
         }
 
         /**
@@ -70,7 +71,7 @@ namespace DGCValidator.Services.CWT
             * @return a byte array
             */
         public byte[] Encode() {
-            return cwtObject.EncodeToBytes();
+            return CwtObject.EncodeToBytes();
         }
 
         /**
@@ -79,7 +80,7 @@ namespace DGCValidator.Services.CWT
             * @return the issuer value, or null
             */
         public String GetIssuer() {
-            return cwtObject[1].AsString();
+            return CwtObject[1].AsString();
         }
 
         /**
@@ -88,27 +89,31 @@ namespace DGCValidator.Services.CWT
          * @return the subject value, or null
          */
         public String GetSubject() {
-            return cwtObject[2].AsString();
+            return CwtObject[2].AsString();
         }
 
-            ///**
-            // * Gets the values for the "aud" claim
-            // * 
-            // * @return the value, or null
-            // */
-            //public List<String> getAudience() {
-            //  CBORObject aud = cwtObject[3];
-            //  if (aud == null) {
-            //    return null;
-            //  }
-            //  if (aud.Type == CBORType.Array) {
-            //    Collection<CBORObject> values = aud.Values;
-            //    return values.stream().map(CBORObject::AsString).collect(Collectors.toList());
-            //  }
-            //  else {
-            //    return Arrays.asList(aud.AsString());
-            //  }
-            //}
+        ///**
+        // * Gets the values for the "aud" claim
+        // * 
+        // * @return the value, or null
+        // */
+        //public List<String> getAudience()
+        //{
+        //    CBORObject aud = CwtObject[3];
+        //    if (aud == null)
+        //    {
+        //        return null;
+        //    }
+        //    if (aud.Type == CBORType.Array)
+        //    {
+        //        ICollection<CBORObject> values = aud.Values;
+        //        return values.stream().map(CBORObject::AsString).collect(Collectors.toList());
+        //    }
+        //    else
+        //    {
+        //        return new List<string>(aud.AsString());
+        //    }
+        //}
 
         /**
         * Gets the value of the "exp" (expiration time) claim.
@@ -116,7 +121,7 @@ namespace DGCValidator.Services.CWT
         * @return the instant, or null
         */
         public DateTime GetExpiration() {
-        return dateTimeConverter.FromCBORObject(cwtObject[4]);
+        return dateTimeConverter.FromCBORObject(CwtObject[4]);
         }
 
         /**
@@ -125,7 +130,7 @@ namespace DGCValidator.Services.CWT
          * @return the instant, or null
          */
         public DateTime GetNotBefore() {
-        return dateTimeConverter.FromCBORObject(cwtObject[5]);
+        return dateTimeConverter.FromCBORObject(CwtObject[5]);
         }
 
   
@@ -135,7 +140,7 @@ namespace DGCValidator.Services.CWT
          * @return the instant, or null
          */
         public DateTime GetIssuedAt() {
-        return dateTimeConverter.FromCBORObject(cwtObject[6]);
+        return dateTimeConverter.FromCBORObject(CwtObject[6]);
         }
 
  
@@ -145,7 +150,7 @@ namespace DGCValidator.Services.CWT
          * @return the ID, or null
          */
         public byte[] GetCwtId() {
-        return cwtObject[7].GetByteString();
+        return CwtObject[7].GetByteString();
         }
 
         /**
@@ -153,46 +158,48 @@ namespace DGCValidator.Services.CWT
          * 
          * @return the binary representation of a EU HCERT or null
          */
-        public byte[] GetHCertv1()
+        public byte[] GetDgcV1()
         {
-            CBORObject hcert = cwtObject[HCERT_CLAIM_KEY];
+            CBORObject hcert = CwtObject[HCERT_CLAIM_KEY];
             if (hcert == null)
             {
-                hcert = cwtObject[HCERT_CLAIM_KEY_TEMP];
+                hcert = CwtObject[HCERT_CLAIM_KEY_OLD];
                 if (hcert == null)
                 {
                     return null;
                 }
             }
-            return hcert[EU_HCERT_V1_MESSAGE_TAG].EncodeToBytes(); //GetByteString();
+            return hcert[EU_HCERT_V1_MESSAGE_TAG].EncodeToBytes();
         }
 
 
-        ///**
-        // * Gets the claim identified by {@code claimKey}.
-        // * 
-        // * @param claimKey
-        // *          the claim key
-        // * @return the claim value (in its CBOR binary encoding), or null
-        // */
-        //public byte[] getClaim(int claimKey) {
-        //    return Optional.ofNullable(cwtObject.get(claimKey)).map(CBORObject::GetByteString).orElse(null);
-        //  }
+        /**
+         * Gets the claim identified by {@code claimKey}.
+         * 
+         * @param claimKey
+         *          the claim key
+         * @return the claim value (in its CBOR binary encoding), or null
+         */
+        public CBORObject getClaim(int claimKey)
+        {
+            return CwtObject[claimKey];
+        }
 
-        //  /**
-        //   * Gets the claim identified by {@code claimKey}.
-        //   * 
-        //   * @param claimKey
-        //   *          the claim key
-        //   * @return the claim value (in its CBOR binary encoding), or null
-        //   */
-        //  public byte[] getClaim(String claimKey) {
-        //    return Optional.ofNullable(cwtObject[claimKey]).map(CBORObject::GetByteString).orElse(null);
-        //  }
+        /**
+         * Gets the claim identified by {@code claimKey}.
+         * 
+         * @param claimKey
+         *          the claim key
+         * @return the claim value (in its CBOR binary encoding), or null
+         */
+        public CBORObject getClaim(string claimKey)
+        {
+            return CwtObject[claimKey];
+        }
 
         /** {@inheritDoc} */
-        public override String ToString() {
-            return cwtObject.ToString();
+        public override string ToString() {
+            return CwtObject.ToString();
         }
     }
 }

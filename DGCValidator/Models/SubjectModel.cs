@@ -6,9 +6,9 @@ namespace DGCValidator.Models
 {
     public class SubjectModel : BaseModel
     {
-        String _name="";
-        String _dateOfBirth="";
-        String _identifier = "";
+        string _name="";
+        string _dateOfBirth="";
+        string _identifier = "";
 
         public SubjectModel()
         {
@@ -18,7 +18,7 @@ namespace DGCValidator.Models
             _name = name;
         }
 
-        public String Name
+        public string Name
         {
             get { return (_name!=null&&_name.Length>0?AppResources.NameLabel + _name:null); }
             set
@@ -27,7 +27,7 @@ namespace DGCValidator.Models
                 OnPropertyChanged();
             }
         }
-        public String DateOfBirth
+        public string DateOfBirth
         {
             get { return (_dateOfBirth != null && _dateOfBirth.Length > 0 ? AppResources.BirthDateLabel + _dateOfBirth:null); }
             set
@@ -36,7 +36,16 @@ namespace DGCValidator.Models
                 OnPropertyChanged();
             }
         }
-        public String Identifier
+        public DateTimeOffset? ConvertDateOfBirth
+        {
+            set{
+                if (value != null)
+                {
+                    DateOfBirth = ((DateTimeOffset)value).ToString("d");
+                }
+            }
+        }
+        public string Identifier
         {
             get { return (_identifier != null && _identifier.Length > 0 ? AppResources.PinLabel + _identifier:null); }
             set

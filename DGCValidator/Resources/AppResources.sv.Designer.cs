@@ -113,6 +113,24 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string TestedText {
+            get {
+                return ResourceManager.GetString("TestedText", resourceCulture);
+            }
+        }
+        
+        public static string RecoveredText {
+            get {
+                return ResourceManager.GetString("RecoveredText", resourceCulture);
+            }
+        }
+        
+        public static string MissingDataText {
+            get {
+                return ResourceManager.GetString("MissingDataText", resourceCulture);
+            }
+        }
+        
         public static string ErrorReadingText {
             get {
                 return ResourceManager.GetString("ErrorReadingText", resourceCulture);
@@ -161,12 +179,6 @@ namespace DGCValidator.Resources {
             }
         }
         
-        public static string TestDateLabel {
-            get {
-                return ResourceManager.GetString("TestDateLabel", resourceCulture);
-            }
-        }
-        
         public static string TestTypeLabel {
             get {
                 return ResourceManager.GetString("TestTypeLabel", resourceCulture);
@@ -200,6 +212,24 @@ namespace DGCValidator.Resources {
         public static string TestingCentreLabel {
             get {
                 return ResourceManager.GetString("TestingCentreLabel", resourceCulture);
+            }
+        }
+        
+        public static string TestDateLabel {
+            get {
+                return ResourceManager.GetString("TestDateLabel", resourceCulture);
+            }
+        }
+        
+        public static string TestResultDateLabel {
+            get {
+                return ResourceManager.GetString("TestResultDateLabel", resourceCulture);
+            }
+        }
+        
+        public static string RecTestDateLabel {
+            get {
+                return ResourceManager.GetString("RecTestDateLabel", resourceCulture);
             }
         }
         

@@ -374,7 +374,7 @@ FodyWeavers.xsd
 
 ### iOS Builds ###
 # iOS App Store Build
-.ipa
+**/*.ipa
 
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,xamarinstudio

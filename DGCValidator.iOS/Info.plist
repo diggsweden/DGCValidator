@@ -28,7 +28,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>se.sondaica.dgcvalidator</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>

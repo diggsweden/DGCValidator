@@ -5,32 +5,49 @@ namespace DGCValidator.Models
 {
     public class SignatureModel : BaseModel
     {
-        DateTime? _expirationDate;
-        DateTime? _issuedDate;
-        String _issuerCountry = "";
+        string _expirationDate;
+        string _issuedDate;
+        string _issuerCountry = "";
 
         public SignatureModel()
         {
         }
-        public DateTime? ExpriationDate
+        public string ExpirationDateString
         {
-            get { return _expirationDate; }
+            get { return AppResources.ExpireDateLabel + _expirationDate.ToString(); }
             set
             {
                 _expirationDate = value;
                 OnPropertyChanged();
             }
         }
-        public DateTime? IssuedDate
+        public string IssuedDateString
         {
-            get { return _issuedDate; }
+            get { return AppResources.IssuedDateLabel + _issuedDate; }
             set
             {
                 _issuedDate = value;
                 OnPropertyChanged();
             }
         }
-        public String IssuerCountry
+
+        public DateTime? ExpirationDate
+        {
+            set
+            {
+                _expirationDate = ((DateTime)value).ToString();
+                OnPropertyChanged();
+            }
+        }
+        public DateTime? IssuedDate
+        {
+            set
+            {
+                _issuedDate = ((DateTime)value).ToString();
+                OnPropertyChanged();
+            }
+        }
+        public string IssuerCountry
         {
             get { return _issuerCountry; }
             set
@@ -54,9 +71,9 @@ namespace DGCValidator.Models
         }
         public void Clear()
         {
-            ExpriationDate = null;
-            IssuedDate = null;
-            IssuerCountry = null;
+            ExpirationDateString = "";
+            IssuedDateString = "";
+            IssuerCountry = "";
         }
     }
 }

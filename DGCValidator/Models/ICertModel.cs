@@ -3,9 +3,10 @@ namespace DGCValidator.Models
 {
     public interface ICertModel
     {
-        public CertEnum Type { get; set; }
-        public String Header { get; set; }
-        public String Info { get; set; }
+        public CertType Type { get; set; }
+        public string Header { get; set; }
+        public string Info { get; set; }
         public void CreateHeaderAndInfo();
+
     }
 }

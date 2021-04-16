@@ -2,6 +2,8 @@
 using System.IO;
 using System.Text;
 using DGCValidator.Services.CWT;
+using DGCValidator.Services.DGC;
+using DGCValidator.Services.DGC.V1;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using PeterO.Cbor;
@@ -21,27 +23,27 @@ namespace DGCValidator.Services
         {
         }
 
-        public static DGC VerifyData(String codeData)
+        public static SignedDGC VerifyData(String codeData)
         {
             try {
                 // The base45 encoded data shoudl begin with HC1
                 if( codeData.StartsWith("HC1"))
                 {
-                    String base45CodedData = codeData.Substring(3);
+                    string base45CodedData = codeData.Substring(3);
 
                     // Base 45 decode data
-                    byte[] base45DecodedData = Base45Decoding(Encoding.GetEncoding("ISO-8859-1").GetBytes(base45CodedData));
+                    byte[] base45DecodedData = Base45Decoding(Encoding.GetEncoding("UTF-8").GetBytes(base45CodedData));
 
                     // zlib decompression
                     byte[] uncompressedData = ZlibDecompression(base45DecodedData);
 
-                    DGC vacProof = new DGC();
+                    SignedDGC vacProof = new SignedDGC();
                     // Sign and encrypt data
                     byte[] signedData = VerifySignedData(uncompressedData, vacProof);
 
                     // Get json from CBOR representation of ProofCode
-                    Vproof vProof = GetVaccinationProofFromCbor(signedData);
-                    vacProof.vProof = vProof;
+                    EU_DGC eU_DGC = GetVaccinationProofFromCbor(signedData);
+                    vacProof.Dgc = eU_DGC;
 
                     return vacProof;
                 }
@@ -56,7 +58,7 @@ namespace DGCValidator.Services
 
 		protected static byte[] ZlibDecompression(byte[] compressedData)
         {
-            if( compressedData[0] == 0x78 && compressedData[1] == 0xDA)
+            if( compressedData[0] == 0x78 )
             {
                 var outputStream = new MemoryStream();
                 using (var compressedStream = new MemoryStream(compressedData))
@@ -74,23 +76,22 @@ namespace DGCValidator.Services
             }
         }
 
-		protected static byte[] VerifySignedData(byte[] signedData, DGC vacProof)
+		protected static byte[] VerifySignedData(byte[] signedData, SignedDGC vacProof)
         {
-            HCertVerifier verifier = new HCertVerifier(new CertificateProvider());
-            byte[] hCertData = verifier.Verify(signedData, vacProof);
-			return hCertData;
-		}
+            DGCVerifier verifier = new DGCVerifier(new CertificateProvider());
+            return verifier.Verify(signedData, vacProof);
+        }
 
         protected static byte[] Base45Decoding(byte[] encodedData)
         {
-			byte[] uncodedData = Base45.Decode(encodedData);
+            byte[] uncodedData = Base45.Decode(encodedData);
 			return uncodedData;
         }
 
-		protected static Vproof GetVaccinationProofFromCbor(byte[] cborData)
+		protected static EU_DGC GetVaccinationProofFromCbor(byte[] cborData)
 		{
             CBORObject cbor = CBORObject.DecodeFromBytes(cborData, CBOREncodeOptions.Default);
-            Vproof vacProof = Vproof.FromJson(cbor.ToJSONString());
+            EU_DGC vacProof = EU_DGC.FromJson(cbor.ToJSONString());
             return vacProof;
         }
 

@@ -5,24 +5,25 @@ namespace DGCValidator.Models
 {
     public class VaccineCertModel : BaseModel,ICertModel
     {
-        public CertEnum Type { get; set; }
-        String _header;
-        String _info;
+        public CertType Type { get; set; }
+        string _header;
+        string _info;
         public string Adm { get; set; }
         public string Aut { get; set; }
+        public string Cou { get; set; }
         public DateTimeOffset Dat { get; set; }
-        public string Des { get; set; }
         public string Dis { get; set; }
         public string Lot { get; set; }
-        public string Nam { get; set; }
+        public string Mep { get; set; }
         public long Seq { get; set; }
         public long Tot { get; set; }
+        public string Vap { get; set; }
 
         public VaccineCertModel()
         {
         }
 
-        public String Header
+        public string Header
         {
             get { return _header; }
             set
@@ -31,7 +32,7 @@ namespace DGCValidator.Models
                 OnPropertyChanged();
             }
         }
-        public String Info
+        public string Info
         {
             get { return _info; }
             set
@@ -44,12 +45,14 @@ namespace DGCValidator.Models
         {
             Header = AppResources.DoseText + Seq + "/" + Tot;
             Info = AppResources.DiseaseLabel + Dis + "\n" +
-                AppResources.VaccineNameLabel + Nam + "\n" +
-                AppResources.VaccineDescriptionLabel + Des + "\n" +
+                AppResources.VaccineDescriptionLabel + Vap + "\n" +
+                AppResources.VaccineNameLabel + Mep + "\n" +
                 AppResources.VaccineAuthLabel + Aut + "\n" +
                 AppResources.VaccineLotLabel + Lot + "\n" +
                 AppResources.VaccinationDateLabel + Dat.ToString("d") + "\n" +
-                AppResources.VaccinationProviderLabel + Adm; ;
+                AppResources.VaccinationProviderLabel + Adm + "\n" +
+                AppResources.CountryLabel + Cou;
+
         }
     }
 }

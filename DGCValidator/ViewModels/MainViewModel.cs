@@ -5,6 +5,7 @@ using System.Windows.Input;
 using DGCValidator.Models;
 using DGCValidator.Resources;
 using DGCValidator.Services;
+using DGCValidator.Services.DGC.V1;
 using Xamarin.Forms;
 
 namespace DGCValidator.ViewModels
@@ -64,76 +65,104 @@ namespace DGCValidator.ViewModels
                     var result = VerificationService.VerifyData(scanResult);
                     if (result != null)
                     {
-                        DGC proof = result;
+                        SignedDGC proof = result;
                         if (proof != null)
                         {
-                            ResultText = AppResources.VaccinatedText;
-                            IsResultOK = true;
                             Subject = new Models.SubjectModel
                             {
-                                Name = proof.vProof.Sub.N,
-                                DateOfBirth = proof.vProof.Sub.Dob,
-                                Identifier = proof.vProof.Sub.Id[0].I
+                                Name = proof.Dgc.Sub.Fn+" "+proof.Dgc.Sub.Gn,
+                                ConvertDateOfBirth = proof.Dgc.Sub.Dob,
+                                Identifier = proof.Dgc.Sub.Id[0].I
                             };
                             Signature = new Models.SignatureModel
                             {
-                                IssuedDate = proof.issuedDate,
-                                ExpriationDate = proof.expirationDate,
-                                IssuerCountry = proof.issuingCountry
+                                IssuedDate = proof.IssuedDate,
+                                ExpirationDate = proof.ExpirationDate,
+                                IssuerCountry = proof.IssuingCountry
                             };
 
-                            if (proof.vProof.Vac != null)
+                            bool vaccinated = false;
+                            if (proof.Dgc.Vac != null)
                             {
-                                foreach (Vac vac in proof.vProof.Vac)
+                                foreach (Vac vac in proof.Dgc.Vac)
                                 {
                                     AddCertificate(new Models.VaccineCertModel
                                     {
-                                        Type = Models.CertEnum.VACCINE,
+                                        Type = Models.CertType.VACCINE,
                                         Adm = vac.Adm,
                                         Aut = vac.Aut,
+                                        Cou = vac.Cou,
                                         Dat = vac.Dat,
-                                        Des = vac.Des,
-                                        Dis = vac.Tar,
+                                        Dis = vac.Dis,
                                         Lot = vac.Lot,
-                                        Nam = vac.Nam,
+                                        Mep = vac.Mep,
+                                        Seq = vac.Seq,
                                         Tot = vac.Tot,
-                                        Seq = vac.Seq
+                                        Vap = vac.Vap
                                     });
+                                    vaccinated = true;
                                 }
 
                             }
-                            if (proof.vProof.Tst != null)
+                            bool tested = false;
+                            if (proof.Dgc.Tst != null)
                             {
-                                foreach (Tst tst in proof.vProof.Tst)
+                                foreach (Tst tst in proof.Dgc.Tst)
                                 {
                                     AddCertificate(new Models.TestCertModel
                                     {
-                                        Type = Models.CertEnum.TEST,
+                                        Type = Models.CertType.TEST,
                                         Cou = tst.Cou,
-                                        Dat = tst.Dat,
                                         Dis = tst.Dis,
+                                        Dtr = Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dtr),
+                                        Dts = Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dts),
                                         Fac = tst.Fac,
                                         Ori = tst.Ori,
                                         Res = tst.Res,
-                                        Tma = tst.Tma,
+                                        Typ = tst.Typ,
                                         Tna = tst.Tna,
-                                        Typ = tst.Typ
+                                        Tma = tst.Tma
                                     });
+                                    tested = true;
                                 }
                             }
-                            if (proof.vProof.Rec != null)
+                            bool recovered = false;
+                            if (proof.Dgc.Rec != null)
                             {
-                                foreach (Rec rec in proof.vProof.Rec)
+                                foreach (Rec rec in proof.Dgc.Rec)
                                 {
                                     AddCertificate(new Models.RecoveredCertModel
                                     {
-                                        Type = Models.CertEnum.RECOVERED,
+                                        Type = Models.CertType.RECOVERED,
                                         Cou = rec.Cou,
                                         Dat = rec.Dat,
                                         Dis = rec.Dis
                                     });
+                                    recovered = true;
                                 }
                             }
+
+                            if(vaccinated)
+                            {
+                                ResultText = AppResources.VaccinatedText;
+                                IsResultOK = true;
+                            }
+                            else if(tested)
+                            {
+                                ResultText = AppResources.TestedText;
+                                IsResultOK = true;
+                            }
+                            else if (recovered)
+                            {
+                                ResultText = AppResources.RecoveredText;
+                                IsResultOK = true;
+                            }
+                            else
+                            {
+                                ResultText = AppResources.MissingDataText;
+                                IsResultOK = false;
+                            }
+
                         }
                         else
                         {

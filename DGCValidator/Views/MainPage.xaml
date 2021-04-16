@@ -79,8 +79,8 @@
                     JustifyContent="SpaceEvenly">
                     <Image x:Name="nationFlag" Source="{Binding Signature.IssuerCountryImage}" HeightRequest="80" WidthRequest="80" HorizontalOptions="Start" Margin="30,0,30,0" />
                     <StackLayout>
-                        <Label x:Name="labelIssuedDate" Text="{Binding Signature.IssuedDate}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
-                        <Label x:Name="labelExpirationDate" Text="{Binding Signature.ExpriationDate}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                        <Label x:Name="labelIssuedDate" Text="{Binding Signature.IssuedDateString}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                        <Label x:Name="labelExpirationDate" Text="{Binding Signature.ExpirationDateString}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
                     </StackLayout>
                 </FlexLayout>
                 <Label x:Name="labelName" Text="{Binding Subject.Name}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>

@@ -45,6 +45,15 @@
     <data name="VaccinatedText" xml:space="preserve">
         <value>Vaccinated</value>
     </data>
+    <data name="TestedText" xml:space="preserve">
+        <value>Tested</value>
+    </data>
+    <data name="RecoveredText" xml:space="preserve">
+        <value>Recovered</value>
+    </data>
+    <data name="MissingDataText" xml:space="preserve">
+        <value>No information</value>
+    </data>
     <data name="ErrorReadingText" xml:space="preserve">
         <value>Error while reading</value>
     </data>
@@ -73,9 +82,6 @@
     <data name="CountryLabel" xml:space="preserve">
         <value>Country: </value>
     </data>
-        <data name="TestDateLabel" xml:space="preserve">
-        <value>Positive date: </value>
-    </data>
 
     <!-- Test Resources -->
     <data name="TestTypeLabel" xml:space="preserve">
@@ -96,8 +102,18 @@
     <data name="TestingCentreLabel" xml:space="preserve">
         <value>Test centre: </value>
     </data>
+    <data name="TestDateLabel" xml:space="preserve">
+        <value>Test date: </value>
+    </data>
+    <data name="TestResultDateLabel" xml:space="preserve">
+        <value>Result date: </value>
+    </data>
+
 
     <!-- Recovered Resources -->
+    <data name="RecTestDateLabel" xml:space="preserve">
+        <value>Positive date: </value>
+    </data>
 
     <!-- Vaccination Resources -->
     <data name="DoseText" xml:space="preserve">

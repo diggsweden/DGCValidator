@@ -22,8 +22,8 @@ namespace DGCValidator
         {
             switch (((ICertModel)item).Type)
             {
-                case CertEnum.RECOVERED: return RecoveredTemplate;
-                case CertEnum.TEST: return TestTemplate;
+                case CertType.RECOVERED: return RecoveredTemplate;
+                case CertType.TEST: return TestTemplate;
                 default: return VaccineTemplate;
             }
         }

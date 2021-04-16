@@ -5,9 +5,9 @@ namespace DGCValidator.Models
 {
     public class RecoveredCertModel : BaseModel,ICertModel
     {
-        public CertEnum Type { get; set; }
-        String _header;
-        String _info;
+        public CertType Type { get; set; }
+        string _header;
+        string _info;
         public string Cou { get; set; }
         public DateTimeOffset Dat { get; set; }
         public string Dis { get; set; }
@@ -16,7 +16,7 @@ namespace DGCValidator.Models
         {
         }
 
-        public String Header
+        public string Header
         {
             get { return _header; }
             set
@@ -25,7 +25,7 @@ namespace DGCValidator.Models
                 OnPropertyChanged();
             }
         }
-        public String Info
+        public string Info
         {
             get { return _info; }
             set
@@ -37,7 +37,7 @@ namespace DGCValidator.Models
         public void CreateHeaderAndInfo()
         {
             Header = AppResources.DiseaseLabel + Dis;
-            Info = AppResources.TestDateLabel + Dat + "\n"+
+            Info = AppResources.RecTestDateLabel + Dat + "\n"+
                 AppResources.CountryLabel + Cou;
         }
     }
