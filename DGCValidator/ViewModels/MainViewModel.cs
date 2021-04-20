@@ -6,6 +6,7 @@ using DGCValidator.Models;
 using DGCValidator.Resources;
 using DGCValidator.Services;
 using DGCValidator.Services.DGC.V1;
+using DGCValidator.Views;
 using Xamarin.Forms;
 
 namespace DGCValidator.ViewModels
@@ -19,12 +20,26 @@ namespace DGCValidator.ViewModels
         ObservableCollection<ICertModel> _certificates;
 
         private ICommand scanCommand;
+        private ICommand settingsCommand;
+        private ICommand aboutCommand;
 
         public MainViewModel()
         {
             _subject = new SubjectModel();
             _certificates = new ObservableCollection<ICertModel>();
         }
+
+        public ICommand SettingsCommand => settingsCommand ??
+                (settingsCommand = new Command(async () =>
+                {
+                    await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
+                }));
+
+        public ICommand AboutCommand => aboutCommand ??
+                (aboutCommand = new Command(async () =>
+                {
+                    await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
+                }));
 
         public ICommand ScanCommand
         {
@@ -120,7 +135,6 @@ namespace DGCValidator.ViewModels
                                         Ori = tst.Ori,
                                         Res = tst.Res,
                                         Typ = tst.Typ,
-                                        Tna = tst.Tna,
                                         Tma = tst.Tma
                                     });
                                     tested = true;

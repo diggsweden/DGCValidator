@@ -1014,5 +1014,14 @@
     <BundleResource Include="..\DGCValidator\Resources\digg_centered.png">
       <Link>Resources\digg_centered.png</Link>
     </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\fohm_logo.png">
+      <Link>Resources\fohm_logo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\ehm_logo.png">
+      <Link>Resources\ehm_logo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Info.png">
+      <Link>Resources\Info.png</Link>
+    </BundleResource>
   </ItemGroup>
 </Project>

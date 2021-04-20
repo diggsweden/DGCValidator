@@ -84,6 +84,9 @@
     </data>
 
     <!-- Test Resources -->
+    <data name="TestHeader" xml:space="preserve">
+        <value>Getest</value>
+    </data>
     <data name="TestTypeLabel" xml:space="preserve">
         <value>Test type: </value>
     </data>
@@ -111,11 +114,17 @@
 
 
     <!-- Recovered Resources -->
+    <data name="RecoveryHeader" xml:space="preserve">
+        <value>Hersteld</value>
+    </data>
     <data name="RecTestDateLabel" xml:space="preserve">
         <value>Positive date: </value>
     </data>
 
     <!-- Vaccination Resources -->
+    <data name="VaccinationHeader" xml:space="preserve">
+        <value>Vaccinatie</value>
+    </data>
     <data name="DoseText" xml:space="preserve">
         <value>Dosis </value>
     </data>

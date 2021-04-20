@@ -27,9 +27,9 @@ namespace DGCValidator.Services
         {
             try {
                 // The base45 encoded data shoudl begin with HC1
-                if( codeData.StartsWith("HC1"))
+                if( codeData.StartsWith("HC1:"))
                 {
-                    string base45CodedData = codeData.Substring(3);
+                    string base45CodedData = codeData.Substring(4);
 
                     // Base 45 decode data
                     byte[] base45DecodedData = Base45Decoding(Encoding.GetEncoding("UTF-8").GetBytes(base45CodedData));

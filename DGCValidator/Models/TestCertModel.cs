@@ -16,7 +16,6 @@ namespace DGCValidator.Models
         public string Ori { get; set; }
         public string Res { get; set; }
         public string Tma { get; set; }
-        public string Tna { get; set; }
         public string Typ { get; set; }
 
         public TestCertModel()
@@ -44,7 +43,6 @@ namespace DGCValidator.Models
         {
             Header = AppResources.DiseaseLabel + Dis;
             Info = AppResources.TestTypeLabel + Typ + "\n" +
-                AppResources.TestNameLabel + Tna + "\n" +
                 AppResources.TestManifacturerLabel + Tma + "\n" +
                 AppResources.TestSampleOriginLabel + Ori + "\n" +
                 AppResources.TestDateLabel + Dts + "\n" +

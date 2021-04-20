@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using DGCValidator.Resources;
 
@@ -9,6 +10,7 @@ namespace DGCValidator.Models
         string _name="";
         string _dateOfBirth="";
         string _identifier = "";
+        List<SubjectIdentity> _identities = new List<SubjectIdentity>();
 
         public SubjectModel()
         {
@@ -54,12 +56,23 @@ namespace DGCValidator.Models
                 OnPropertyChanged();
             }
         }
-
+        public void AddIdentity(SubjectIdentity identity)
+        {
+            _identities.Add(identity);
+            OnPropertyChanged("Identities");
+        }
         public void Clear()
         {
             Name = "";
             DateOfBirth = "";
             Identifier = "";
+            _identities.Clear();
         }
+    }
+
+    public class SubjectIdentity
+    {
+        string Type { get; set; }
+        string Identifier { get; set; }
     }
 }

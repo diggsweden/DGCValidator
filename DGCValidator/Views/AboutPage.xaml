@@ -5,9 +5,11 @@
     xmlns:resource="clr-namespace:DGCValidator.Resources"
     xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
     x:Class="DGCValidator.Views.AboutPage">
-    <StackLayout Spacing="10" BackgroundColor="White">
-            <Image Source="digg_centered.png" HorizontalOptions="Center"/>
+    <StackLayout Spacing="10" BackgroundColor="White" Padding="0,20">
             <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="16" Padding="30,20,30,10" TextColor="Black"/>
-            <Label Text="Flag Icons from www.icondrawer.com" FontSize="12" Padding="30,20,30,10" TextColor="Black"/>
+            <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30"/>
+            <Image Source="ehm_logo.png" HorizontalOptions="Center" Margin="30"/>
+            <Image Source="fohm_logo.png" HorizontalOptions="Center" Margin="30"/>
+            <Label Text="Flag Icons from www.icondrawer.com" FontSize="14" Padding="30,20,30,10" TextColor="Black"/>
     </StackLayout>
 </ContentPage>

@@ -10,7 +10,7 @@ namespace DGCValidator.Views
         public MainPage()
         {
             InitializeComponent();
-            Title = AppResources.HeaderText;
+           // Title = AppResources.HeaderText;
         }
 
     }

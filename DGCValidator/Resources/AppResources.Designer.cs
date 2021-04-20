@@ -179,6 +179,12 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string TestHeader {
+            get {
+                return ResourceManager.GetString("TestHeader", resourceCulture);
+            }
+        }
+        
         public static string TestTypeLabel {
             get {
                 return ResourceManager.GetString("TestTypeLabel", resourceCulture);
@@ -227,9 +233,21 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string RecoveryHeader {
+            get {
+                return ResourceManager.GetString("RecoveryHeader", resourceCulture);
+            }
+        }
+        
         public static string RecTestDateLabel {
             get {
                 return ResourceManager.GetString("RecTestDateLabel", resourceCulture);
+            }
+        }
+        
+        public static string VaccinationHeader {
+            get {
+                return ResourceManager.GetString("VaccinationHeader", resourceCulture);
             }
         }
         

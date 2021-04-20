@@ -2,6 +2,7 @@
 namespace DGCValidator.Services.DGC.V1
 {
     using System;
+    using System.Collections.Generic;
 
     using System.Globalization;
     using Newtonsoft.Json;
@@ -15,15 +16,18 @@ namespace DGCValidator.Services.DGC.V1
     /// movement during the COVID-19 pandemic (Digital Green Certificate) -
     /// https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021PC0130 2) Document
     /// "Value Sets for the digital green certificate as stated in the Annex ...", abbr.
-    /// "VS-2021-04-08" - https://webgate.ec.europa.eu/fpfis/wikis/x/05PuKg
+    /// "VS-2021-04-14" - https://webgate.ec.europa.eu/fpfis/wikis/x/05PuKg 3) Guidelines on
+    /// verifiable vaccination certificates - basic interoperability elements - Release 2 -
+    /// 2021-03-12, abbr. "guidelines"
     /// </summary>
     public partial class EU_DGC
     {
         /// <summary>
-        /// Certificate metadata
+        /// Unique identifier of the DGC (initially called UVCI (V for vaccination), later renamed to
+        /// DGCI), format and composizion viz. guidelines
         /// </summary>
-        [JsonProperty("cert", NullValueHandling = NullValueHandling.Ignore)]
-        public Cert Cert { get; set; }
+        [JsonProperty("dgcid")]
+        public string Dgcid { get; set; }
 
         /// <summary>
         /// Recovery statement
@@ -44,59 +48,17 @@ namespace DGCValidator.Services.DGC.V1
         public Tst[] Tst { get; set; }
 
         /// <summary>
+        /// Version of the schema, according to Semantic versioning (ISO, https://semver.org/ version
+        /// 2.0.0 or newer) (viz. guidelines)
+        /// </summary>
+        [JsonProperty("v")]
+        public string V { get; set; }
+
+        /// <summary>
         /// Vaccination/prophylaxis information
         /// </summary>
         [JsonProperty("vac", NullValueHandling = NullValueHandling.Ignore)]
         public Vac[] Vac { get; set; }
-    }
-
-    /// <summary>
-    /// Certificate metadata
-    /// </summary>
-    public partial class Cert
-    {
-        /// <summary>
-        /// Country of the issuing authority (optional for vaccination and testing, viz. annex)
-        /// </summary>
-        [JsonProperty("co")]
-        public string Co { get; set; }
-
-        /// <summary>
-        /// Identifier of the DGC, called UVID (V for vaccinations), will maybe be renamed to DGCI?
-        /// </summary>
-        [JsonProperty("id")]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Issuer of the DGC
-        /// </summary>
-        [JsonProperty("is")]
-        public string Is { get; set; }
-
-        /// <summary>
-        /// Define schema type for easier detection for applicatione (e.g. smartphone wallets). Can
-        /// also be used to refer to schemas with less data fields e.g. for privacy issues.
-        /// </summary>
-        [JsonProperty("ty")]
-        public string Ty { get; set; }
-
-        /// <summary>
-        /// Certificate valid from (optional for vaccination and testing, viz. annex)
-        /// </summary>
-        [JsonProperty("vf")]
-        public DateTimeOffset Vf { get; set; }
-
-        /// <summary>
-        /// Version of the schema (optional, viz. annex)
-        /// </summary>
-        [JsonProperty("vr")]
-        public string Vr { get; set; }
-
-        /// <summary>
-        /// Certificate valid until (optional for vaccination and testing, viz. annex)
-        /// </summary>
-        [JsonProperty("vu")]
-        public DateTimeOffset Vu { get; set; }
     }
 
     public partial class Rec
@@ -127,10 +89,10 @@ namespace DGCValidator.Services.DGC.V1
     public partial class Sub
     {
         /// <summary>
-        /// Mandatory if no Person identifier is provided
+        /// The date of birth of the person addressed in the certificate
         /// </summary>
-        [JsonProperty("dob", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? Dob { get; set; }
+        [JsonProperty("dob")]
+        public DateTimeOffset Dob { get; set; }
 
         /// <summary>
         /// The family name(s) of the person addressed in the certificate
@@ -139,16 +101,24 @@ namespace DGCValidator.Services.DGC.V1
         public string Fn { get; set; }
 
         /// <summary>
-        /// Administrative gender (optional, viz. VS-2021-04-08)
+        /// The family name(s) of the person addressed in the certificate transliterated into the
+        /// OCR-B Characters from ISO 1073-2 according to the ICAO Doc 9303 part 3.
         /// </summary>
-        [JsonProperty("gen", NullValueHandling = NullValueHandling.Ignore)]
-        public string Gen { get; set; }
+        [JsonProperty("fnt", NullValueHandling = NullValueHandling.Ignore)]
+        public string Fnt { get; set; }
 
         /// <summary>
         /// The given name(s) of the person addressed in the certificate
         /// </summary>
         [JsonProperty("gn")]
         public string Gn { get; set; }
+
+        /// <summary>
+        /// The given name(s) of the person addressed in the certificate transliterated into the
+        /// OCR-B Characters from ISO 1073-2 according to the ICAO Doc 9303 part 3.
+        /// </summary>
+        [JsonProperty("gnt", NullValueHandling = NullValueHandling.Ignore)]
+        public string Gnt { get; set; }
 
         /// <summary>
         /// Identifiers of the vaccinated person, according to the policies applicable in each country
@@ -159,16 +129,22 @@ namespace DGCValidator.Services.DGC.V1
 
     public partial class PersonIdentifier
     {
+        /// <summary>
+        /// Issuing country (ISO 3166-1 alpha-2 country code) of identifier
+        /// </summary>
+        [JsonProperty("c")]
+        public string C { get; set; }
+
         [JsonProperty("i")]
         public string I { get; set; }
 
         /// <summary>
-        /// The type of identifier (viz. VS-2021-04-08) PPN = Passport NNxxx = national Person
-        /// Identifier (ISO 3166-1 alpha-3 country code) CZ = Citizenship card HC = Health Card
-        /// number etc.
+        /// The type of identifier (viz. VS-2021-04-08) PP = Passport Number NN = National Person
+        /// Identifier (country specified in the 'c' parameter) CZ = Citizenship Card Number HC =
+        /// Health Card Number
         /// </summary>
         [JsonProperty("t")]
-        public string T { get; set; }
+        public IdentifierType T { get; set; }
     }
 
     public partial class Tst
@@ -180,7 +156,7 @@ namespace DGCValidator.Services.DGC.V1
         public string Cou { get; set; }
 
         /// <summary>
-        /// Disease or agent targeted
+        /// Disease or agent targeted (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("dis")]
         public string Dis { get; set; }
@@ -199,39 +175,33 @@ namespace DGCValidator.Services.DGC.V1
 
         /// <summary>
         /// Name/code of testing centre, facility or a health authority responsible for the testing
-        /// event. (not specified in VS-2021-04-08)
+        /// event.
         /// </summary>
         [JsonProperty("fac")]
         public string Fac { get; set; }
 
         /// <summary>
-        /// Origin of sample that was taken (e.g. nasopharyngeal swab, oropharyngeal swab etc.), viz.
-        /// VS-2021-04-08, optional
+        /// Origin of sample that was taken (e.g. nasopharyngeal swab, oropharyngeal swab etc.) (viz.
+        /// VS-2021-04-14) optional
         /// </summary>
         [JsonProperty("ori", NullValueHandling = NullValueHandling.Ignore)]
         public string Ori { get; set; }
 
         /// <summary>
-        /// Result of the test according to SNOMED CT (viz. VS-2021-04-08)
+        /// Result of the test according to SNOMED CT (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("res")]
         public string Res { get; set; }
 
         /// <summary>
-        /// Manufacturer of the test, optional for NAAT test (work in progress in VS-2021-04-08)
+        /// Manufacturer and commercial name of the test used (optional for NAAT test) (viz.
+        /// VS-2021-04-14)
         /// </summary>
-        [JsonProperty("tma")]
+        [JsonProperty("tma", NullValueHandling = NullValueHandling.Ignore)]
         public string Tma { get; set; }
 
         /// <summary>
-        /// Commercial or brand name of the RT-PCR or rapid antigen test (work in progress in
-        /// VS-2021-04-08)
-        /// </summary>
-        [JsonProperty("tna")]
-        public string Tna { get; set; }
-
-        /// <summary>
-        /// Code of the type of test that was conducted (viz. VS-2021-04-08)
+        /// Code of the type of test that was conducted
         /// </summary>
         [JsonProperty("typ")]
         public string Typ { get; set; }
@@ -247,13 +217,14 @@ namespace DGCValidator.Services.DGC.V1
         public string Adm { get; set; }
 
         /// <summary>
-        /// Code as defined in EMA SPOR - Organisations Management System (viz. VS-2021-04-08)
+        /// Code as defined in EMA SPOR - Organisations Management System (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("aut")]
         public string Aut { get; set; }
 
         /// <summary>
-        /// Country (member state) of vaccination (ISO 3166-1 alpha-2 Country Code)
+        /// Country (member state) of vaccination (ISO 3166-1 alpha-2 Country Code) (viz.
+        /// VS-2021-04-14)
         /// </summary>
         [JsonProperty("cou")]
         public string Cou { get; set; }
@@ -265,7 +236,7 @@ namespace DGCValidator.Services.DGC.V1
         public DateTimeOffset Dat { get; set; }
 
         /// <summary>
-        /// Disease or agent targeted (viz. VS-2021-04-08)
+        /// Disease or agent targeted (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("dis")]
         public string Dis { get; set; }
@@ -278,30 +249,37 @@ namespace DGCValidator.Services.DGC.V1
         public string Lot { get; set; }
 
         /// <summary>
-        /// Code of the medicinal product (viz. VS-2021-04-08)
+        /// Code of the medicinal product (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("mep")]
         public string Mep { get; set; }
 
         /// <summary>
-        /// Number of dose administered in a cycle
+        /// Number of dose administered in a cycle  (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("seq")]
         public long Seq { get; set; }
 
         /// <summary>
         /// Number of expected doses for a complete cycle (specific for a person at the time of
-        /// administration)
+        /// administration) (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("tot")]
         public long Tot { get; set; }
 
         /// <summary>
-        /// Generic description of the vaccine/prophylaxis or its component(s), (viz. VS-2021-04-08)
+        /// Generic description of the vaccine/prophylaxis or its component(s), (viz. VS-2021-04-14)
         /// </summary>
         [JsonProperty("vap")]
         public string Vap { get; set; }
     }
+
+    /// <summary>
+    /// The type of identifier (viz. VS-2021-04-08) PP = Passport Number NN = National Person
+    /// Identifier (country specified in the 'c' parameter) CZ = Citizenship Card Number HC =
+    /// Health Card Number
+    /// </summary>
+    public enum IdentifierType { Cz, Hc, Nn, Pp };
 
     public partial class EU_DGC
     {
@@ -320,8 +298,63 @@ namespace DGCValidator.Services.DGC.V1
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
             DateParseHandling = DateParseHandling.None,
             Converters = {
+                IdentifierTypeConverter.Singleton,
                 new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
             },
         };
+    }
+
+    internal class IdentifierTypeConverter : JsonConverter
+    {
+        public override bool CanConvert(Type t) => t == typeof(IdentifierType) || t == typeof(IdentifierType?);
+
+        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+        {
+            if (reader.TokenType == JsonToken.Null) return null;
+            var value = serializer.Deserialize<string>(reader);
+            switch (value)
+            {
+                case "CZ":
+                    return IdentifierType.Cz;
+                case "HC":
+                    return IdentifierType.Hc;
+                case "NN":
+                case "pin":
+                    return IdentifierType.Nn;
+                case "PP":
+                case "pas":
+                case "nid":
+                    return IdentifierType.Pp;
+            }
+            throw new Exception("Cannot unmarshal type IdentifierType");
+        }
+
+        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
+        {
+            if (untypedValue == null)
+            {
+                serializer.Serialize(writer, null);
+                return;
+            }
+            var value = (IdentifierType)untypedValue;
+            switch (value)
+            {
+                case IdentifierType.Cz:
+                    serializer.Serialize(writer, "CZ");
+                    return;
+                case IdentifierType.Hc:
+                    serializer.Serialize(writer, "HC");
+                    return;
+                case IdentifierType.Nn:
+                    serializer.Serialize(writer, "NN");
+                    return;
+                case IdentifierType.Pp:
+                    serializer.Serialize(writer, "PP");
+                    return;
+            }
+            throw new Exception("Cannot marshal type IdentifierType");
+        }
+
+        public static readonly IdentifierTypeConverter Singleton = new IdentifierTypeConverter();
     }
 }
