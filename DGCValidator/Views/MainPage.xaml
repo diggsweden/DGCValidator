@@ -123,7 +123,6 @@
                        IndicatorColor="LightGray"
                        SelectedIndicatorColor="DarkGray"
                        HorizontalOptions="Center" />
-                    <Label Text="Flag Icons from www.icondrawer.com" FontSize="12" Padding="30,20,30,10" TextColor="Black" IsVisible="{Binding IsResultOK, Converter={StaticResource LabelVisibleConverter}}"/>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

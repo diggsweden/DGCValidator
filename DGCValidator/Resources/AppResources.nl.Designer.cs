@@ -179,6 +179,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string IssuerLabel {
+            get {
+                return ResourceManager.GetString("IssuerLabel", resourceCulture);
+            }
+        }
+        
+        public static string CertificateIdentifierLabel {
+            get {
+                return ResourceManager.GetString("CertificateIdentifierLabel", resourceCulture);
+            }
+        }
+        
         public static string TestHeader {
             get {
                 return ResourceManager.GetString("TestHeader", resourceCulture);
@@ -230,6 +242,18 @@ namespace DGCValidator.Resources {
         public static string TestResultDateLabel {
             get {
                 return ResourceManager.GetString("TestResultDateLabel", resourceCulture);
+            }
+        }
+        
+        public static string ValidFromLabel {
+            get {
+                return ResourceManager.GetString("ValidFromLabel", resourceCulture);
+            }
+        }
+        
+        public static string ValidUntilLabel {
+            get {
+                return ResourceManager.GetString("ValidUntilLabel", resourceCulture);
             }
         }
         

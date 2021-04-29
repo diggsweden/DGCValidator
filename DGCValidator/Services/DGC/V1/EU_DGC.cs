@@ -20,7 +20,7 @@ namespace DGCValidator.Services.DGC.V1
     /// verifiable vaccination certificates - basic interoperability elements - Release 2 -
     /// 2021-03-12, abbr. "guidelines"
     /// </summary>
-    public partial class EU_DGC
+    public partial class Old_EU_DGC
     {
         /// <summary>
         /// Unique identifier of the DGC (initially called UVCI (V for vaccination), later renamed to

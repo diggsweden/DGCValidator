@@ -8,15 +8,19 @@ namespace DGCValidator.Models
         public CertType Type { get; set; }
         string _header;
         string _info;
-        public string Cou { get; set; }
-        public DateTimeOffset Dts { get; set; }
-        public DateTimeOffset Dtr { get; set; }
-        public string Dis { get; set; }
-        public string Fac { get; set; }
-        public string Ori { get; set; }
-        public string Res { get; set; }
-        public string Tma { get; set; }
-        public string Typ { get; set; }
+        public string Tg { get; set; }//Dis Disease
+        public string Tt { get; set; }//Typ Type of test
+        public string Nm { get; set; }//Ori NAA Test name
+        public string Ma { get; set; }// Tma RAT Test name and manufacturer
+        public DateTimeOffset Sc { get; set; }// Test date
+        public DateTimeOffset? Dr { get; set; }// Test result date
+        //public string Sc { get; set; }// Test date
+        //public string Dr { get; set; }// Test result date
+        public string Tr { get; set; }//Res Test result
+        public string Tc { get; set; }//Fac Testing centre
+        public string Co { get; set; }//Cou Country
+        public string Is { get; set; } // Issuer
+        public string Ci { get; set; } // Certificate Identifier
 
         public TestCertModel()
         {
@@ -41,15 +45,17 @@ namespace DGCValidator.Models
         }
         public void CreateHeaderAndInfo()
         {
-            Header = AppResources.DiseaseLabel + Dis;
-            Info = AppResources.TestTypeLabel + Typ + "\n" +
-                AppResources.TestManifacturerLabel + Tma + "\n" +
-                AppResources.TestSampleOriginLabel + Ori + "\n" +
-                AppResources.TestDateLabel + Dts + "\n" +
-                AppResources.TestResultDateLabel + Dtr + "\n" +
-                AppResources.TestResultLabel + Res + "\n" +
-                AppResources.TestingCentreLabel + Fac + "\n" +
-                AppResources.CountryLabel + Cou;
+            Header = AppResources.DiseaseLabel + Tg;
+            Info = AppResources.TestTypeLabel + Tt + "\n" +
+                AppResources.TestSampleOriginLabel + Nm + "\n" +
+                AppResources.TestManifacturerLabel + Ma + "\n" +
+                AppResources.TestDateLabel + Sc + "\n" +
+                AppResources.TestResultDateLabel + Dr + "\n" +
+                AppResources.TestResultLabel + Tr + "\n" +
+                AppResources.TestingCentreLabel + Tc + "\n" +
+                AppResources.CountryLabel + Co + "\n" +
+                AppResources.IssuerLabel + Is + "\n" +
+                AppResources.CertificateIdentifierLabel + Ci;
         }
 
         public static DateTimeOffset ConvertFromSecondsEpoc(long seconds)

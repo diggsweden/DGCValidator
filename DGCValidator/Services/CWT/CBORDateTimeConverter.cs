@@ -63,7 +63,7 @@ namespace DGCValidator.Services.CWT
                   String.Format("Date is represented as {0} - Only {1} is supported", num.GetType(), CBORNumber.NumberKind.Integer));
             }
             System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(num.ToInt64Unchecked()).ToLocalTime();
+            dtDateTime = dtDateTime.AddSeconds(num.ToInt64Unchecked()).ToUniversalTime();
 
             return dtDateTime;
         }

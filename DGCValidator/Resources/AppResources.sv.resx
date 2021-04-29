@@ -82,6 +82,12 @@
     <data name="CountryLabel" xml:space="preserve">
         <value>Land: </value>
     </data>
+    <data name="IssuerLabel" xml:space="preserve">
+        <value>Utfärdare: </value>
+    </data>
+    <data name="CertificateIdentifierLabel" xml:space="preserve">
+        <value>Identifierare: </value>
+    </data>
 
     <!-- Test Resources -->
     <data name="TestHeader" xml:space="preserve">
@@ -110,6 +116,12 @@
     </data>
     <data name="TestResultDateLabel" xml:space="preserve">
         <value>Resultdatum: </value>
+    </data>
+    <data name="ValidFromLabel" xml:space="preserve">
+        <value>Giltig from: </value>
+    </data>
+    <data name="ValidUntilLabel" xml:space="preserve">
+        <value>Giltig tom: </value>
     </data>
 
     <!-- Recovered Resources -->

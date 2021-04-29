@@ -2,8 +2,9 @@
 using System.IO;
 using System.Text;
 using DGCValidator.Services.CWT;
+using DGCValidator.Services;
 using DGCValidator.Services.DGC;
-using DGCValidator.Services.DGC.V1;
+using DGCValidator.Services.DGC.Vx;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using PeterO.Cbor;
@@ -78,7 +79,7 @@ namespace DGCValidator.Services
 
 		protected static byte[] VerifySignedData(byte[] signedData, SignedDGC vacProof)
         {
-            DGCVerifier verifier = new DGCVerifier(new CertificateProvider());
+            DGCVerifier verifier = new DGCVerifier(App.CertificateManager);
             return verifier.Verify(signedData, vacProof);
         }
 
@@ -91,6 +92,7 @@ namespace DGCValidator.Services
 		protected static EU_DGC GetVaccinationProofFromCbor(byte[] cborData)
 		{
             CBORObject cbor = CBORObject.DecodeFromBytes(cborData, CBOREncodeOptions.Default);
+            string json = cbor.ToJSONString();
             EU_DGC vacProof = EU_DGC.FromJson(cbor.ToJSONString());
             return vacProof;
         }

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto;
 
-namespace DGCValidator.Services.CWT
+namespace DGCValidator.Services.CWT.Certificates
 {
     /**
      * A functional interface for finding certificates that may be used to verify a HCERT (see {@link HCertVerifier}).
@@ -34,7 +32,7 @@ namespace DGCValidator.Services.CWT
          *          the key identifier
          * @return a list of certificates (never null)
          */
-        List<ECPublicKeyParameters> GetCertificates(String country, byte[] kid);
+        List<AsymmetricKeyParameter> GetCertificates(String country, byte[] kid);
 
     }
 }

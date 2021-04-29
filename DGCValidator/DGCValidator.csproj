@@ -32,6 +32,10 @@
     <Folder Include="Services\CWT\Cose\" />
     <Folder Include="Services\CWT\Certificates\" />
     <Folder Include="Services\DGC\V1\" />
+    <Folder Include="Services\DGC\Vx\" />
+    <Folder Include="Services\DGC\ValueSet\" />
+    <Folder Include="Resources\ValueSets\" />
+    <Folder Include="Resources\Trusts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.resx">

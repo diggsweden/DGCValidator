@@ -5,7 +5,8 @@ using System.Windows.Input;
 using DGCValidator.Models;
 using DGCValidator.Resources;
 using DGCValidator.Services;
-using DGCValidator.Services.DGC.V1;
+using DGCValidator.Services.DGC;
+using DGCValidator.Services.DGC.Vx;
 using DGCValidator.Views;
 using Xamarin.Forms;
 
@@ -32,6 +33,7 @@ namespace DGCValidator.ViewModels
         public ICommand SettingsCommand => settingsCommand ??
                 (settingsCommand = new Command(async () =>
                 {
+                    App.CertificateManager.RefreshTrustListAsync();
                     await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
                 }));
 
@@ -85,9 +87,9 @@ namespace DGCValidator.ViewModels
                         {
                             Subject = new Models.SubjectModel
                             {
-                                Name = proof.Dgc.Sub.Fn+" "+proof.Dgc.Sub.Gn,
-                                ConvertDateOfBirth = proof.Dgc.Sub.Dob,
-                                Identifier = proof.Dgc.Sub.Id[0].I
+                                Name = proof.Dgc.Nam.Fn+" "+proof.Dgc.Nam.Gn,
+                                ConvertDateOfBirth = proof.Dgc.Dob,
+                                Identifier = ""/*proof.Dgc.Sub.Id[0].I*/
                             };
                             Signature = new Models.SignatureModel
                             {
@@ -97,60 +99,65 @@ namespace DGCValidator.ViewModels
                             };
 
                             bool vaccinated = false;
-                            if (proof.Dgc.Vac != null)
+                            if (proof.Dgc.V != null && proof.Dgc.V.Length > 0)
                             {
-                                foreach (Vac vac in proof.Dgc.Vac)
+                                foreach (VElement vac in proof.Dgc.V)
                                 {
-                                    AddCertificate(new Models.VaccineCertModel
+                                     AddCertificate(new Models.VaccineCertModel
                                     {
                                         Type = Models.CertType.VACCINE,
-                                        Adm = vac.Adm,
-                                        Aut = vac.Aut,
-                                        Cou = vac.Cou,
-                                        Dat = vac.Dat,
-                                        Dis = vac.Dis,
-                                        Lot = vac.Lot,
-                                        Mep = vac.Mep,
-                                        Seq = vac.Seq,
-                                        Tot = vac.Tot,
-                                        Vap = vac.Vap
+                                        Tg = CodeMapperUtil.GetDiseaseAgentTargeted(vac.Tg),
+                                        Vp = CodeMapperUtil.GetVaccineOrProphylaxis(vac.Vp),
+                                        Mp = CodeMapperUtil.GetVaccineMedicalProduct(vac.Mp),
+                                        Ma = CodeMapperUtil.GetMarketingAuthHolder(vac.Ma),
+                                        Dn = vac.Dn,
+                                        Sd = vac.Sd,
+                                        Dt = vac.Dt,
+                                        Co = vac.Co,
+                                        Is = vac.Is,
+                                        Ci = vac.Ci
                                     });
                                     vaccinated = true;
                                 }
 
                             }
                             bool tested = false;
-                            if (proof.Dgc.Tst != null)
+                            if (proof.Dgc.T != null && proof.Dgc.T.Length > 0)
                             {
-                                foreach (Tst tst in proof.Dgc.Tst)
+                                foreach (TElement tst in proof.Dgc.T)
                                 {
                                     AddCertificate(new Models.TestCertModel
                                     {
                                         Type = Models.CertType.TEST,
-                                        Cou = tst.Cou,
-                                        Dis = tst.Dis,
-                                        Dtr = Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dtr),
-                                        Dts = Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dts),
-                                        Fac = tst.Fac,
-                                        Ori = tst.Ori,
-                                        Res = tst.Res,
-                                        Typ = tst.Typ,
-                                        Tma = tst.Tma
+                                        Tg = tst.Tg.ToString(),
+                                        Tt = tst.Tt,
+                                        Nm = tst.Nm,
+                                        Sc = tst.Sc, /*Models.TestCertModel.ConvertFromSecondsEpoc(tst.Sc),*/
+                                        Dr = tst.Dr, /*Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dr),*/
+                                        Tr = CodeMapperUtil.GetTestResult(tst.Tr),
+                                        Tc = tst.Tc,
+                                        Co = tst.Co,
+                                        Is = tst.Is,
+                                        Ci = tst.Ci
                                     });
                                     tested = true;
                                 }
                             }
                             bool recovered = false;
-                            if (proof.Dgc.Rec != null)
+                            if (proof.Dgc.R != null && proof.Dgc.R.Length > 0)
                             {
-                                foreach (Rec rec in proof.Dgc.Rec)
+                                foreach (RElement rec in proof.Dgc.R)
                                 {
                                     AddCertificate(new Models.RecoveredCertModel
                                     {
                                         Type = Models.CertType.RECOVERED,
-                                        Cou = rec.Cou,
-                                        Dat = rec.Dat,
-                                        Dis = rec.Dis
+                                        Tg = CodeMapperUtil.GetDiseaseAgentTargeted(rec.Tg),
+                                        Fr = rec.Fr,
+                                        Co = rec.Co,
+                                        Is = rec.Is,
+                                        Df = rec.Df,
+                                        Du = rec.Du,
+                                        Ci = rec.Ci
                                     });
                                     recovered = true;
                                 }

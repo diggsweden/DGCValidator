@@ -14,7 +14,7 @@ namespace DGCValidator.Models
         }
         public string ExpirationDateString
         {
-            get { return AppResources.ExpireDateLabel + _expirationDate.ToString(); }
+            get { return (_expirationDate!=null&&_expirationDate.Length>0?AppResources.ExpireDateLabel + _expirationDate.ToString():""); }
             set
             {
                 _expirationDate = value;
@@ -23,7 +23,7 @@ namespace DGCValidator.Models
         }
         public string IssuedDateString
         {
-            get { return AppResources.IssuedDateLabel + _issuedDate; }
+            get { return (_issuedDate!=null&&_issuedDate.Length>0? AppResources.IssuedDateLabel + _issuedDate:""); }
             set
             {
                 _issuedDate = value;

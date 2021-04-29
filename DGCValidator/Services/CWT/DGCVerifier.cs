@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Crypto.Parameters;
+using DGCValidator.Services.CWT.Certificates;
+using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.X509;
 
 /**
@@ -46,9 +45,9 @@ namespace DGCValidator.Services.CWT
                 throw new Exception("Signed object does not contain kid or country - cannot find certificate");
             }
 
-            List<ECPublicKeyParameters> certs = this.certificateProvider.GetCertificates(country, kid);
+            List<AsymmetricKeyParameter> certs = this.certificateProvider.GetCertificates(country, kid);
 
-            foreach (ECPublicKeyParameters cert in certs) {
+            foreach (AsymmetricKeyParameter cert in certs) {
                 Console.WriteLine("Attempting HCERT signature verification using certificate");// '{0}'", cert.Subject);//getSubjectX500Principal().getName()) ;
 
                 try {
@@ -68,7 +67,7 @@ namespace DGCValidator.Services.CWT
 
                 DateTime expiration = cwt.GetExpiration();
                 if (expiration != null) {
-                    if (DateTime.Now.CompareTo(expiration)>=0) {
+                    if (DateTime.UtcNow.CompareTo(expiration)>=0) {
                         throw new CertificateExpiredException("Signed HCERT has expired");
                     }
                 }

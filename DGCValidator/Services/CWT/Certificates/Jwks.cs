@@ -13,7 +13,7 @@ using Newtonsoft.Json.Converters;
 * @author Martin Lindström (martin@idsec.se)
 * @author Henric Norlander (extern.henric.norlander@digg.se)
 */
-namespace DGCValidator.Services.CWT
+namespace DGCValidator.Services.CWT.Certificates
 {
     public partial class Jwks
     {
@@ -43,6 +43,12 @@ namespace DGCValidator.Services.CWT
 
         [JsonProperty("y")]
         public string Y { get; set; }
+
+        [JsonProperty("n")]
+        public string N { get; set; }
+
+        [JsonProperty("e")]
+        public string E { get; set; }
     }
 
     public partial class X5A

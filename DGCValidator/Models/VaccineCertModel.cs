@@ -8,16 +8,20 @@ namespace DGCValidator.Models
         public CertType Type { get; set; }
         string _header;
         string _info;
-        public string Adm { get; set; }
-        public string Aut { get; set; }
-        public string Cou { get; set; }
-        public DateTimeOffset Dat { get; set; }
-        public string Dis { get; set; }
-        public string Lot { get; set; }
-        public string Mep { get; set; }
-        public long Seq { get; set; }
-        public long Tot { get; set; }
-        public string Vap { get; set; }
+//        public string Adm { get; set; }//Adm
+//        public string Cou { get; set; }//Cou
+        public string Tg { get; set; }//Dis Disease or agent target
+//        public string Lot { get; set; }//Lot
+        public string Vp { get; set; }//Vap Vaccine or prophylaxis
+        public string Mp { get; set; }//Mep Medical product
+        public string Ma { get; set; }//Aut Marketing Authorization
+        public long Dn { get; set; }//Seq Dose number
+        public long Sd { get; set; }//Tot Total Doses
+        public DateTimeOffset Dt { get; set; }//Dat Date
+        //public string Dt { get; set; }//Dat Date
+        public string Co { get; set; } // Country
+        public string Is { get; set; } // Issuer
+        public string Ci { get; set; } // Certificate Identifier
 
         public VaccineCertModel()
         {
@@ -43,15 +47,18 @@ namespace DGCValidator.Models
         }
         public void CreateHeaderAndInfo()
         {
-            Header = AppResources.DoseText + Seq + "/" + Tot;
-            Info = AppResources.DiseaseLabel + Dis + "\n" +
-                AppResources.VaccineDescriptionLabel + Vap + "\n" +
-                AppResources.VaccineNameLabel + Mep + "\n" +
-                AppResources.VaccineAuthLabel + Aut + "\n" +
-                AppResources.VaccineLotLabel + Lot + "\n" +
-                AppResources.VaccinationDateLabel + Dat.ToString("d") + "\n" +
-                AppResources.VaccinationProviderLabel + Adm + "\n" +
-                AppResources.CountryLabel + Cou;
+            Header = AppResources.DoseText + Dn + "/" + Sd;
+            Info = AppResources.DiseaseLabel + Tg + "\n" +
+                AppResources.VaccineDescriptionLabel + Vp + "\n" +
+                AppResources.VaccineNameLabel + Mp + "\n" +
+                AppResources.VaccineAuthLabel + Ma + "\n" +
+             /*   AppResources.VaccineLotLabel + Lot + "\n" + */
+             /*   AppResources.VaccinationDateLabel + Dt.ToString("d") + "\n" + */
+                AppResources.VaccinationDateLabel + Dt + "\n" +
+                /*   AppResources.VaccinationProviderLabel + Adm + "\n" + */
+                AppResources.CountryLabel + Co + "\n" +
+                AppResources.IssuerLabel + Is + "\n" +
+                AppResources.CertificateIdentifierLabel + Ci;
 
         }
     }
