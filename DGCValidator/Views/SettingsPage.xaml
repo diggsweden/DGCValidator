@@ -2,8 +2,25 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resource="clr-namespace:DGCValidator.Resources"
+    xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
     x:Class="DGCValidator.Views.SettingsPage">
+    <ContentPage.BindingContext>
+        <viewModels:SettingsViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        
+        <StackLayout Spacing="10" BackgroundColor="White" Padding="0,20">
+            <Label Text="{x:Static resource:AppResources.SettingsText}" FontSize="Large" FontAttributes="Bold" Padding="30,20,30,10" TextColor="Black"/>
+            <FlexLayout Direction="Row" AlignItems="Start">
+                <Label x:Name="labelProduction" Text="{x:Static resource:AppResources.ProductionText}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                <Switch IsToggled="{Binding ProductionMode, Mode=TwoWay}"  Toggled="OnToggled" />
+            </FlexLayout>
+            <Label x:Name="labelIssuer" Text="{Binding Trust.Issuer}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+            <Label x:Name="labelIssuedDate" Text="{Binding Trust.IssuedDateString}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+            <Label x:Name="labelExpirationDate" Text="{Binding Trust.ExpirationDateString}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+            <Button Text="{x:Static resource:AppResources.RefreshText}"
+                HorizontalOptions="Start"
+                Command="{Binding RefreshTrustListCommand}" Padding="30,0,30,0"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -322,5 +322,23 @@ namespace DGCValidator.Resources {
                 return ResourceManager.GetString("AboutText", resourceCulture);
             }
         }
+        
+        public static string SettingsText {
+            get {
+                return ResourceManager.GetString("SettingsText", resourceCulture);
+            }
+        }
+        
+        public static string ProductionText {
+            get {
+                return ResourceManager.GetString("ProductionText", resourceCulture);
+            }
+        }
+        
+        public static string RefreshText {
+            get {
+                return ResourceManager.GetString("RefreshText", resourceCulture);
+            }
+        }
     }
 }

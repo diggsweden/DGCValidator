@@ -11,5 +11,10 @@ namespace DGCValidator.Views
         {
             InitializeComponent();
         }
+
+        private void OnToggled(object sender, ToggledEventArgs e)
+        {
+            Xamarin.Essentials.Preferences.Set("ProductionMode", e.Value);
+        }
     }
 }

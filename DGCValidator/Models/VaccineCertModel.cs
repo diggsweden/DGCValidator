@@ -52,10 +52,7 @@ namespace DGCValidator.Models
                 AppResources.VaccineDescriptionLabel + Vp + "\n" +
                 AppResources.VaccineNameLabel + Mp + "\n" +
                 AppResources.VaccineAuthLabel + Ma + "\n" +
-             /*   AppResources.VaccineLotLabel + Lot + "\n" + */
-             /*   AppResources.VaccinationDateLabel + Dt.ToString("d") + "\n" + */
-                AppResources.VaccinationDateLabel + Dt + "\n" +
-                /*   AppResources.VaccinationProviderLabel + Adm + "\n" + */
+                AppResources.VaccinationDateLabel + Dt.ToString("d") + "\n" +
                 AppResources.CountryLabel + Co + "\n" +
                 AppResources.IssuerLabel + Is + "\n" +
                 AppResources.CertificateIdentifierLabel + Ci;

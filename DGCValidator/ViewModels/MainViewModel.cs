@@ -33,8 +33,8 @@ namespace DGCValidator.ViewModels
         public ICommand SettingsCommand => settingsCommand ??
                 (settingsCommand = new Command(async () =>
                 {
-                    App.CertificateManager.RefreshTrustListAsync();
-                    await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
+                    //App.CertificateManager.RefreshTrustListAsync();
+                    await Application.Current.MainPage.Navigation.PushAsync(new SettingsPage());
                 }));
 
         public ICommand AboutCommand => aboutCommand ??

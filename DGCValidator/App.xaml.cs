@@ -20,6 +20,7 @@ namespace DGCValidator
 
         protected override void OnStart()
         {
+            CertificateManager.LoadCertificates();
         }
 
         protected override void OnSleep()

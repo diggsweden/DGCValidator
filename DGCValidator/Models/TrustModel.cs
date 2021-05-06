@@ -3,13 +3,13 @@ using DGCValidator.Resources;
 
 namespace DGCValidator.Models
 {
-    public class SignatureModel : BaseModel
+    public class TrustModel : BaseModel
     {
         string _expirationDate;
         string _issuedDate;
-        string _issuerCountry = "";
+        string _issuer = "";
 
-        public SignatureModel()
+        public TrustModel()
         {
         }
         public string ExpirationDateString
@@ -35,7 +35,7 @@ namespace DGCValidator.Models
         {
             set
             {
-                _expirationDate = ((DateTime)value).ToShortDateString();
+                _expirationDate = ((DateTime)value).ToString();
                 OnPropertyChanged();
             }
         }
@@ -43,37 +43,24 @@ namespace DGCValidator.Models
         {
             set
             {
-                _issuedDate = ((DateTime)value).ToShortDateString();
+                _issuedDate = ((DateTime)value).ToString();
                 OnPropertyChanged();
             }
         }
-        public string IssuerCountry
+        public string Issuer
         {
-            get { return _issuerCountry; }
+            get { return _issuer; }
             set
             {
-                _issuerCountry = (value!=null?value.ToLower():"");
+                _issuer = (value!=null?value.ToLower():"");
                 OnPropertyChanged();
-                OnPropertyChanged("IssuerCountryImage");
-
-            }
-        }
-        public String IssuerCountryImage
-        {
-            get
-            {
-                if( _issuerCountry != null)
-                {
-                    return _issuerCountry + ".png";
-                }
-                return "";
             }
         }
         public void Clear()
         {
             ExpirationDateString = "";
             IssuedDateString = "";
-            IssuerCountry = "";
+            Issuer = "";
         }
     }
 }

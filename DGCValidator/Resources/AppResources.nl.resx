@@ -162,5 +162,13 @@
     <data name="AboutText" xml:space="preserve">
         <value>Verificatie-app voor digitaal groencertificaat ontwikkeld door DIGG.</value>
     </data>
-
+    <data name="SettingsText" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="ProductionText" xml:space="preserve">
+        <value>Production</value>
+    </data>
+    <data name="RefreshText" xml:space="preserve">
+        <value>Refresh trust list</value>
+    </data>
 </root>

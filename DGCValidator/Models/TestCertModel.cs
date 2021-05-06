@@ -49,7 +49,7 @@ namespace DGCValidator.Models
             Info = AppResources.TestTypeLabel + Tt + "\n" +
                 AppResources.TestSampleOriginLabel + Nm + "\n" +
                 AppResources.TestManifacturerLabel + Ma + "\n" +
-                AppResources.TestDateLabel + Sc + "\n" +
+                AppResources.TestDateLabel + Sc.ToString("d") + "\n" +
                 AppResources.TestResultDateLabel + Dr + "\n" +
                 AppResources.TestResultLabel + Tr + "\n" +
                 AppResources.TestingCentreLabel + Tc + "\n" +

@@ -14,6 +14,30 @@ namespace DGCValidator.Services.CWT.Certificates
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    public partial class DSC_TL_HEADER
+    {
+        [JsonProperty("typ")]
+        public string Typ { get; set; }
+
+        [JsonProperty("alg")]
+        public string Alg { get; set; }
+
+        [JsonProperty("x5c")]
+        public string[] X5C { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("aud")]
+        public string Aud { get; set; }
+    }
+
+    public partial class DSC_TL_HEADER
+    {
+        public static DSC_TL_HEADER FromJson(string json) => JsonConvert.DeserializeObject<DSC_TL_HEADER>(json);
+    }
+
+
     /// <summary>
     /// Schema defining the payload format for Document Signing Certificate - Trust List
     /// information

@@ -159,7 +159,15 @@
     </data>
 
     <data name="AboutText" xml:space="preserve">
-        <value>Verifieringsapp för Digital Green Certificate utvecklad av DIGG.</value>
+        <value>Verifieringsapp för Digital Green Certificate utvecklad av Myndigheten för Digital förvaltning (DIGG), E-hälsomyndigheten och Folkhälsomyndigheten.</value>
     </data>
-
+    <data name="SettingsText" xml:space="preserve">
+        <value>Inställningar</value>
+    </data>
+    <data name="ProductionText" xml:space="preserve">
+        <value>Produktion</value>
+    </data>
+    <data name="RefreshText" xml:space="preserve">
+        <value>Uppdatera lista</value>
+    </data>
 </root>

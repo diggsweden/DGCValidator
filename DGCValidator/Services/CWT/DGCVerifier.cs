@@ -45,7 +45,7 @@ namespace DGCValidator.Services.CWT
                 throw new Exception("Signed object does not contain kid or country - cannot find certificate");
             }
 
-            List<AsymmetricKeyParameter> certs = this.certificateProvider.GetCertificates(country, kid);
+            List<AsymmetricKeyParameter> certs = certificateProvider.GetCertificates(country, kid);
 
             foreach (AsymmetricKeyParameter cert in certs) {
                 Console.WriteLine("Attempting HCERT signature verification using certificate");// '{0}'", cert.Subject);//getSubjectX500Principal().getName()) ;

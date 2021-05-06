@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 using DGCValidator.Services.CWT.Certificates;
 using DGCValidator.Services.DGC.ValueSet;
 using Org.BouncyCastle.Asn1.X9;
@@ -10,7 +8,6 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Security;
 
 namespace DGCValidator.Services
 {
@@ -23,12 +20,10 @@ namespace DGCValidator.Services
      */
     public class CertificateManager : ICertificateProvider
     {
-        private String _publicKey = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFzWPFb4pCXJONcqkz+MsHoHCrEw7FTFpRwDj7w380LPp9U//ddpWvUkMOK888mB6qAviPllcMJJFXAzoo2+gfg==";
-        private String _publicKey2 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAphzVQe/ih0K3foSww+KGvqY+DF54mZKHK0g8lv0ZW7tbTCvbtcb5D+9IecEnwXMGtZA+3VTHP6ywCOR660SAhKpnMkfm7+at/OUcZQs/9QXbA9vZ3Ek5J3I6U/sOfPTuldrHpdTsOtqvIT4XQHZlG5Js4m21Rje/T5UM3OTo/cMHVDKFuHbyKbZvdCS4aqkp4cVGSSepGYjVC0fqX3WUu4OYyANrDRFq/8vvI/GwPzG40VbN5IL0psXb+vpGig2OATRt6Q2PeH2WEYf/hq7aXfn10cHwT47XARXJIXKwoDCnykHB/UNfLirSuStbVWSEDJoIgCj+zK8VTtwepccOqwIDAQAB";
         private readonly IRestService _restService;
         public Dictionary<string, ValueSet> ValueSets { get; private set; }
         public DSC_TL TrustList { get; private set; }
-        private readonly string FileName = "Trusts/DscTrustList.json";
+        private readonly string FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DscTrustList.json");
 
         public CertificateManager(IRestService service)
         {
@@ -37,7 +32,7 @@ namespace DGCValidator.Services
         public async void RefreshTrustListAsync()
         {
             DSC_TL trustList = await _restService.RefreshTrustListAsync();
-            if (trustList != null && trustList.DscTrustList != null && trustList.DscTrustList.Count > 0)
+            if (trustList != null && trustList.DscTrustList != null && trustList.DscTrustList.Count > 0 && trustList.Exp > GetSecondsFromEpoc() )
             {
                 TrustList = trustList;
                 await File.WriteAllTextAsync(FileName, DSC_TLSerialize.ToJson(trustList));
@@ -53,15 +48,19 @@ namespace DGCValidator.Services
             }
         }
 
-        private void LoadCertificates()
+        public void LoadCertificates()
         {
             if (TrustList == null && File.Exists(FileName))
             {
                 DSC_TL trustList = DSC_TL.FromJson(File.ReadAllText(FileName));
-                TrustList = trustList;
+                // If trustlist hasn´t expired
+                if (trustList.Exp > GetSecondsFromEpoc())
+                {
+                    TrustList = trustList;
+                }
             }
             // If trustlist is not set or it´s older than 24 hours refresh it
-            if( TrustList == null || (TrustList.Iat+86400)< GetSecondsFromEpoc() )
+            if (TrustList == null || (TrustList.Iat + 86400) < GetSecondsFromEpoc())
             {
                 RefreshTrustListAsync();
             }
@@ -103,8 +102,7 @@ namespace DGCValidator.Services
                 {
                     string kidStr = Convert.ToBase64String(kid)
                         .Replace('+', '-')
-                        .Replace('/', '_')
-                        .Replace("=", ""); ;
+                        .Replace('/', '_');
                     if (kid == null || key.Kid == null || key.Kid.Equals(kidStr))
                     {
                         if( key.Kty.Equals("EC"))
@@ -124,26 +122,22 @@ namespace DGCValidator.Services
                     }
                 }
             }
-            ECPublicKeyParameters bpubKey = (ECPublicKeyParameters)PublicKeyFactory.CreateKey(Convert.FromBase64String(_publicKey));
-            publicKeys.Add(bpubKey);
-            AsymmetricKeyParameter dkKey = PublicKeyFactory.CreateKey(Convert.FromBase64String(_publicKey2));
-            publicKeys.Add(dkKey);
             return publicKeys;
         }
 
         private BigInteger Base64UrlDecodeToBigInt(String value)
         {
-            value = value.Replace('-', '+'); // 62nd char of encoding
-            value = value.Replace('_', '/'); // 63rd char of encoding
-            switch (value.Length % 4) // Pad with trailing '='s
+            value = value.Replace('-', '+');
+            value = value.Replace('_', '/');
+            switch (value.Length % 4)
             {
-                case 0: break; // No pad chars in this case
-                case 2: value += "=="; break; // Two pad chars
-                case 3: value += "="; break; // One pad char
+                case 0: break;
+                case 2: value += "=="; break;
+                case 3: value += "="; break;
                 default:
                     throw new Exception("Illegal base64url string!");
             }
-            return new BigInteger(1,Convert.FromBase64String(value)); // Standard base64 decoder
+            return new BigInteger(1,Convert.FromBase64String(value));
         }
     }
 }
