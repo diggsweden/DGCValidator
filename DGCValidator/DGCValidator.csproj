@@ -32,7 +32,6 @@
     <Folder Include="Services\CWT\Cose\" />
     <Folder Include="Services\CWT\Certificates\" />
     <Folder Include="Services\DGC\V1\" />
-    <Folder Include="Services\DGC\Vx\" />
     <Folder Include="Services\DGC\ValueSet\" />
     <Folder Include="Resources\ValueSets\" />
     <Folder Include="Resources\Trusts\" />
@@ -62,5 +61,11 @@
     <Compile Update="Resources\AppResources.nl.Designer.cs">
       <DependentUpon>AppResources.nl.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scan.png" />
   </ItemGroup>
 </Project>

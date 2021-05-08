@@ -65,8 +65,9 @@ namespace DGCValidator.Services.CWT
                 // OK, before we are done - let's ensure that the HCERT hasn't expired.
                 CWT cwt = obj.GetCwt();
 
-                DateTime expiration = cwt.GetExpiration();
-                if (expiration != null) {
+                DateTime? expiration = cwt.GetExpiration();
+                if (expiration.HasValue) {
+                    vacProof.ExpirationDate = expiration.Value;
                     if (DateTime.UtcNow.CompareTo(expiration)>=0) {
                         throw new CertificateExpiredException("Signed HCERT has expired");
                     }
@@ -75,8 +76,11 @@ namespace DGCValidator.Services.CWT
                 {
                     Console.WriteLine("Signed HCERT did not contain an expiration time - assuming it is valid");
                 }
-                vacProof.ExpirationDate = expiration;
-                vacProof.IssuedDate = cwt.GetIssuedAt();
+                DateTime? issuedAt = cwt.GetIssuedAt();
+                if(issuedAt.HasValue)
+                {
+                    vacProof.IssuedDate = issuedAt.Value;
+                }
                 // OK, everything looks fine - return the DGC
                 return cwt.GetDgcV1();
             }

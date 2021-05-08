@@ -6,7 +6,7 @@ using DGCValidator.Models;
 using DGCValidator.Resources;
 using DGCValidator.Services;
 using DGCValidator.Services.DGC;
-using DGCValidator.Services.DGC.Vx;
+using DGCValidator.Services.DGC.V1;
 using DGCValidator.Views;
 using Xamarin.Forms;
 

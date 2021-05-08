@@ -24,8 +24,8 @@ namespace DGCValidator.Services.CWT
         /** The COSE_Sign1 message tag. */
         public static int MessageTag = 18;
 
-        /** Should the message tag be included? The default is {@code false}. */
-        private bool IncludeMessageTag = false;
+        /** Should the message tag be included? The default is {@code true}. */
+        private bool IncludeMessageTag = true;
 
         /** The protected attributes. */
         private CBORObject ProtectedAttributes;
@@ -74,10 +74,20 @@ namespace DGCValidator.Services.CWT
             }
 
             // If the message is tagged, it must have the message tag for a COSE_Sign1 message.
+            // We also handle the case where there is an outer CWT tag.
             //
             if (message.IsTagged) {
-                if (message.GetAllTags().Length != 1) {
+                if (message.GetAllTags().Length > 2) {
                     throw new CBORException("Invalid object - too many tags");
+                }
+                if (message.GetAllTags().Length == 2)
+                {
+                    if (CWT.MESSAGE_TAG != message.MostOuterTag.ToInt32Unchecked())
+                    {
+                        throw new CBORException(string.Format(
+                          "Invalid COSE_Sign1 structure - Expected {0} tag - but was {1}",
+                          CWT.MESSAGE_TAG, message.MostInnerTag.ToInt32Unchecked()));
+                    }
                 }
                 if (MessageTag != message.MostInnerTag.ToInt32Unchecked())
                 {

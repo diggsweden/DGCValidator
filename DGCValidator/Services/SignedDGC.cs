@@ -1,6 +1,6 @@
 ﻿using System;
 using DGCValidator.Services.DGC;
-using DGCValidator.Services.DGC.Vx;
+using DGCValidator.Services.DGC.V1;
 
 namespace DGCValidator.Services
 {

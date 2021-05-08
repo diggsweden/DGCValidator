@@ -4,7 +4,7 @@ using System.Text;
 using DGCValidator.Services.CWT;
 using DGCValidator.Services;
 using DGCValidator.Services.DGC;
-using DGCValidator.Services.DGC.Vx;
+using DGCValidator.Services.DGC.V1;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using PeterO.Cbor;
@@ -89,7 +89,7 @@ namespace DGCValidator.Services
 			return uncodedData;
         }
 
-		protected static EU_DGC GetVaccinationProofFromCbor(byte[] cborData)
+        protected static EU_DGC GetVaccinationProofFromCbor(byte[] cborData)
 		{
             CBORObject cbor = CBORObject.DecodeFromBytes(cborData, CBOREncodeOptions.Default);
             string json = cbor.ToJSONString();

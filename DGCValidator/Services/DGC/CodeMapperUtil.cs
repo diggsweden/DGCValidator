@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using DGCValidator.Services.DGC.Vx;
+using DGCValidator.Services.DGC.V1;
 namespace DGCValidator.Services.DGC
 {
     public class CodeMapperUtil

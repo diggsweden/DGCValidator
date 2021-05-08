@@ -11,22 +11,22 @@ namespace DGCValidator.Services.CWT
 {
     public class CBORDateTimeConverter
     {
+
         public CBORDateTimeConverter()
         {
         }
 
-        public DateTime FromCBORObject(CBORObject obj)
+        public DateTime? FromCBORObject(CBORObject obj)
         {
+            if( obj == null)
+            {
+                return null;
+            }
 
             CBORObject untaggedObject = obj;
 
-            if (obj.HasMostOuterTag(0))
+            if (obj.HasMostOuterTag(0) || obj.HasMostOuterTag(1))
             {
-                throw new CBORException("Only numeric representation of date is permitted");
-            }
-            else if (obj.HasMostOuterTag(1))
-            {
-                Console.WriteLine("Section 2 of RFC8392 states that the leading 1 tag MUST be omitted, but it is present here");
                 untaggedObject = obj.UntagOne();
             }
 
@@ -57,11 +57,11 @@ namespace DGCValidator.Services.CWT
 
             // We only support a positive integer ...
             //
-            if ( !num.IsInteger() )
-            {
-                throw new CBORException(
-                  String.Format("Date is represented as {0} - Only {1} is supported", num.GetType(), CBORNumber.NumberKind.Integer));
-            }
+            //if ( !num.IsInteger() )
+            //{
+            //    throw new CBORException(
+            //      String.Format("Date is represented as {0} - Only {1} is supported", num.GetType(), CBORNumber.NumberKind.Integer));
+            //}
             System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(num.ToInt64Unchecked()).ToUniversalTime();
 
