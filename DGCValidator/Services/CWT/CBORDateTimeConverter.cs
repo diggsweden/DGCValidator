@@ -18,7 +18,7 @@ namespace DGCValidator.Services.CWT
 
         public DateTime? FromCBORObject(CBORObject obj)
         {
-            if( obj == null)
+            if (obj == null)
             {
                 return null;
             }

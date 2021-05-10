@@ -24,6 +24,7 @@ namespace DGCValidator.ViewModels
                 (refreshTrustListCommand = new Command(async () =>
                 {
                     App.CertificateManager.RefreshTrustListAsync();
+                    App.CertificateManager.RefreshValueSetsAsync();
                 }));
 
         public TrustModel Trust

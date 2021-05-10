@@ -9,6 +9,6 @@ namespace DGCValidator.Services
     public interface IRestService
     {
         Task<DSC_TL> RefreshTrustListAsync();
-        Task<Dictionary<string, ValueSet>> RefreshValueSetAsync();
+        Task<Dictionary<string, string>> RefreshValueSetAsync();
     }
 }

@@ -109,7 +109,7 @@ namespace DGCValidator.ViewModels
                                         Tg = CodeMapperUtil.GetDiseaseAgentTargeted(vac.Tg),
                                         Vp = CodeMapperUtil.GetVaccineOrProphylaxis(vac.Vp),
                                         Mp = CodeMapperUtil.GetVaccineMedicalProduct(vac.Mp),
-                                        Ma = CodeMapperUtil.GetMarketingAuthHolder(vac.Ma),
+                                        Ma = CodeMapperUtil.GetVaccineMarketingAuthHolder(vac.Ma),
                                         Dn = vac.Dn,
                                         Sd = vac.Sd,
                                         Dt = vac.Dt,

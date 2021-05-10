@@ -25,7 +25,7 @@ namespace DGCValidator.Services
         public async Task<DSC_TL> RefreshTrustListAsync()
         {
             DSC_TL trustList = new DSC_TL();
-            Uri uri = new Uri(Constants.GetUrl());
+            Uri uri = new Uri(Constants.GetTrustListUrl());
             try
             {
                 HttpResponseMessage response = await client.GetAsync(uri);
@@ -126,41 +126,73 @@ namespace DGCValidator.Services
         }
 
 
-        public async Task<Dictionary<string, ValueSet>> RefreshValueSetAsync()
+        public async Task<Dictionary<string, string>> RefreshValueSetAsync()
         {
-            Dictionary<string, ValueSet> valueSets = new Dictionary<string, ValueSet>();
-            Uri uri = new Uri(string.Format(Constants.GetUrl(), "valusets"));
-            try
+            Dictionary<string, string> valueSets = new Dictionary<string, string>();
+            foreach( string valueset in Constants.ValueSets)
             {
-                HttpResponseMessage response = await client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
+                Uri uri = new Uri(string.Format(Constants.GetValueSetBaseUrl(),valueset));
+                try
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-                    valueSets = ValueSet.FromJson(content);
+                    HttpResponseMessage response = await client.GetAsync(uri);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        valueSets.Add(valueset, content);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("ERROR " + ex.Message);
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("ERROR " + ex.Message);
+                }
             }
 
             return valueSets;
         }
-
     }
 
     public class Constants
     {
-        private static string TestRestUrl = "https://dgc.idsec.se/tp/trust-list";
-        private static string ProductionRestUrl = "https://dgc.digg.se/tp/trust-list/";
-        public static string GetUrl()
+        private static readonly string TestTrustListRestUrl = "https://dgc.idsec.se/tp/trust-list";
+        private static readonly string ProductionTrustListRestUrl = "https://dgc.digg.se/tp/trust-list/";
+
+        private static readonly string TestValueSetRestUrl = "https://raw.githubusercontent.com/ehn-digital-green-development/ehn-dgc-schema/1.0.0/valuesets/{0}";
+        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/ehn-digital-green-development/ehn-dgc-schema/1.0.0/valuesets/{0}";
+        public static readonly List<string> ValueSets;
+
+        public static readonly string Disesase = "disease-agent-targeted.json";
+        public static readonly string TestManufacturer = "test-manf.json";
+        public static readonly string TestResult = "test-result.json";
+        public static readonly string VaccineManufacturer = "vaccine-mah-manf.json";
+        public static readonly string VaccineProduct = "vaccine-medicinal-product.json";
+        public static readonly string VaccineProphylaxis = "vaccine-prophylaxis.json";
+
+        static Constants()
+        {
+            ValueSets = new List<string> { Disesase, TestManufacturer, TestResult, VaccineManufacturer, VaccineProduct, VaccineProphylaxis };
+        }
+
+
+
+        public static string GetTrustListUrl()
         {
             if( Xamarin.Essentials.Preferences.Get("ProductionMode", false)){
-                return ProductionRestUrl;
+                return ProductionTrustListRestUrl;
             }
             else
             {
-                return TestRestUrl;
+                return TestTrustListRestUrl;
+            }
+        }
+        public static string GetValueSetBaseUrl()
+        {
+            if (Xamarin.Essentials.Preferences.Get("ProductionMode", false))
+            {
+                return ProductionValueSetRestUrl;
+            }
+            else
+            {
+                return TestValueSetRestUrl;
             }
         }
     }
