@@ -41,7 +41,6 @@ namespace DGCValidator.ViewModels
         {
             get { return Xamarin.Essentials.Preferences.Get("ProductionMode", false); }
         }
-
         public static DateTime SecondsFromEpocToDateTime(long sec)
         {
             System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);

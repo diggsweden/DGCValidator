@@ -1,5 +1,6 @@
 ﻿using System;
 using DGCValidator.Resources;
+using Xamarin.Forms;
 
 namespace DGCValidator.Models
 {
@@ -14,7 +15,7 @@ namespace DGCValidator.Models
         }
         public string ExpirationDateString
         {
-            get { return (_expirationDate!=null&&_expirationDate.Length>0?AppResources.ExpireDateLabel + _expirationDate.ToString():""); }
+            get { return _expirationDate; }
             set
             {
                 _expirationDate = value;
@@ -23,7 +24,7 @@ namespace DGCValidator.Models
         }
         public string IssuedDateString
         {
-            get { return (_issuedDate!=null&&_issuedDate.Length>0? AppResources.IssuedDateLabel + _issuedDate:""); }
+            get { return _issuedDate; }
             set
             {
                 _issuedDate = value;
@@ -64,7 +65,14 @@ namespace DGCValidator.Models
             {
                 if( _issuerCountry != null)
                 {
-                    return _issuerCountry + ".png";
+                    if(Device.RuntimePlatform.Equals(Device.Android))
+                    {
+                        return _issuerCountry + ".png";
+                    }
+                    else
+                    {
+                        return "Flags/" + _issuerCountry + ".png";
+                    }
                 }
                 return "";
             }

@@ -153,23 +153,24 @@ namespace DGCValidator.Services
 
     public class Constants
     {
-        private static readonly string TestTrustListRestUrl = "https://dgc.idsec.se/tp/trust-list";
-        private static readonly string ProductionTrustListRestUrl = "https://dgc.digg.se/tp/trust-list/";
+        private static readonly string TestTrustListRestUrl = "https://qa.dgc.idsec.se/tp/trust-list";
+        private static readonly string ProductionTrustListRestUrl = "https://dgcg.covidbevis.se/tp/trust-list";
 
-        private static readonly string TestValueSetRestUrl = "https://raw.githubusercontent.com/ehn-digital-green-development/ehn-dgc-schema/1.0.0/valuesets/{0}";
-        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/ehn-digital-green-development/ehn-dgc-schema/1.0.0/valuesets/{0}";
+        private static readonly string TestValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
+        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
         public static readonly List<string> ValueSets;
 
         public static readonly string Disesase = "disease-agent-targeted.json";
         public static readonly string TestManufacturer = "test-manf.json";
         public static readonly string TestResult = "test-result.json";
+        public static readonly string TestType = "test-type.json";
         public static readonly string VaccineManufacturer = "vaccine-mah-manf.json";
         public static readonly string VaccineProduct = "vaccine-medicinal-product.json";
         public static readonly string VaccineProphylaxis = "vaccine-prophylaxis.json";
 
         static Constants()
         {
-            ValueSets = new List<string> { Disesase, TestManufacturer, TestResult, VaccineManufacturer, VaccineProduct, VaccineProphylaxis };
+            ValueSets = new List<string> { Disesase, TestManufacturer, TestResult, VaccineManufacturer, VaccineProduct, VaccineProphylaxis, TestType };
         }
 
 

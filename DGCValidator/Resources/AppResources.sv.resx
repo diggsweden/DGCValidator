@@ -13,19 +13,19 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="HeaderText" xml:space="preserve">
-        <value>Vaccinationsbevis</value>
+        <value>Covidbevis validering</value>
     </data>
 	<data name="InformationHeader" xml:space="preserve">
-        <value>Validera vaccinationsbevis</value>
+        <value>Validera Covidbevis</value>
     </data>
 	<data name="InformationText" xml:space="preserve">
-        <value>Här kan du validera ett vaccinationsbevis genom att skanna det med din kamera!</value>
+        <value>Här kan du validera ett covidbevis genom att skanna det med din kamera!</value>
     </data>
 	<data name="ScanButtonText" xml:space="preserve">
         <value>Skanna</value>
     </data>
 	<data name="ScanTopText" xml:space="preserve">
-        <value>Skanna vaccinationsbeviset</value>
+        <value>Skanna covidbevis</value>
     </data>
     <data name="ScanBottomText" xml:space="preserve">
         <value></value>
@@ -49,7 +49,7 @@
         <value>Testad</value>
     </data>
     <data name="RecoveredText" xml:space="preserve">
-        <value>Återhämtad</value>
+        <value>Tillfrisknad</value>
     </data>
     <data name="MissingDataText" xml:space="preserve">
         <value>Information saknas</value>
@@ -62,17 +62,11 @@
     <data name="NameLabel" xml:space="preserve">
         <value>Namn: </value>
     </data>
+    <data name="TranNameLabel" xml:space="preserve">
+        <value>Translitererat namn: </value>
+    </data>
     <data name="BirthDateLabel" xml:space="preserve">
         <value>Födelsedatum: </value>
-    </data>
-    <data name="PinLabel" xml:space="preserve">
-        <value>PIN: </value>
-    </data>
-    <data name="PasLabel" xml:space="preserve">
-        <value>PAS: </value>
-    </data>
-    <data name="NidLabel" xml:space="preserve">
-        <value>NID: </value>
     </data>
 
     <!-- Common Resources -->
@@ -159,7 +153,7 @@
     </data>
 
     <data name="AboutText" xml:space="preserve">
-        <value>Verifieringsapp för Digital Green Certificate utvecklad av Myndigheten för Digital förvaltning (DIGG), E-hälsomyndigheten och Folkhälsomyndigheten.</value>
+        <value>Verifieringsapp för Covidbevis utvecklad av Myndigheten för Digital förvaltning (DIGG), E-hälsomyndigheten och Folkhälsomyndigheten.</value>
     </data>
     <data name="SettingsText" xml:space="preserve">
         <value>Inställningar</value>
@@ -169,5 +163,8 @@
     </data>
     <data name="RefreshText" xml:space="preserve">
         <value>Uppdatera lista</value>
+    </data>
+    <data name="VerificationText" xml:space="preserve">
+        <value>Verifiering</value>
     </data>
 </root>

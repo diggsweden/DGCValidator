@@ -62,17 +62,11 @@
     <data name="NameLabel" xml:space="preserve">
         <value>Naam: </value>
     </data>
+    <data name="TranNameLabel" xml:space="preserve">
+        <value>Transliterated name: </value>
+    </data>
     <data name="BirthDateLabel" xml:space="preserve">
         <value>Geboortedatum: </value>
-    </data>
-    <data name="PinLabel" xml:space="preserve">
-        <value>PIN: </value>
-    </data>
-    <data name="PasLabel" xml:space="preserve">
-        <value>PAS: </value>
-    </data>
-    <data name="NidLabel" xml:space="preserve">
-        <value>NID: </value>
     </data>
 
     <!-- Common Resources -->
@@ -170,5 +164,8 @@
     </data>
     <data name="RefreshText" xml:space="preserve">
         <value>Refresh trust list</value>
+    </data>
+    <data name="VerificationText" xml:space="preserve">
+        <value>Verification</value>
     </data>
 </root>

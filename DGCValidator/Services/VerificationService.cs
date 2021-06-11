@@ -45,7 +45,6 @@ namespace DGCValidator.Services
                     // Get json from CBOR representation of ProofCode
                     EU_DGC eU_DGC = GetVaccinationProofFromCbor(signedData);
                     vacProof.Dgc = eU_DGC;
-
                     return vacProof;
                 }
             }

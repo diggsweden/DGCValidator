@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,10 +16,16 @@ namespace DGCValidator.ViewModels
     public class MainViewModel : BaseViewModel
     {
         String _resultText;
-        bool _resultOk;
+        bool _resultOk = false;
         SignatureModel _signature;
         SubjectModel _subject;
-        ObservableCollection<ICertModel> _certificates;
+        bool _hasVaccination = false;
+        bool _hasTest = false;
+        bool _hasRecovered = false;
+        ObservableCollection<object> _certs;
+        //ObservableCollection<VaccineCertModel> _vaccination;
+        //ObservableCollection<TestCertModel> _test;
+        //ObservableCollection<RecoveredCertModel> _recovery;
 
         private ICommand scanCommand;
         private ICommand settingsCommand;
@@ -27,7 +34,10 @@ namespace DGCValidator.ViewModels
         public MainViewModel()
         {
             _subject = new SubjectModel();
-            _certificates = new ObservableCollection<ICertModel>();
+            _certs = new ObservableCollection<object>();
+            //_vaccination = new ObservableCollection<VaccineCertModel>();
+            //_test = new ObservableCollection<TestCertModel>();
+            //_recovery = new ObservableCollection<RecoveredCertModel>();
         }
 
         public ICommand SettingsCommand => settingsCommand ??
@@ -88,8 +98,8 @@ namespace DGCValidator.ViewModels
                             Subject = new Models.SubjectModel
                             {
                                 Name = proof.Dgc.Nam.Fn+" "+proof.Dgc.Nam.Gn,
-                                ConvertDateOfBirth = proof.Dgc.Dob,
-                                Identifier = ""/*proof.Dgc.Sub.Id[0].I*/
+                                TranName = proof.Dgc.Nam.Fnt+" "+proof.Dgc.Nam.Gnt,
+                                DateOfBirth = proof.Dgc.Dob,
                             };
                             Signature = new Models.SignatureModel
                             {
@@ -98,9 +108,9 @@ namespace DGCValidator.ViewModels
                                 IssuerCountry = proof.IssuingCountry
                             };
 
-                            bool vaccinated = false;
                             if (proof.Dgc.V != null && proof.Dgc.V.Length > 0)
                             {
+                                HasVaccinations = true;
                                 foreach (VElement vac in proof.Dgc.V)
                                 {
                                      AddCertificate(new Models.VaccineCertModel
@@ -117,35 +127,34 @@ namespace DGCValidator.ViewModels
                                         Is = vac.Is,
                                         Ci = vac.Ci
                                     });
-                                    vaccinated = true;
                                 }
 
                             }
-                            bool tested = false;
                             if (proof.Dgc.T != null && proof.Dgc.T.Length > 0)
                             {
+                                HasTest = true;
                                 foreach (TElement tst in proof.Dgc.T)
                                 {
                                     AddCertificate(new Models.TestCertModel
                                     {
                                         Type = Models.CertType.TEST,
-                                        Tg = tst.Tg.ToString(),
-                                        Tt = tst.Tt,
+                                        Tg = CodeMapperUtil.GetDiseaseAgentTargeted(tst.Tg),
+                                        Tt = CodeMapperUtil.GetTestType(tst.Tt),
+                                        Ma = CodeMapperUtil.GetTestMarketingAuthHolder(tst.Ma),
                                         Nm = tst.Nm,
                                         Sc = tst.Sc, /*Models.TestCertModel.ConvertFromSecondsEpoc(tst.Sc),*/
-                                        Dr = tst.Dr, /*Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dr),*/
+                                        //Dr = tst.Dr, /*Models.TestCertModel.ConvertFromSecondsEpoc(tst.Dr),*/
                                         Tr = CodeMapperUtil.GetTestResult(tst.Tr),
                                         Tc = tst.Tc,
                                         Co = tst.Co,
                                         Is = tst.Is,
                                         Ci = tst.Ci
                                     });
-                                    tested = true;
                                 }
                             }
-                            bool recovered = false;
                             if (proof.Dgc.R != null && proof.Dgc.R.Length > 0)
                             {
+                                HasRecovered = true;
                                 foreach (RElement rec in proof.Dgc.R)
                                 {
                                     AddCertificate(new Models.RecoveredCertModel
@@ -159,31 +168,32 @@ namespace DGCValidator.ViewModels
                                         Du = rec.Du,
                                         Ci = rec.Ci
                                     });
-                                    recovered = true;
                                 }
                             }
 
-                            if(vaccinated)
+                            List<string> texts = new List<string>();
+                            if(_hasVaccination)
                             {
-                                ResultText = AppResources.VaccinatedText;
+                                texts.Add(AppResources.VaccinatedText);
                                 IsResultOK = true;
                             }
-                            else if(tested)
+                            if(_hasTest)
                             {
-                                ResultText = AppResources.TestedText;
+                                texts.Add(AppResources.TestedText);
                                 IsResultOK = true;
                             }
-                            else if (recovered)
+                            if (_hasRecovered)
                             {
-                                ResultText = AppResources.RecoveredText;
+                                texts.Add(AppResources.RecoveredText);
                                 IsResultOK = true;
                             }
-                            else
+                            if( !_hasVaccination && !_hasTest && !_hasRecovered)
                             {
-                                ResultText = AppResources.MissingDataText;
+                                texts.Add(AppResources.MissingDataText);
                                 IsResultOK = false;
                             }
 
+                            ResultText = string.Join(", ", texts.ToArray());
                         }
                         else
                         {
@@ -204,6 +214,41 @@ namespace DGCValidator.ViewModels
             {
                 ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
                 IsResultOK = false;
+            }
+        }
+
+        public bool IsVisible
+        {
+            get { return (_subject!=null&&_subject.Name!=null&&_subject.Name.Length>0?true:false); }
+        }
+
+        public bool HasVaccinations
+        {
+            get { return _hasVaccination; }
+            set
+            {
+                _hasVaccination = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool HasTest
+        {
+            get { return _hasTest; }
+            set
+            {
+                _hasTest = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool HasRecovered
+        {
+            get { return _hasRecovered; }
+            set
+            {
+                _hasRecovered = value;
+                OnPropertyChanged();
             }
         }
 
@@ -244,22 +289,70 @@ namespace DGCValidator.ViewModels
             {
                 _subject = value;
                 OnPropertyChanged();
+                OnPropertyChanged("IsVisible");
             }
         }
 
-        public ObservableCollection<ICertModel> Certs
+        //public ObservableCollection<VaccineCertModel> Vaccinations
+        //{
+        //    get { return _vaccination; }
+        //    set
+        //    {
+        //        _vaccination = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+        //public void AddVacCertificate(VaccineCertModel cert)
+        //{
+        //    _vaccination.Add(cert);
+        //    AddCertificate(cert);
+        //    HasVaccinations = true;
+        //    OnPropertyChanged("Vaccinations");
+        //}
+        //public ObservableCollection<TestCertModel> Test
+        //{
+        //    get { return _test; }
+        //    set
+        //    {
+        //        _test = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+        //public void AddTestCertificate(TestCertModel cert)
+        //{
+        //    _test.Add(cert);
+        //    AddCertificate(cert);
+        //    HasTest = true;
+        //    OnPropertyChanged("Test");
+        //}
+        //public ObservableCollection<RecoveredCertModel> Recovered
+        //{
+        //    get { return _recovery; }
+        //    set
+        //    {
+        //        _recovery = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+        //public void AddRecCertificate(RecoveredCertModel cert)
+        //{
+        //    _recovery.Add(cert);
+        //    AddCertificate(cert);
+        //    HasRecovered = true;
+        //    OnPropertyChanged("Recovered");
+        //}
+        public ObservableCollection<object> Certs
         {
-            get { return _certificates; }
+            get { return _certs; }
             set
             {
-                _certificates = value;
+                _certs = value;
                 OnPropertyChanged();
             }
         }
-        public void AddCertificate(ICertModel cert)
+        public void AddCertificate(object cert)
         {
-            _certificates.Add(cert);
-            cert.CreateHeaderAndInfo();
+            _certs.Add(cert);
             OnPropertyChanged("Certs");
         }
         public void Clear()
@@ -273,14 +366,33 @@ namespace DGCValidator.ViewModels
             {
                 _subject.Clear();
             }
-            if (_certificates != null)
+            //if (_vaccination != null)
+            //{
+            //    _vaccination.Clear();
+            //}
+            //if (_test != null)
+            //{
+            //    _test.Clear();
+            //}
+            //if (_recovery != null)
+            //{
+            //    _recovery.Clear();
+            //}
+            if (_certs != null)
             {
-                _certificates.Clear();
+                _certs.Clear();
             }
+            _resultOk = false;
+            HasVaccinations = false;
+            HasTest = false;
+            HasRecovered = false;
+            OnPropertyChanged("IsVisible");
             OnPropertyChanged("ResultText");
             OnPropertyChanged("Signature");
             OnPropertyChanged("Subject");
-            OnPropertyChanged("Certs");
+            //OnPropertyChanged("Vaccinations");
+            //OnPropertyChanged("Test");
+            //OnPropertyChanged("Recovered");
         }
 
     }
@@ -311,6 +423,32 @@ namespace DGCValidator.ViewModels
                 return (bool)value;
             }
             return true;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class ListVisibleConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is ObservableCollection<VaccineCertModel>)
+            {
+                return ((ObservableCollection<VaccineCertModel>)value).Count > 0 ? true : false;
+            }
+            if (value is ObservableCollection<TestCertModel>)
+            {
+                return ((ObservableCollection<TestCertModel>)value).Count > 0 ? true : false;
+            }
+            if (value is ObservableCollection<RecoveredCertModel>)
+            {
+                return ((ObservableCollection<RecoveredCertModel>)value).Count > 0 ? true : false;
+            }
+
+            return false;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

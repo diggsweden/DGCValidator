@@ -8,9 +8,8 @@ namespace DGCValidator.Models
     public class SubjectModel : BaseModel
     {
         string _name="";
-        string _dateOfBirth="";
-        string _identifier = "";
-        List<SubjectIdentity> _identities = new List<SubjectIdentity>();
+        string _tranName = "";
+        string _dateOfBirth ="";
 
         public SubjectModel()
         {
@@ -22,57 +21,45 @@ namespace DGCValidator.Models
 
         public string Name
         {
-            get { return (_name!=null&&_name.Length>0?AppResources.NameLabel + _name:null); }
+            get { return _name; }
             set
             {
                 _name = value;
                 OnPropertyChanged();
             }
         }
+        public string TranName
+        {
+            get { return (_tranName != null && _tranName.Length > 0 ? _tranName : null); }
+            set
+            {
+                _tranName = value;
+                OnPropertyChanged();
+            }
+        }
         public string DateOfBirth
         {
-            get { return (_dateOfBirth != null && _dateOfBirth.Length > 0 ? AppResources.BirthDateLabel + _dateOfBirth:null); }
+            get { return _dateOfBirth; }
             set
             {
                 _dateOfBirth = value;
                 OnPropertyChanged();
             }
         }
-        public DateTimeOffset? ConvertDateOfBirth
-        {
-            set{
-                if (value != null)
-                {
-                    DateOfBirth = ((DateTimeOffset)value).ToString("d");
-                }
-            }
-        }
-        public string Identifier
-        {
-            get { return (_identifier != null && _identifier.Length > 0 ? AppResources.PinLabel + _identifier:null); }
-            set
-            {
-                _identifier = value;
-                OnPropertyChanged();
-            }
-        }
-        public void AddIdentity(SubjectIdentity identity)
-        {
-            _identities.Add(identity);
-            OnPropertyChanged("Identities");
-        }
+        //public DateTimeOffset? ConvertDateOfBirth
+        //{
+        //    set{
+        //        if (value != null)
+        //        {
+        //            DateOfBirth = ((DateTimeOffset)value).ToString("d");
+        //        }
+        //    }
+        //}
         public void Clear()
         {
             Name = "";
+            TranName = "";
             DateOfBirth = "";
-            Identifier = "";
-            _identities.Clear();
         }
-    }
-
-    public class SubjectIdentity
-    {
-        string Type { get; set; }
-        string Identifier { get; set; }
     }
 }

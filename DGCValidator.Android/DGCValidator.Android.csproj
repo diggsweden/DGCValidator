@@ -76,861 +76,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="..\DGCValidator\Resources\Flags\tg.png">
-      <Link>Resources\drawable\Flags\tg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_African-Union.png">
-      <Link>Resources\drawable\Flags\_African-Union.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\me.png">
-      <Link>Resources\drawable\Flags\me.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\la.png">
-      <Link>Resources\drawable\Flags\la.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mr.png">
-      <Link>Resources\drawable\Flags\mr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ni.png">
-      <Link>Resources\drawable\Flags\ni.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lv.png">
-      <Link>Resources\drawable\Flags\lv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\om.png">
-      <Link>Resources\drawable\Flags\om.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\af.png">
-      <Link>Resources\drawable\Flags\af.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cy.png">
-      <Link>Resources\drawable\Flags\cy.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bj.png">
-      <Link>Resources\drawable\Flags\bj.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\aq.png">
-      <Link>Resources\drawable\Flags\aq.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cn.png">
-      <Link>Resources\drawable\Flags\cn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\co.png">
-      <Link>Resources\drawable\Flags\co.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cx.png">
-      <Link>Resources\drawable\Flags\cx.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ag.png">
-      <Link>Resources\drawable\Flags\ag.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ms.png">
-      <Link>Resources\drawable\Flags\ms.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\md.png">
-      <Link>Resources\drawable\Flags\md.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\zm.png">
-      <Link>Resources\drawable\Flags\zm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\vn.png">
-      <Link>Resources\drawable\Flags\vn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tf.png">
-      <Link>Resources\drawable\Flags\tf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\td.png">
-      <Link>Resources\drawable\Flags\td.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\yt.png">
-      <Link>Resources\drawable\Flags\yt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lb.png">
-      <Link>Resources\drawable\Flags\lb.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mf.png">
-      <Link>Resources\drawable\Flags\mf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lu.png">
-      <Link>Resources\drawable\Flags\lu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mq.png">
-      <Link>Resources\drawable\Flags\mq.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cz.png">
-      <Link>Resources\drawable\Flags\cz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ae.png">
-      <Link>Resources\drawable\Flags\ae.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cm.png">
-      <Link>Resources\drawable\Flags\cm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bi.png">
-      <Link>Resources\drawable\Flags\bi.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ar.png">
-      <Link>Resources\drawable\Flags\ar.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Arab-League.png">
-      <Link>Resources\drawable\Flags\_Arab-League.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Wales.png">
-      <Link>Resources\drawable\Flags\_Wales.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\as.png">
-      <Link>Resources\drawable\Flags\as.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bh.png">
-      <Link>Resources\drawable\Flags\bh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cl.png">
-      <Link>Resources\drawable\Flags\cl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ad.png">
-      <Link>Resources\drawable\Flags\ad.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mp.png">
-      <Link>Resources\drawable\Flags\mp.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lt.png">
-      <Link>Resources\drawable\Flags\lt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mg.png">
-      <Link>Resources\drawable\Flags\mg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lc.png">
-      <Link>Resources\drawable\Flags\lc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tr.png">
-      <Link>Resources\drawable\Flags\tr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ua.png">
-      <Link>Resources\drawable\Flags\ua.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tv.png">
-      <Link>Resources\drawable\Flags\tv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\vi.png">
-      <Link>Resources\drawable\Flags\vi.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Kosovo.png">
-      <Link>Resources\drawable\Flags\_Kosovo.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mt.png">
-      <Link>Resources\drawable\Flags\mt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\no.png">
-      <Link>Resources\drawable\Flags\no.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mc.png">
-      <Link>Resources\drawable\Flags\mc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ch.png">
-      <Link>Resources\drawable\Flags\ch.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bl.png">
-      <Link>Resources\drawable\Flags\bl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\aw.png">
-      <Link>Resources\drawable\Flags\aw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Northern-Cyprus.png">
-      <Link>Resources\drawable\Flags\_Northern-Cyprus.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Northern-Ireland.png">
-      <Link>Resources\drawable\Flags\_Northern-Ireland.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Somaliland.png">
-      <Link>Resources\drawable\Flags\_Somaliland.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bz.png">
-      <Link>Resources\drawable\Flags\bz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bm.png">
-      <Link>Resources\drawable\Flags\bm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ci.png">
-      <Link>Resources\drawable\Flags\ci.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mu.png">
-      <Link>Resources\drawable\Flags\mu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\us.png">
-      <Link>Resources\drawable\Flags\us.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tw.png">
-      <Link>Resources\drawable\Flags\tw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ye.png">
-      <Link>Resources\drawable\Flags\ye.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mw.png">
-      <Link>Resources\drawable\Flags\mw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nl.png">
-      <Link>Resources\drawable\Flags\nl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ls.png">
-      <Link>Resources\drawable\Flags\ls.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bo.png">
-      <Link>Resources\drawable\Flags\bo.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\at.png">
-      <Link>Resources\drawable\Flags\at.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ck.png">
-      <Link>Resources\drawable\Flags\ck.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_United-Nations.png">
-      <Link>Resources\drawable\Flags\_United-Nations.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\by.png">
-      <Link>Resources\drawable\Flags\by.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_WTO.png">
-      <Link>Resources\drawable\Flags\_WTO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\au.png">
-      <Link>Resources\drawable\Flags\au.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bn.png">
-      <Link>Resources\drawable\Flags\bn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ma.png">
-      <Link>Resources\drawable\Flags\ma.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nz.png">
-      <Link>Resources\drawable\Flags\nz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lr.png">
-      <Link>Resources\drawable\Flags\lr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mv.png">
-      <Link>Resources\drawable\Flags\mv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tc.png">
-      <Link>Resources\drawable\Flags\tc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ug.png">
-      <Link>Resources\drawable\Flags\ug.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tt.png">
-      <Link>Resources\drawable\Flags\tt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pl.png">
-      <Link>Resources\drawable\Flags\pl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\rs.png">
-      <Link>Resources\drawable\Flags\rs.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\in.png">
-      <Link>Resources\drawable\Flags\in.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ge.png">
-      <Link>Resources\drawable\Flags\ge.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gr.png">
-      <Link>Resources\drawable\Flags\gr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gs.png">
-      <Link>Resources\drawable\Flags\gs.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Scotland.png">
-      <Link>Resources\drawable\Flags\_Scotland.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gd.png">
-      <Link>Resources\drawable\Flags\gd.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\io.png">
-      <Link>Resources\drawable\Flags\io.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\hk.png">
-      <Link>Resources\drawable\Flags\hk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kp.png">
-      <Link>Resources\drawable\Flags\kp.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kg.png">
-      <Link>Resources\drawable\Flags\kg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pm.png">
-      <Link>Resources\drawable\Flags\pm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sv.png">
-      <Link>Resources\drawable\Flags\sv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Quebec.png">
-      <Link>Resources\drawable\Flags\_Quebec.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\re.png">
-      <Link>Resources\drawable\Flags\re.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sa.png">
-      <Link>Resources\drawable\Flags\sa.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sc.png">
-      <Link>Resources\drawable\Flags\sc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\st.png">
-      <Link>Resources\drawable\Flags\st.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ke.png">
-      <Link>Resources\drawable\Flags\ke.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\im.png">
-      <Link>Resources\drawable\Flags\im.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kr.png">
-      <Link>Resources\drawable\Flags\kr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gf.png">
-      <Link>Resources\drawable\Flags\gf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\dj.png">
-      <Link>Resources\drawable\Flags\dj.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gq.png">
-      <Link>Resources\drawable\Flags\gq.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gp.png">
-      <Link>Resources\drawable\Flags\gp.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\dk.png">
-      <Link>Resources\drawable\Flags\dk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gg.png">
-      <Link>Resources\drawable\Flags\gg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_OPEC.png">
-      <Link>Resources\drawable\Flags\_OPEC.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\il.png">
-      <Link>Resources\drawable\Flags\il.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pn.png">
-      <Link>Resources\drawable\Flags\pn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sb.png">
-      <Link>Resources\drawable\Flags\sb.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\py.png">
-      <Link>Resources\drawable\Flags\py.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ru.png">
-      <Link>Resources\drawable\Flags\ru.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kw.png">
-      <Link>Resources\drawable\Flags\kw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\do.png">
-      <Link>Resources\drawable\Flags\do.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gt.png">
-      <Link>Resources\drawable\Flags\gt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Olimpic-Movement.png">
-      <Link>Resources\drawable\Flags\_Olimpic-Movement.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_UNESCO.png">
-      <Link>Resources\drawable\Flags\_UNESCO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gb.png">
-      <Link>Resources\drawable\Flags\gb.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gu.png">
-      <Link>Resources\drawable\Flags\gu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\je.png">
-      <Link>Resources\drawable\Flags\je.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\hm.png">
-      <Link>Resources\drawable\Flags\hm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sg.png">
-      <Link>Resources\drawable\Flags\sg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pk.png">
-      <Link>Resources\drawable\Flags\pk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sr.png">
-      <Link>Resources\drawable\Flags\sr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_England.png">
-      <Link>Resources\drawable\Flags\_England.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\se.png">
-      <Link>Resources\drawable\Flags\se.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_UNICEF.png">
-      <Link>Resources\drawable\Flags\_UNICEF.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\jp.png">
-      <Link>Resources\drawable\Flags\jp.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Tristan-da-Cunha.png">
-      <Link>Resources\drawable\Flags\_Tristan-da-Cunha.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gw.png">
-      <Link>Resources\drawable\Flags\gw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\eh.png">
-      <Link>Resources\drawable\Flags\eh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Islamic-Conference.png">
-      <Link>Resources\drawable\Flags\_Islamic-Conference.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\dz.png">
-      <Link>Resources\drawable\Flags\dz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ga.png">
-      <Link>Resources\drawable\Flags\ga.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fr.png">
-      <Link>Resources\drawable\Flags\fr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\dm.png">
-      <Link>Resources\drawable\Flags\dm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_NATO.png">
-      <Link>Resources\drawable\Flags\_NATO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\hn.png">
-      <Link>Resources\drawable\Flags\hn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sd.png">
-      <Link>Resources\drawable\Flags\sd.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\rw.png">
-      <Link>Resources\drawable\Flags\rw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ph.png">
-      <Link>Resources\drawable\Flags\ph.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ss.png">
-      <Link>Resources\drawable\Flags\ss.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\qa.png">
-      <Link>Resources\drawable\Flags\qa.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pe.png">
-      <Link>Resources\drawable\Flags\pe.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pr.png">
-      <Link>Resources\drawable\Flags\pr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\si.png">
-      <Link>Resources\drawable\Flags\si.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_WHO.png">
-      <Link>Resources\drawable\Flags\_WHO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ht.png">
-      <Link>Resources\drawable\Flags\ht.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\es.png">
-      <Link>Resources\drawable\Flags\es.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gl.png">
-      <Link>Resources\drawable\Flags\gl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gm.png">
-      <Link>Resources\drawable\Flags\gm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\er.png">
-      <Link>Resources\drawable\Flags\er.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fi.png">
-      <Link>Resources\drawable\Flags\fi.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ee.png">
-      <Link>Resources\drawable\Flags\ee.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kn.png">
-      <Link>Resources\drawable\Flags\kn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\hu.png">
-      <Link>Resources\drawable\Flags\hu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\iq.png">
-      <Link>Resources\drawable\Flags\iq.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ky.png">
-      <Link>Resources\drawable\Flags\ky.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sh.png">
-      <Link>Resources\drawable\Flags\sh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ps.png">
-      <Link>Resources\drawable\Flags\ps.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_CARICOM.png">
-      <Link>Resources\drawable\Flags\_CARICOM.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pf.png">
-      <Link>Resources\drawable\Flags\pf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sj.png">
-      <Link>Resources\drawable\Flags\sj.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Red-Cross.png">
-      <Link>Resources\drawable\Flags\_Red-Cross.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\rn.png">
-      <Link>Resources\drawable\Flags\rn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\id.png">
-      <Link>Resources\drawable\Flags\id.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\is.png">
-      <Link>Resources\drawable\Flags\is.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\eg.png">
-      <Link>Resources\drawable\Flags\eg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fk.png">
-      <Link>Resources\drawable\Flags\fk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fj.png">
-      <Link>Resources\drawable\Flags\fj.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gn.png">
-      <Link>Resources\drawable\Flags\gn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gy.png">
-      <Link>Resources\drawable\Flags\gy.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ir.png">
-      <Link>Resources\drawable\Flags\ir.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\km.png">
-      <Link>Resources\drawable\Flags\km.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ie.png">
-      <Link>Resources\drawable\Flags\ie.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kz.png">
-      <Link>Resources\drawable\Flags\kz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Catalonia.png">
-      <Link>Resources\drawable\Flags\_Catalonia.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ro.png">
-      <Link>Resources\drawable\Flags\ro.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sk.png">
-      <Link>Resources\drawable\Flags\sk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pg.png">
-      <Link>Resources\drawable\Flags\pg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pt.png">
-      <Link>Resources\drawable\Flags\pt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\so.png">
-      <Link>Resources\drawable\Flags\so.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sx.png">
-      <Link>Resources\drawable\Flags\sx.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\hr.png">
-      <Link>Resources\drawable\Flags\hr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ki.png">
-      <Link>Resources\drawable\Flags\ki.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\jm.png">
-      <Link>Resources\drawable\Flags\jm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_OAS.png">
-      <Link>Resources\drawable\Flags\_OAS.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ec.png">
-      <Link>Resources\drawable\Flags\ec.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\et.png">
-      <Link>Resources\drawable\Flags\et.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fo.png">
-      <Link>Resources\drawable\Flags\fo.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\kh.png">
-      <Link>Resources\drawable\Flags\kh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sy.png">
-      <Link>Resources\drawable\Flags\sy.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sn.png">
-      <Link>Resources\drawable\Flags\sn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pw.png">
-      <Link>Resources\drawable\Flags\pw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sl.png">
-      <Link>Resources\drawable\Flags\sl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Basque-Country.png">
-      <Link>Resources\drawable\Flags\_Basque-Country.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\fm.png">
-      <Link>Resources\drawable\Flags\fm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gi.png">
-      <Link>Resources\drawable\Flags\gi.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\de.png">
-      <Link>Resources\drawable\Flags\de.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\gh.png">
-      <Link>Resources\drawable\Flags\gh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\jo.png">
-      <Link>Resources\drawable\Flags\jo.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\it.png">
-      <Link>Resources\drawable\Flags\it.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\pa.png">
-      <Link>Resources\drawable\Flags\pa.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sz.png">
-      <Link>Resources\drawable\Flags\sz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\sm.png">
-      <Link>Resources\drawable\Flags\sm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_IAEA.png">
-      <Link>Resources\drawable\Flags\_IAEA.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_OECD.png">
-      <Link>Resources\drawable\Flags\_OECD.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ml.png">
-      <Link>Resources\drawable\Flags\ml.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cg.png">
-      <Link>Resources\drawable\Flags\cg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ax.png">
-      <Link>Resources\drawable\Flags\ax.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ao.png">
-      <Link>Resources\drawable\Flags\ao.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bt.png">
-      <Link>Resources\drawable\Flags\bt.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_ASEAN.png">
-      <Link>Resources\drawable\Flags\_ASEAN.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\an.png">
-      <Link>Resources\drawable\Flags\an.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bb.png">
-      <Link>Resources\drawable\Flags\bb.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cf.png">
-      <Link>Resources\drawable\Flags\cf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mm.png">
-      <Link>Resources\drawable\Flags\mm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\li.png">
-      <Link>Resources\drawable\Flags\li.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\na.png">
-      <Link>Resources\drawable\Flags\na.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mz.png">
-      <Link>Resources\drawable\Flags\mz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\to.png">
-      <Link>Resources\drawable\Flags\to.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\vg.png">
-      <Link>Resources\drawable\Flags\vg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ve.png">
-      <Link>Resources\drawable\Flags\ve.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tz.png">
-      <Link>Resources\drawable\Flags\tz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tm.png">
-      <Link>Resources\drawable\Flags\tm.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mx.png">
-      <Link>Resources\drawable\Flags\mx.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nc.png">
-      <Link>Resources\drawable\Flags\nc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mo.png">
-      <Link>Resources\drawable\Flags\mo.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\lk.png">
-      <Link>Resources\drawable\Flags\lk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cd.png">
-      <Link>Resources\drawable\Flags\cd.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\al.png">
-      <Link>Resources\drawable\Flags\al.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bw.png">
-      <Link>Resources\drawable\Flags\bw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_CIS.png">
-      <Link>Resources\drawable\Flags\_CIS.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cr.png">
-      <Link>Resources\drawable\Flags\cr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bv.png">
-      <Link>Resources\drawable\Flags\bv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\am.png">
-      <Link>Resources\drawable\Flags\am.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\az.png">
-      <Link>Resources\drawable\Flags\az.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ba.png">
-      <Link>Resources\drawable\Flags\ba.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mn.png">
-      <Link>Resources\drawable\Flags\mn.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nu.png">
-      <Link>Resources\drawable\Flags\nu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\my.png">
-      <Link>Resources\drawable\Flags\my.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tl.png">
-      <Link>Resources\drawable\Flags\tl.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ws.png">
-      <Link>Resources\drawable\Flags\ws.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\th.png">
-      <Link>Resources\drawable\Flags\th.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nf.png">
-      <Link>Resources\drawable\Flags\nf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ly.png">
-      <Link>Resources\drawable\Flags\ly.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ai.png">
-      <Link>Resources\drawable\Flags\ai.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\br.png">
-      <Link>Resources\drawable\Flags\br.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cv.png">
-      <Link>Resources\drawable\Flags\cv.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\be.png">
-      <Link>Resources\drawable\Flags\be.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ca.png">
-      <Link>Resources\drawable\Flags\ca.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_FAO.png">
-      <Link>Resources\drawable\Flags\_FAO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bd.png">
-      <Link>Resources\drawable\Flags\bd.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cw.png">
-      <Link>Resources\drawable\Flags\cw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bs.png">
-      <Link>Resources\drawable\Flags\bs.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ng.png">
-      <Link>Resources\drawable\Flags\ng.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mk.png">
-      <Link>Resources\drawable\Flags\mk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\np.png">
-      <Link>Resources\drawable\Flags\np.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_IHO.png">
-      <Link>Resources\drawable\Flags\_IHO.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\va.png">
-      <Link>Resources\drawable\Flags\va.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\uz.png">
-      <Link>Resources\drawable\Flags\uz.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\um.png">
-      <Link>Resources\drawable\Flags\um.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tk.png">
-      <Link>Resources\drawable\Flags\tk.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\vc.png">
-      <Link>Resources\drawable\Flags\vc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\zw.png">
-      <Link>Resources\drawable\Flags\zw.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\nr.png">
-      <Link>Resources\drawable\Flags\nr.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\ne.png">
-      <Link>Resources\drawable\Flags\ne.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cu.png">
-      <Link>Resources\drawable\Flags\cu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bq.png">
-      <Link>Resources\drawable\Flags\bq.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bf.png">
-      <Link>Resources\drawable\Flags\bf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Galicia.png">
-      <Link>Resources\drawable\Flags\_Galicia.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_European-Union.png">
-      <Link>Resources\drawable\Flags\_European-Union.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Commonwealth.png">
-      <Link>Resources\drawable\Flags\_Commonwealth.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\bg.png">
-      <Link>Resources\drawable\Flags\bg.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\cc.png">
-      <Link>Resources\drawable\Flags\cc.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\_Alderney.png">
-      <Link>Resources\drawable\Flags\_Alderney.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\mh.png">
-      <Link>Resources\drawable\Flags\mh.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\za.png">
-      <Link>Resources\drawable\Flags\za.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\uy.png">
-      <Link>Resources\drawable\Flags\uy.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\wf.png">
-      <Link>Resources\drawable\Flags\wf.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\vu.png">
-      <Link>Resources\drawable\Flags\vu.png</Link>
-    </None>
-    <None Include="..\DGCValidator\Resources\Flags\tj.png">
-      <Link>Resources\drawable\Flags\tj.png</Link>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -969,6 +114,1251 @@
     </AndroidResource>
     <AndroidResource Include="..\DGCValidator\Resources\scan.png">
       <Link>Resources\drawable\scan.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tg.png">
+      <Link>Resources\drawable\tg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\me.png">
+      <Link>Resources\drawable\me.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\la.png">
+      <Link>Resources\drawable\la.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mr.png">
+      <Link>Resources\drawable\mr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ni.png">
+      <Link>Resources\drawable\ni.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lv.png">
+      <Link>Resources\drawable\lv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\om.png">
+      <Link>Resources\drawable\om.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\af.png">
+      <Link>Resources\drawable\af.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cy.png">
+      <Link>Resources\drawable\cy.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bj.png">
+      <Link>Resources\drawable\bj.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\aq.png">
+      <Link>Resources\drawable\aq.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cn.png">
+      <Link>Resources\drawable\cn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\co.png">
+      <Link>Resources\drawable\co.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cx.png">
+      <Link>Resources\drawable\cx.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ag.png">
+      <Link>Resources\drawable\ag.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ms.png">
+      <Link>Resources\drawable\ms.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\md.png">
+      <Link>Resources\drawable\md.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\zm.png">
+      <Link>Resources\drawable\zm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\vn.png">
+      <Link>Resources\drawable\vn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tf.png">
+      <Link>Resources\drawable\tf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\td.png">
+      <Link>Resources\drawable\td.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\yt.png">
+      <Link>Resources\drawable\yt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lb.png">
+      <Link>Resources\drawable\lb.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mf.png">
+      <Link>Resources\drawable\mf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lu.png">
+      <Link>Resources\drawable\lu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mq.png">
+      <Link>Resources\drawable\mq.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cz.png">
+      <Link>Resources\drawable\cz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ae.png">
+      <Link>Resources\drawable\ae.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cm.png">
+      <Link>Resources\drawable\cm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bi.png">
+      <Link>Resources\drawable\bi.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ar.png">
+      <Link>Resources\drawable\ar.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\as.png">
+      <Link>Resources\drawable\as.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bh.png">
+      <Link>Resources\drawable\bh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cl.png">
+      <Link>Resources\drawable\cl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ad.png">
+      <Link>Resources\drawable\ad.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mp.png">
+      <Link>Resources\drawable\mp.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lt.png">
+      <Link>Resources\drawable\lt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mg.png">
+      <Link>Resources\drawable\mg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lc.png">
+      <Link>Resources\drawable\lc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tr.png">
+      <Link>Resources\drawable\tr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ua.png">
+      <Link>Resources\drawable\ua.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tv.png">
+      <Link>Resources\drawable\tv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\vi.png">
+      <Link>Resources\drawable\vi.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mt.png">
+      <Link>Resources\drawable\mt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\no.png">
+      <Link>Resources\drawable\no.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mc.png">
+      <Link>Resources\drawable\mc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ch.png">
+      <Link>Resources\drawable\ch.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bl.png">
+      <Link>Resources\drawable\bl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\aw.png">
+      <Link>Resources\drawable\aw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bz.png">
+      <Link>Resources\drawable\bz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bm.png">
+      <Link>Resources\drawable\bm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ci.png">
+      <Link>Resources\drawable\ci.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mu.png">
+      <Link>Resources\drawable\mu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\us.png">
+      <Link>Resources\drawable\us.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tw.png">
+      <Link>Resources\drawable\tw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ye.png">
+      <Link>Resources\drawable\ye.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mw.png">
+      <Link>Resources\drawable\mw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nl.png">
+      <Link>Resources\drawable\nl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ls.png">
+      <Link>Resources\drawable\ls.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bo.png">
+      <Link>Resources\drawable\bo.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\at.png">
+      <Link>Resources\drawable\at.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ck.png">
+      <Link>Resources\drawable\ck.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\by.png">
+      <Link>Resources\drawable\by.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\au.png">
+      <Link>Resources\drawable\au.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bn.png">
+      <Link>Resources\drawable\bn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ma.png">
+      <Link>Resources\drawable\ma.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nz.png">
+      <Link>Resources\drawable\nz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lr.png">
+      <Link>Resources\drawable\lr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mv.png">
+      <Link>Resources\drawable\mv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tc.png">
+      <Link>Resources\drawable\tc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ug.png">
+      <Link>Resources\drawable\ug.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tt.png">
+      <Link>Resources\drawable\tt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pl.png">
+      <Link>Resources\drawable\pl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\rs.png">
+      <Link>Resources\drawable\rs.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\in.png">
+      <Link>Resources\drawable\in.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ge.png">
+      <Link>Resources\drawable\ge.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gr.png">
+      <Link>Resources\drawable\gr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gs.png">
+      <Link>Resources\drawable\gs.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gd.png">
+      <Link>Resources\drawable\gd.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\io.png">
+      <Link>Resources\drawable\io.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\hk.png">
+      <Link>Resources\drawable\hk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kp.png">
+      <Link>Resources\drawable\kp.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kg.png">
+      <Link>Resources\drawable\kg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pm.png">
+      <Link>Resources\drawable\pm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sv.png">
+      <Link>Resources\drawable\sv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\re.png">
+      <Link>Resources\drawable\re.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sa.png">
+      <Link>Resources\drawable\sa.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sc.png">
+      <Link>Resources\drawable\sc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\st.png">
+      <Link>Resources\drawable\st.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ke.png">
+      <Link>Resources\drawable\ke.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\im.png">
+      <Link>Resources\drawable\im.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kr.png">
+      <Link>Resources\drawable\kr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gf.png">
+      <Link>Resources\drawable\gf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\dj.png">
+      <Link>Resources\drawable\dj.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gq.png">
+      <Link>Resources\drawable\gq.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gp.png">
+      <Link>Resources\drawable\gp.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\dk.png">
+      <Link>Resources\drawable\dk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gg.png">
+      <Link>Resources\drawable\gg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\il.png">
+      <Link>Resources\drawable\il.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pn.png">
+      <Link>Resources\drawable\pn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sb.png">
+      <Link>Resources\drawable\sb.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\py.png">
+      <Link>Resources\drawable\py.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ru.png">
+      <Link>Resources\drawable\ru.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kw.png">
+      <Link>Resources\drawable\kw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gt.png">
+      <Link>Resources\drawable\gt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gb.png">
+      <Link>Resources\drawable\gb.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gu.png">
+      <Link>Resources\drawable\gu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\je.png">
+      <Link>Resources\drawable\je.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\hm.png">
+      <Link>Resources\drawable\hm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sg.png">
+      <Link>Resources\drawable\sg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pk.png">
+      <Link>Resources\drawable\pk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sr.png">
+      <Link>Resources\drawable\sr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\se.png">
+      <Link>Resources\drawable\se.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\jp.png">
+      <Link>Resources\drawable\jp.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gw.png">
+      <Link>Resources\drawable\gw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\eh.png">
+      <Link>Resources\drawable\eh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\dz.png">
+      <Link>Resources\drawable\dz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ga.png">
+      <Link>Resources\drawable\ga.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fr.png">
+      <Link>Resources\drawable\fr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\dm.png">
+      <Link>Resources\drawable\dm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\hn.png">
+      <Link>Resources\drawable\hn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sd.png">
+      <Link>Resources\drawable\sd.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\rw.png">
+      <Link>Resources\drawable\rw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ph.png">
+      <Link>Resources\drawable\ph.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ss.png">
+      <Link>Resources\drawable\ss.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\qa.png">
+      <Link>Resources\drawable\qa.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pe.png">
+      <Link>Resources\drawable\pe.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pr.png">
+      <Link>Resources\drawable\pr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\si.png">
+      <Link>Resources\drawable\si.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ht.png">
+      <Link>Resources\drawable\ht.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\es.png">
+      <Link>Resources\drawable\es.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gl.png">
+      <Link>Resources\drawable\gl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gm.png">
+      <Link>Resources\drawable\gm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\er.png">
+      <Link>Resources\drawable\er.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fi.png">
+      <Link>Resources\drawable\fi.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ee.png">
+      <Link>Resources\drawable\ee.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kn.png">
+      <Link>Resources\drawable\kn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\hu.png">
+      <Link>Resources\drawable\hu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\iq.png">
+      <Link>Resources\drawable\iq.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ky.png">
+      <Link>Resources\drawable\ky.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sh.png">
+      <Link>Resources\drawable\sh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ps.png">
+      <Link>Resources\drawable\ps.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pf.png">
+      <Link>Resources\drawable\pf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sj.png">
+      <Link>Resources\drawable\sj.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\rn.png">
+      <Link>Resources\drawable\rn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\id.png">
+      <Link>Resources\drawable\id.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\is.png">
+      <Link>Resources\drawable\is.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\eg.png">
+      <Link>Resources\drawable\eg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fk.png">
+      <Link>Resources\drawable\fk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fj.png">
+      <Link>Resources\drawable\fj.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gn.png">
+      <Link>Resources\drawable\gn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gy.png">
+      <Link>Resources\drawable\gy.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ir.png">
+      <Link>Resources\drawable\ir.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\km.png">
+      <Link>Resources\drawable\km.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ie.png">
+      <Link>Resources\drawable\ie.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kz.png">
+      <Link>Resources\drawable\kz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ro.png">
+      <Link>Resources\drawable\ro.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sk.png">
+      <Link>Resources\drawable\sk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pg.png">
+      <Link>Resources\drawable\pg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pt.png">
+      <Link>Resources\drawable\pt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\so.png">
+      <Link>Resources\drawable\so.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sx.png">
+      <Link>Resources\drawable\sx.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\hr.png">
+      <Link>Resources\drawable\hr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ki.png">
+      <Link>Resources\drawable\ki.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\jm.png">
+      <Link>Resources\drawable\jm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ec.png">
+      <Link>Resources\drawable\ec.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\et.png">
+      <Link>Resources\drawable\et.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fo.png">
+      <Link>Resources\drawable\fo.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\kh.png">
+      <Link>Resources\drawable\kh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sy.png">
+      <Link>Resources\drawable\sy.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sn.png">
+      <Link>Resources\drawable\sn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pw.png">
+      <Link>Resources\drawable\pw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sl.png">
+      <Link>Resources\drawable\sl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\fm.png">
+      <Link>Resources\drawable\fm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gi.png">
+      <Link>Resources\drawable\gi.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\de.png">
+      <Link>Resources\drawable\de.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\gh.png">
+      <Link>Resources\drawable\gh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\jo.png">
+      <Link>Resources\drawable\jo.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\it.png">
+      <Link>Resources\drawable\it.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\pa.png">
+      <Link>Resources\drawable\pa.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sz.png">
+      <Link>Resources\drawable\sz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\sm.png">
+      <Link>Resources\drawable\sm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ml.png">
+      <Link>Resources\drawable\ml.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cg.png">
+      <Link>Resources\drawable\cg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ax.png">
+      <Link>Resources\drawable\ax.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ao.png">
+      <Link>Resources\drawable\ao.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bt.png">
+      <Link>Resources\drawable\bt.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\an.png">
+      <Link>Resources\drawable\an.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bb.png">
+      <Link>Resources\drawable\bb.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cf.png">
+      <Link>Resources\drawable\cf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mm.png">
+      <Link>Resources\drawable\mm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\li.png">
+      <Link>Resources\drawable\li.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\na.png">
+      <Link>Resources\drawable\na.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mz.png">
+      <Link>Resources\drawable\mz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\to.png">
+      <Link>Resources\drawable\to.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\vg.png">
+      <Link>Resources\drawable\vg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ve.png">
+      <Link>Resources\drawable\ve.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tz.png">
+      <Link>Resources\drawable\tz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tm.png">
+      <Link>Resources\drawable\tm.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mx.png">
+      <Link>Resources\drawable\mx.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nc.png">
+      <Link>Resources\drawable\nc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mo.png">
+      <Link>Resources\drawable\mo.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\lk.png">
+      <Link>Resources\drawable\lk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cd.png">
+      <Link>Resources\drawable\cd.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\al.png">
+      <Link>Resources\drawable\al.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bw.png">
+      <Link>Resources\drawable\bw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cr.png">
+      <Link>Resources\drawable\cr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bv.png">
+      <Link>Resources\drawable\bv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\am.png">
+      <Link>Resources\drawable\am.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\az.png">
+      <Link>Resources\drawable\az.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ba.png">
+      <Link>Resources\drawable\ba.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mn.png">
+      <Link>Resources\drawable\mn.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nu.png">
+      <Link>Resources\drawable\nu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\my.png">
+      <Link>Resources\drawable\my.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tl.png">
+      <Link>Resources\drawable\tl.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ws.png">
+      <Link>Resources\drawable\ws.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\th.png">
+      <Link>Resources\drawable\th.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nf.png">
+      <Link>Resources\drawable\nf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ly.png">
+      <Link>Resources\drawable\ly.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ai.png">
+      <Link>Resources\drawable\ai.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\br.png">
+      <Link>Resources\drawable\br.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cv.png">
+      <Link>Resources\drawable\cv.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\be.png">
+      <Link>Resources\drawable\be.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ca.png">
+      <Link>Resources\drawable\ca.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bd.png">
+      <Link>Resources\drawable\bd.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cw.png">
+      <Link>Resources\drawable\cw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bs.png">
+      <Link>Resources\drawable\bs.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ng.png">
+      <Link>Resources\drawable\ng.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mk.png">
+      <Link>Resources\drawable\mk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\np.png">
+      <Link>Resources\drawable\np.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\va.png">
+      <Link>Resources\drawable\va.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\uz.png">
+      <Link>Resources\drawable\uz.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\um.png">
+      <Link>Resources\drawable\um.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tk.png">
+      <Link>Resources\drawable\tk.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\vc.png">
+      <Link>Resources\drawable\vc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\zw.png">
+      <Link>Resources\drawable\zw.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\nr.png">
+      <Link>Resources\drawable\nr.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\ne.png">
+      <Link>Resources\drawable\ne.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cu.png">
+      <Link>Resources\drawable\cu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bq.png">
+      <Link>Resources\drawable\bq.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bf.png">
+      <Link>Resources\drawable\bf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\bg.png">
+      <Link>Resources\drawable\bg.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\cc.png">
+      <Link>Resources\drawable\cc.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\mh.png">
+      <Link>Resources\drawable\mh.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\za.png">
+      <Link>Resources\drawable\za.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\uy.png">
+      <Link>Resources\drawable\uy.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\wf.png">
+      <Link>Resources\drawable\wf.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\vu.png">
+      <Link>Resources\drawable\vu.png</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="..\DGCValidator\Resources\Flags\tj.png">
+      <Link>Resources\drawable\tj.png</Link>
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

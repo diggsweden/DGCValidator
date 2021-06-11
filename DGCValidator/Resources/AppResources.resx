@@ -13,13 +13,13 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="HeaderText" xml:space="preserve">
-        <value>Vaccination validator</value>
+        <value>DCC Validator</value>
     </data>
 	<data name="InformationHeader" xml:space="preserve">
         <value>Validate certificate</value>
     </data>
 	<data name="InformationText" xml:space="preserve">
-        <value>Here you can validate a vaccination certificate by scanning it with the camera!</value>
+        <value>Here you can validate a digital covid certificate by scanning it with the camera!</value>
     </data>
 	<data name="ScanButtonText" xml:space="preserve">
         <value>Scan</value>
@@ -62,17 +62,11 @@
     <data name="NameLabel" xml:space="preserve">
         <value>Name: </value>
     </data>
+    <data name="TranNameLabel" xml:space="preserve">
+        <value>Transliterated name: </value>
+    </data>
     <data name="BirthDateLabel" xml:space="preserve">
         <value>Birth date: </value>
-    </data>
-    <data name="PinLabel" xml:space="preserve">
-        <value>PIN: </value>
-    </data>
-    <data name="PasLabel" xml:space="preserve">
-        <value>PAS: </value>
-    </data>
-    <data name="NidLabel" xml:space="preserve">
-        <value>NID: </value>
     </data>
 
     <!-- Common Resources -->
@@ -159,7 +153,7 @@
     </data>
 
     <data name="AboutText" xml:space="preserve">
-        <value>Verification App for Digital Green Certificate developed by Swedish Agency for Digital Government , The Swedish eHealth Agency and Public Health Agency of Sweden.</value>
+        <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government , The Swedish eHealth Agency and Public Health Agency of Sweden.</value>
     </data>
     <data name="SettingsText" xml:space="preserve">
         <value>Settings</value>
@@ -169,5 +163,8 @@
     </data>
     <data name="RefreshText" xml:space="preserve">
         <value>Refresh trust list</value>
+    </data>
+    <data name="VerificationText" xml:space="preserve">
+        <value>Verification</value>
     </data>
 </root>

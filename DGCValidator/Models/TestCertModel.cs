@@ -13,7 +13,7 @@ namespace DGCValidator.Models
         public string Nm { get; set; }//Ori NAA Test name
         public string Ma { get; set; }// Tma RAT Test name and manufacturer
         public DateTimeOffset Sc { get; set; }// Test date
-        public DateTimeOffset? Dr { get; set; }// Test result date
+        //public DateTimeOffset? Dr { get; set; }// Test result date
         //public string Sc { get; set; }// Test date
         //public string Dr { get; set; }// Test result date
         public string Tr { get; set; }//Res Test result
@@ -50,7 +50,7 @@ namespace DGCValidator.Models
                 AppResources.TestSampleOriginLabel + Nm + "\n" +
                 AppResources.TestManifacturerLabel + Ma + "\n" +
                 AppResources.TestDateLabel + Sc.ToString("d") + "\n" +
-                AppResources.TestResultDateLabel + Dr + "\n" +
+                //AppResources.TestResultDateLabel + Dr + "\n" +
                 AppResources.TestResultLabel + Tr + "\n" +
                 AppResources.TestingCentreLabel + Tc + "\n" +
                 AppResources.CountryLabel + Co + "\n" +

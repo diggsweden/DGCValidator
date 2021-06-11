@@ -27,6 +27,10 @@ namespace DGCValidator.Models
         {
         }
 
+        public string DoseHeader
+        {
+            get { return AppResources.DoseText + Dn + "/" + Sd; }
+        }
         public string Header
         {
             get { return _header; }

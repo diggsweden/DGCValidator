@@ -18,7 +18,7 @@ namespace DGCValidator.Services.DGC.V1
         /// range 1900-2099
         /// </summary>
         [JsonProperty("dob")]
-        public DateTimeOffset Dob { get; set; }
+        public string Dob { get; set; }
 
         /// <summary>
         /// Surname(s), given name(s) - in that order
@@ -146,11 +146,11 @@ namespace DGCValidator.Services.DGC.V1
         [JsonProperty("co")]
         public string Co { get; set; }
 
-        /// <summary>
-        /// Date/Time of Test Result
-        /// </summary>
-        [JsonProperty("dr", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? Dr { get; set; }
+        ///// <summary>
+        ///// Date/Time of Test Result
+        ///// </summary>
+        //[JsonProperty("dr", NullValueHandling = NullValueHandling.Ignore)]
+        //public DateTimeOffset? Dr { get; set; }
 
         /// <summary>
         /// Certificate Issuer

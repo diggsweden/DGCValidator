@@ -143,27 +143,15 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string TranNameLabel {
+            get {
+                return ResourceManager.GetString("TranNameLabel", resourceCulture);
+            }
+        }
+        
         public static string BirthDateLabel {
             get {
                 return ResourceManager.GetString("BirthDateLabel", resourceCulture);
-            }
-        }
-        
-        public static string PinLabel {
-            get {
-                return ResourceManager.GetString("PinLabel", resourceCulture);
-            }
-        }
-        
-        public static string PasLabel {
-            get {
-                return ResourceManager.GetString("PasLabel", resourceCulture);
-            }
-        }
-        
-        public static string NidLabel {
-            get {
-                return ResourceManager.GetString("NidLabel", resourceCulture);
             }
         }
         
@@ -338,6 +326,12 @@ namespace DGCValidator.Resources {
         public static string RefreshText {
             get {
                 return ResourceManager.GetString("RefreshText", resourceCulture);
+            }
+        }
+        
+        public static string VerificationText {
+            get {
+                return ResourceManager.GetString("VerificationText", resourceCulture);
             }
         }
     }

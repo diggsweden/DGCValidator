@@ -57,8 +57,7 @@ namespace DGCValidator.Services.CWT
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("HCERT signature verification failed using certificate '{0}' - {1}",
-                    cert, e.Message, e);
+                    Console.WriteLine(String.Format("HCERT signature verification failed using certificate '{0}' - {1}",cert, e.Message));
                     continue;
                 }
 
@@ -69,7 +68,7 @@ namespace DGCValidator.Services.CWT
                 if (expiration.HasValue) {
                     vacProof.ExpirationDate = expiration.Value;
                     if (DateTime.UtcNow.CompareTo(expiration)>=0) {
-                        throw new CertificateExpiredException("Signed HCERT has expired");
+                        throw new CertificateExpiredException(String.Format("Signed HCERT has expired {0}",expiration.Value));
                     }
                 }
                 else
