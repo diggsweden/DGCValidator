@@ -1,14 +1,14 @@
 ![Logo](https://docs.swedenconnect.se/technical-framework/latest/img/digg_centered.png)
 
-# DGCValidator
+# DCCValidator
 
-Xamarin App for validating EU Digital Green Certificate
+Xamarin App for validating EU Digital Covid Certificate
 
 ---
 
-## About DGC Validator
+## About DCC Validator
 
-This GitHub-repository contains a reference implementation for the validation of the EU Digital Green Certificate
+This GitHub-repository contains a reference implementation for the validation of the EU Digital Covid Certificate
 
 The solution is developed by Swedish Agency for Digital Government (DIGG).
 
