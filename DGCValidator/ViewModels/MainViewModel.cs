@@ -212,7 +212,8 @@ namespace DGCValidator.ViewModels
             }
             catch (Exception ex)
             {
-                ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
+                //ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
+                ResultText = ex.Message;
                 IsResultOK = false;
             }
         }

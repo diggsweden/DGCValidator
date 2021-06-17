@@ -42,12 +42,13 @@ namespace DGCValidator.Services.CWT
 
             if (kid == null && country == null)
             {
-                throw new Exception("Signed object does not contain kid or country - cannot find certificate");
+                throw new Exception("Signed DCC does not contain kid or country - cannot find certificate");
             }
 
             List<AsymmetricKeyParameter> certs = certificateProvider.GetCertificates(country, kid);
 
-            foreach (AsymmetricKeyParameter cert in certs) {
+            foreach (AsymmetricKeyParameter cert in certs)
+            {
                 Console.WriteLine("Attempting HCERT signature verification using certificate");// '{0}'", cert.Subject);//getSubjectX500Principal().getName()) ;
 
                 try {
@@ -65,10 +66,12 @@ namespace DGCValidator.Services.CWT
                 CWT cwt = obj.GetCwt();
 
                 DateTime? expiration = cwt.GetExpiration();
-                if (expiration.HasValue) {
+                if (expiration.HasValue)
+                {
                     vacProof.ExpirationDate = expiration.Value;
-                    if (DateTime.UtcNow.CompareTo(expiration)>=0) {
-                        throw new CertificateExpiredException(String.Format("Signed HCERT has expired {0}",expiration.Value));
+                    if (DateTime.UtcNow.CompareTo(expiration) >= 0)
+                    {
+                        throw new CertificateExpiredException(string.Format("DCC has expired {0}",expiration.Value));
                     }
                 }
                 else
@@ -86,11 +89,11 @@ namespace DGCValidator.Services.CWT
 
             if (certs.Count<=0)
             {
-                throw new Exception("No signer certificates could be found");
+                throw new CertificateUnknownException("No signer certificates could be found");
             }
             else
             {
-                throw new Exception("Signature verification failed for all attempted keys");
+                throw new CertificateValidationException("Signature verification failed for all attempted keys");
             }
         }
     }
