@@ -123,7 +123,7 @@ namespace DGCValidator.Services
             }
 
             List<DscTrust> trusts=new List<DscTrust>();
-            if( country != null)
+            if( country != null && country.Length > 0 && TrustList.DscTrustList.ContainsKey(country) )
             {
                 DscTrust dscTrust = TrustList.DscTrustList.GetValueOrDefault(country);
                 if( dscTrust != null)
@@ -140,9 +140,9 @@ namespace DGCValidator.Services
             {
                 foreach (Key key in trust.Keys)
                 {
-                    string kidStr = Convert.ToBase64String(kid)
-                        .Replace('+', '-')
-                        .Replace('/', '_');
+                    string kidStr = Convert.ToBase64String(kid);
+                        //.Replace('+', '-')
+                        //.Replace('/', '_');
                     if (kid == null || key.Kid == null || key.Kid.Equals(kidStr))
                     {
                         if( key.Kty.Equals("EC"))

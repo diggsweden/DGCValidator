@@ -153,11 +153,12 @@ namespace DGCValidator.Services
 
     public class Constants
     {
-        private static readonly string TestTrustListRestUrl = "https://qa.dgc.idsec.se/tp/trust-list";
+        private static readonly string TestTrustListRestUrl = "https://dgcg-qa.covidbevis.se/tp/trust-list";
         private static readonly string ProductionTrustListRestUrl = "https://dgcg.covidbevis.se/tp/trust-list";
 
-        private static readonly string TestValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
-        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
+        private static readonly string TestValueSetRestUrl = "https://dgcg-qa.covidbevis.se/tp/valuesets/{0}";
+//        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
+        private static readonly string ProductionValueSetRestUrl = "https://dgcg.covidbevis.se/tp/valuesets/{0}";
         public static readonly List<string> ValueSets;
 
         public static readonly string Disesase = "disease-agent-targeted.json";

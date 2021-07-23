@@ -54,6 +54,7 @@ namespace DGCValidator.Services.CWT
                 try {
                     byte[] key = SubjectPublicKeyInfoFactory.CreateSubjectPublicKeyInfo(cert).GetEncoded();
                     obj.VerifySignature(key);
+                    string keyString = System.Text.Encoding.UTF8.GetString(key);
                     Console.WriteLine("HCERT signature verification succeeded using certificate");// '{0}'", cert.Subject); //getSubjectX500Principal().getName());
                 }
                 catch (Exception e)
