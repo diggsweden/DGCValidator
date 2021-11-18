@@ -12,9 +12,14 @@ namespace DGCValidator.Views
             InitializeComponent();
         }
 
-        private void OnToggled(object sender, ToggledEventArgs e)
+        private void OnProductionToggled(object sender, ToggledEventArgs e)
         {
             Xamarin.Essentials.Preferences.Set("ProductionMode", e.Value);
         }
+        private void OnNoVerificationToggled(object sender, ToggledEventArgs e)
+        {
+            Xamarin.Essentials.Preferences.Set("NoVerificationMode", e.Value);
+        }
+
     }
 }

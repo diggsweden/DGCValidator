@@ -167,4 +167,7 @@
     <data name="VerificationText" xml:space="preserve">
         <value>Verifiering</value>
     </data>
+    <data name="NoVerificationText" xml:space="preserve">
+        <value>Ingen verifiering</value>
+    </data>
 </root>

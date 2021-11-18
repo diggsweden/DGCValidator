@@ -47,5 +47,10 @@ namespace DGCValidator.ViewModels
             dtDateTime = dtDateTime.AddSeconds(sec).ToUniversalTime();
             return dtDateTime;
         }
+        public bool NoVerificationMode
+        {
+            get { return Xamarin.Essentials.Preferences.Get("NoVerificationMode", false); }
+        }
+
     }
 }

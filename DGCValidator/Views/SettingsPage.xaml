@@ -13,7 +13,7 @@
             <Label Text="{x:Static resource:AppResources.SettingsText}" FontSize="Large" FontAttributes="Bold" Padding="30,20,30,10" TextColor="Black"/>
             <FlexLayout Direction="Row" AlignItems="Start">
                 <Label x:Name="labelProduction" Text="{x:Static resource:AppResources.ProductionText}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
-                <Switch IsToggled="{Binding ProductionMode, Mode=TwoWay}"  Toggled="OnToggled" />
+                <Switch IsToggled="{Binding ProductionMode, Mode=TwoWay}"  Toggled="OnProductionToggled" />
             </FlexLayout>
             <Label x:Name="labelIssuer" Text="{Binding Trust.Issuer}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
             <Label x:Name="labelIssuedDate" Text="{Binding Trust.IssuedDateString}" FontSize="Medium" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
@@ -21,6 +21,10 @@
             <Button Text="{x:Static resource:AppResources.RefreshText}"
                 HorizontalOptions="Start"
                 Command="{Binding RefreshTrustListCommand}" Padding="30,0,30,0"/>
+            <FlexLayout Direction="Row" AlignItems="Start">
+                <Label x:Name="labelNoVerification" Text="{x:Static resource:AppResources.NoVerificationText}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0"/>
+                <Switch IsToggled="{Binding NoVerificationMode, Mode=TwoWay}"  Toggled="OnNoVerificationToggled" />
+            </FlexLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

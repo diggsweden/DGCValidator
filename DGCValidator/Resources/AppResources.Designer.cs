@@ -334,5 +334,11 @@ namespace DGCValidator.Resources {
                 return ResourceManager.GetString("VerificationText", resourceCulture);
             }
         }
+        
+        public static string NoVerificationText {
+            get {
+                return ResourceManager.GetString("NoVerificationText", resourceCulture);
+            }
+        }
     }
 }

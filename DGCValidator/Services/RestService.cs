@@ -157,7 +157,6 @@ namespace DGCValidator.Services
         private static readonly string ProductionTrustListRestUrl = "https://dgcg.covidbevis.se/tp/trust-list";
 
         private static readonly string TestValueSetRestUrl = "https://dgcg-qa.covidbevis.se/tp/valuesets/{0}";
-//        private static readonly string ProductionValueSetRestUrl = "https://raw.githubusercontent.com/sondaica/ehn-dcc-schema/v1.3.0/valuesets/{0}";
         private static readonly string ProductionValueSetRestUrl = "https://dgcg.covidbevis.se/tp/valuesets/{0}";
         public static readonly List<string> ValueSets;
 

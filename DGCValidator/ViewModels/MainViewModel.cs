@@ -98,7 +98,7 @@ namespace DGCValidator.ViewModels
                             Subject = new Models.SubjectModel
                             {
                                 Name = proof.Dgc.Nam.Fn+" "+proof.Dgc.Nam.Gn,
-                                TranName = proof.Dgc.Nam.Fnt+" "+proof.Dgc.Nam.Gnt,
+                                TranName = proof.Dgc.Nam.Fnt+"<<"+proof.Dgc.Nam.Gnt,
                                 DateOfBirth = proof.Dgc.Dob,
                             };
                             Signature = new Models.SignatureModel
@@ -190,6 +190,11 @@ namespace DGCValidator.ViewModels
                             if( !_hasVaccination && !_hasTest && !_hasRecovered)
                             {
                                 texts.Add(AppResources.MissingDataText);
+                                IsResultOK = false;
+                            }
+                            if( proof.Message != null)
+                            {
+                                texts.Add(" " + proof.Message);
                                 IsResultOK = false;
                             }
 

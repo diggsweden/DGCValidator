@@ -17,6 +17,7 @@ namespace DGCValidator.Services
         public string IssuingCountry { get; set; }
         public DateTime ExpirationDate { get; set; }
         public DateTime IssuedDate { get; set; }
+        public string Message { get; set; }
 
         public SignedDGC()
         {

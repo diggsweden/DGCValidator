@@ -47,6 +47,36 @@ namespace DGCValidator.Services.CWT
 
             List<AsymmetricKeyParameter> certs = certificateProvider.GetCertificates(country, kid);
 
+            // No validation only debug
+            if (Xamarin.Essentials.Preferences.Get("NoVerificationMode", false))
+            {
+                CWT cwt2 = obj.GetCwt();
+                DateTime? expiration = cwt2.GetExpiration();
+                if (expiration.HasValue)
+                {
+                    vacProof.ExpirationDate = expiration.Value;
+                    if (DateTime.UtcNow.CompareTo(expiration) >= 0)
+                    {
+                        vacProof.Message=string.Format("Expired {0}", expiration.Value);
+                    }
+                }
+                else
+                {
+                    vacProof.Message="No expiration time";
+                }
+                DateTime? issuedAt = cwt2.GetIssuedAt();
+                if (issuedAt.HasValue)
+                {
+                    vacProof.IssuedDate = issuedAt.Value;
+                }
+                if (certs.Count <= 0)
+                {
+                    string kidString = System.Text.Encoding.UTF8.GetString(kid);
+                    vacProof.Message=string.Format("No cert found {0}-{1}",country, kidString);
+                }
+                return cwt2.GetDgcV1();
+            }
+
             foreach (AsymmetricKeyParameter cert in certs)
             {
                 Console.WriteLine("Attempting HCERT signature verification using certificate");// '{0}'", cert.Subject);//getSubjectX500Principal().getName()) ;
