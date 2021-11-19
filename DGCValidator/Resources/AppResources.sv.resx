@@ -43,7 +43,10 @@
         <value>Giltig tom: </value>
     </data>
     <data name="VaccinatedText" xml:space="preserve">
-        <value>Vaccinerad</value>
+        <value>Fullvaccinerad</value>
+    </data>
+    <data name="NotFullyVaccinatedText" xml:space="preserve">
+        <value>Ej fullvaccinerad</value>
     </data>
     <data name="TestedText" xml:space="preserve">
         <value>Testad</value>

@@ -45,6 +45,9 @@
     <data name="VaccinatedText" xml:space="preserve">
         <value>Gevaccineerd</value>
     </data>
+    <data name="NotFullyVaccinatedText" xml:space="preserve">
+        <value>Not fully vaccinered</value>
+    </data>
     <data name="TestedText" xml:space="preserve">
         <value>Getest</value>
     </data>

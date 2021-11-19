@@ -108,11 +108,17 @@ namespace DGCValidator.ViewModels
                                 IssuerCountry = proof.IssuingCountry
                             };
 
+                            bool fullyVaccinated = false;
+
                             if (proof.Dgc.V != null && proof.Dgc.V.Length > 0)
                             {
                                 HasVaccinations = true;
                                 foreach (VElement vac in proof.Dgc.V)
                                 {
+                                    if( vac.Dn >= vac.Sd)
+                                    {
+                                        fullyVaccinated = true;
+                                    }
                                      AddCertificate(new Models.VaccineCertModel
                                     {
                                         Type = Models.CertType.VACCINE,
@@ -174,18 +180,26 @@ namespace DGCValidator.ViewModels
                             List<string> texts = new List<string>();
                             if(_hasVaccination)
                             {
-                                texts.Add(AppResources.VaccinatedText);
-                                IsResultOK = true;
+                                if( fullyVaccinated)
+                                {
+                                    texts.Add(AppResources.VaccinatedText);
+                                    IsResultOK = true;
+                                }
+                                else
+                                {
+                                    texts.Add(AppResources.NotFullyVaccinatedText);
+                                    IsResultOK = false;
+                                }
                             }
                             if(_hasTest)
                             {
                                 texts.Add(AppResources.TestedText);
-                                IsResultOK = true;
+                                IsResultOK = false;
                             }
                             if (_hasRecovered)
                             {
                                 texts.Add(AppResources.RecoveredText);
-                                IsResultOK = true;
+                                IsResultOK = false;
                             }
                             if( !_hasVaccination && !_hasTest && !_hasRecovered)
                             {

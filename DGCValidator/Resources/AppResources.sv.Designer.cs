@@ -113,6 +113,12 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string NotFullyVaccinatedText {
+            get {
+                return ResourceManager.GetString("NotFullyVaccinatedText", resourceCulture);
+            }
+        }
+        
         public static string TestedText {
             get {
                 return ResourceManager.GetString("TestedText", resourceCulture);
