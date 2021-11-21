@@ -6,9 +6,15 @@
     xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
     x:Class="DGCValidator.Views.AboutPage">
     <StackLayout Spacing="10" BackgroundColor="White" Padding="0,20">
-            <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="16" Padding="30,20,30,10" TextColor="Black"/>
+            <Label Text="{x:Static resource:AppResources.AboutHeaderText}" FontSize="25" Padding="30,20,30,10"/>
+            <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="16" Padding="30,20,30,10"/>
+            <Label Text="{x:Static resource:AppResources.FAQ}" FontSize="16" Padding="30,20,30,10">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoGoogle" />
+                </Label.GestureRecognizers>
+            </Label>
+
+
             <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="ehm_logo.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="fohm_logo.png" HorizontalOptions="Center" Margin="30"/>
     </StackLayout>
 </ContentPage>

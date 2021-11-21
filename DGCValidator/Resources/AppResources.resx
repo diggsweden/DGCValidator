@@ -157,7 +157,12 @@
     <data name="VaccinationProviderLabel" xml:space="preserve">
         <value>Responsible: </value>
     </data>
-
+    <data name="FAQ" xml:space="preserve">
+        <value>FAQ</value>
+    </data> 
+    <data name="AboutHeaderText" xml:space="preserve">
+        <value>About this app</value>
+    </data>   
     <data name="AboutText" xml:space="preserve">
         <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government , The Swedish eHealth Agency and Public Health Agency of Sweden.</value>
     </data>

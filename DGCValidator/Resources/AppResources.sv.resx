@@ -157,7 +157,12 @@
     <data name="VaccinationProviderLabel" xml:space="preserve">
         <value>Vaccinatör: </value>
     </data>
-
+    <data name="AboutHeaderText" xml:space="preserve">
+        <value>Om den här appen</value>
+    </data>
+    <data name="FAQ" xml:space="preserve">
+        <value>Vanliga frågor</value>
+    </data> 
     <data name="AboutText" xml:space="preserve">
         <value>Verifieringsapp för Covidbevis utvecklad av Myndigheten för Digital förvaltning (DIGG), E-hälsomyndigheten och Folkhälsomyndigheten.</value>
     </data>

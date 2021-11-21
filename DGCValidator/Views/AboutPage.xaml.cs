@@ -11,5 +11,9 @@ namespace DGCValidator.Views
         {
             InitializeComponent();
         }
+        protected void GoGoogle(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://digg.se"));
+        }
     }
 }
