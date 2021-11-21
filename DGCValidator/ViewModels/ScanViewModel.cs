@@ -10,13 +10,13 @@ using DGCValidator.Services.DGC;
 using DGCValidator.Services.DGC.V1;
 using DGCValidator.Views;
 using Xamarin.Forms;
+using ZXing;
 
 namespace DGCValidator.ViewModels
 {
-    public class ResultViewModel : BaseViewModel
+    public class ScanViewModel : BaseViewModel
     {
         String _resultText;
-        String _resultHeader;
         bool _resultOk = false;
         SignatureModel _signature;
         SubjectModel _subject;
@@ -26,28 +26,34 @@ namespace DGCValidator.ViewModels
         ObservableCollection<object> _certs;
 
         private ICommand scanCommand;
+        private ICommand settingsCommand;
+        private ICommand aboutCommand;
 
-        public ResultViewModel()
+        public ScanViewModel()
         {
             _subject = new SubjectModel();
             _certs = new ObservableCollection<object>();
         }
 
+        public Result Result { get; set; }
+
         public ICommand ScanCommand => scanCommand ??
         (scanCommand = new Command(async () =>
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
+            ResultViewModel resultModel = new ResultViewModel();
+            resultModel.UpdateFields(Result.Text);
+            ResultPage resultPage = new ResultPage();
+            resultPage.BindingContext = resultModel;
+            await Application.Current.MainPage.Navigation.PushAsync(resultPage);
         }));
 
-        public void UpdateFields(String scanResult)
+        private void UpdateFields(String scanResult)
         {
             try
             {
-                Clear();
                 if (scanResult != null)
                 {
                     var result = VerificationService.VerifyData(scanResult);
-                    _resultHeader = AppResources.NotApprovedHeader;
                     if (result != null)
                     {
                         SignedDGC proof = result;
@@ -240,25 +246,12 @@ namespace DGCValidator.ViewModels
             }
         }
 
-        public String ResultHeader
-        {
-            get { return _resultHeader; }
-            set
-            {
-                _resultHeader = value;
-                OnPropertyChanged();
-            }
-        }
         public bool IsResultOK
         {
             get { return _resultOk; }
             set
             {
                 _resultOk = value;
-                if( value)
-                {
-                    _resultHeader = AppResources.ApprovedHeader;
-                }
                 OnPropertyChanged();
             }
         }
@@ -325,64 +318,5 @@ namespace DGCValidator.ViewModels
 
     }
 
-    public class LabelColorConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return ((bool)value ? Color.Green : Color.Red);
-            }
-            return Color.Red;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class LabelVisibleConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return (bool)value;
-            }
-            return true;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class ListVisibleConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is ObservableCollection<VaccineCertModel>)
-            {
-                return ((ObservableCollection<VaccineCertModel>)value).Count > 0 ? true : false;
-            }
-            if (value is ObservableCollection<TestCertModel>)
-            {
-                return ((ObservableCollection<TestCertModel>)value).Count > 0 ? true : false;
-            }
-            if (value is ObservableCollection<RecoveredCertModel>)
-            {
-                return ((ObservableCollection<RecoveredCertModel>)value).Count > 0 ? true : false;
-            }
-
-            return false;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
+   
 }

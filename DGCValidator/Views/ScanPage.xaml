@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:DGCValidator.Resources"
+             xmlns:local="clr-namespace:DGCValidator"
+             xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="DGCValidator.Views.ScanPage"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:ScanViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <BoxView Grid.Row="0" BackgroundColor="Black"/>
+        <zxing:ZXingScannerView Grid.Row="1" x:Name="_scanView"
+                                Result="{Binding Result, Mode=TwoWay}" 
+                                ScanResultCommand="{Binding ScanCommand}" 
+                                IsScanning="true"
+                                WidthRequest="200" HeightRequest="300" />
+        <BoxView Grid.Row="2" BackgroundColor="Black" />
+    </Grid>
+</ContentPage>

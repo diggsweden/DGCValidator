@@ -4,7 +4,8 @@
              xmlns:resource="clr-namespace:DGCValidator.Resources"
              xmlns:local="clr-namespace:DGCValidator"
              xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
-             x:Class="DGCValidator.Views.MainPage">
+             x:Class="DGCValidator.Views.MainPage"
+             NavigationPage.HasBackButton="False">
     <ContentPage.BindingContext>
         <viewModels:MainViewModel/>
     </ContentPage.BindingContext>

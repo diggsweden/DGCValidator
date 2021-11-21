@@ -71,6 +71,12 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string ScanAgainButtonText {
+            get {
+                return ResourceManager.GetString("ScanAgainButtonText", resourceCulture);
+            }
+        }
+        
         public static string LinkText {
             get {
                 return ResourceManager.GetString("LinkText", resourceCulture);
@@ -146,6 +152,18 @@ namespace DGCValidator.Resources {
         public static string ErrorReadingText {
             get {
                 return ResourceManager.GetString("ErrorReadingText", resourceCulture);
+            }
+        }
+        
+        public static string ApprovedHeader {
+            get {
+                return ResourceManager.GetString("ApprovedHeader", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedHeader {
+            get {
+                return ResourceManager.GetString("NotApprovedHeader", resourceCulture);
             }
         }
         
