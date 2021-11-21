@@ -22,7 +22,10 @@
         <value>Här kan du verifiera ett covidbevis genom att skanna med din kamera</value>
     </data>
 	<data name="ScanButtonText" xml:space="preserve">
-        <value>SKANNA</value>
+        <value>Skanna</value>
+    </data>
+	<data name="ScanAgainButtonText" xml:space="preserve">
+        <value>Skanna nästa</value>
     </data>
     <data name="LinkText" xml:space="preserve">
         <value>Hur man använder vaccinationsbevis verifiering</value>
@@ -63,6 +66,13 @@
     <data name="ErrorReadingText" xml:space="preserve">
         <value>Problem vid läsning</value>
     </data>
+    <data name="ApprovedHeader" xml:space="preserve">
+        <value>Godkänd</value>
+    </data>
+    <data name="NotApprovedHeader" xml:space="preserve">
+        <value>Ej godkänd</value>
+    </data>
+
 
     <!-- Subject Resources -->
     <data name="NameLabel" xml:space="preserve">

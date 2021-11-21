@@ -22,7 +22,10 @@
         <value>Here you can validate a vaccination certificate by scanning it with the camera</value>
     </data>
 	<data name="ScanButtonText" xml:space="preserve">
-        <value>VALIDATE</value>
+        <value>Validate</value>
+    </data>
+    <data name="ScanAgainButtonText" xml:space="preserve">
+        <value>Validate next</value>
     </data>
     <data name="LinkText" xml:space="preserve">
         <value>Hur man använder vaccinationsbevis verifiering</value>
@@ -62,6 +65,12 @@
     </data>
     <data name="ErrorReadingText" xml:space="preserve">
         <value>Error while reading</value>
+    </data>
+    <data name="ApprovedHeader" xml:space="preserve">
+        <value>Valid</value>
+    </data>
+    <data name="NotApprovedHeader" xml:space="preserve">
+        <value>Not valid</value>
     </data>
 
     <!-- Subject Resources -->

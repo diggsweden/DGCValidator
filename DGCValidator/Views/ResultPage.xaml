@@ -4,32 +4,50 @@
              xmlns:resource="clr-namespace:DGCValidator.Resources"
              xmlns:local="clr-namespace:DGCValidator"
              xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
-             x:Class="DGCValidator.Views.ResultPage">
+             x:Class="DGCValidator.Views.ResultPage"
+             NavigationPage.HasBackButton="False">
     <ContentPage.BindingContext>
         <viewModels:ResultViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModels:LabelColorConverter x:Key="LabelColorConverter"></viewModels:LabelColorConverter>
+            <viewModels:LabelVisibleConverter x:Key="LabelVisibleConverter"></viewModels:LabelVisibleConverter>
+            <viewModels:ListVisibleConverter x:Key="ListVisibleConverter"></viewModels:ListVisibleConverter>
+
+            <Thickness x:Key="SmallTopMargin">0,10,0,0</Thickness> 
+
+            <Color x:Key="ThemeBackgroundDetailColor">#F0F0F0</Color>
+            <Color x:Key="ThemeTextColor">#000000</Color>
+
+            <Style TargetType="BoxView" x:Key="HorizontalSeparatorBoxViewStyle">
+                <Setter Property="HeightRequest" Value="1.5"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource ThemeBackgroundDetailColor}"/>
+            </Style>
+
+            <Style TargetType="Label" >
+                <Setter Property="TextColor" Value="{StaticResource ThemeTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#195A6751">
-        <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="#195A6751">
-            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m0.43509,-0.01324l254,0c-0.16669,37.36761 -0.33331,70.23521 -0.5,107.60283c-125.00131,32.25 -124.75131,32.03235 -253.5,0.23456l0,-107.83739z"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50">
-                <Label Text="{x:Static resource:AppResources.HeaderText}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Subtitle" TextColor="#FFd78171" Padding="40,20,40,0" />
-            </StackLayout>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.50" >
+        <ScrollView BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
+        <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
+            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.10" Fill="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Stroke="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Aspect="Fill" Data="m0.43509,-0.01324l254,0c-0.16669,37.36761 -0.33331,70.23521 -0.5,107.60283c-125.00131,32.25 -124.75131,32.03235 -253.5,0.23456l0,-107.83739z"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90" BackgroundColor="White" >
                 <ScrollView Padding="0,40,0,0">
                     <StackLayout>
-                        <Label x:Name="labelResult" Text="{Binding ResultText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0"/>
+                        <Label x:Name="labelResultHeader" Text="{Binding ResultHeader}" FontSize="Title" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                        <Label x:Name="labelResultText" Text="{Binding ResultText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment ="Center"/>
                         <FlexLayout Direction="Column" >
-                            <Label Text="{x:Static resource:AppResources.IssuedDateLabel}" FontSize="Small" Padding="30,5,30,0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelIssuedDate" Text="{Binding Signature.IssuedDateString}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0"/>
-                            <Label Text="{x:Static resource:AppResources.ExpireDateLabel}" FontSize="Small" Padding="30,5,30,0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelExpirationDate" Text="{Binding Signature.ExpirationDateString}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0"/>
-                            <Label Text="{x:Static resource:AppResources.NameLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelName" Text="{Binding Subject.Name}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
-                            <Label Text="{x:Static resource:AppResources.BirthDateLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.NameLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelName" Text="{Binding Subject.Name}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.TranNameLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelTranName" Text="{Binding Subject.TranName}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.BirthDateLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
                         </FlexLayout>
-                        <Button Text="{x:Static resource:AppResources.ScanButtonText}" Margin="50" HorizontalOptions="CenterAndExpand" Command="{Binding ScanCommand}" 
+                        <Button Text="{x:Static resource:AppResources.ScanAgainButtonText}" Margin="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding ScanCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
                     FontAttributes="Bold" FontSize="Large" CornerRadius="20" />
                 
