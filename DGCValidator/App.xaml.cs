@@ -15,7 +15,7 @@ namespace DGCValidator
         {
             InitializeComponent();
             CertificateManager = new CertificateManager(new RestService());
-            MainPage = new NavigationPage(new MainPage { });
+            MainPage = new NavigationPage(new MainPage ()){ BarBackgroundColor = Color.White };
         }
 
         protected override void OnStart()

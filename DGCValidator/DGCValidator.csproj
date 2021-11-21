@@ -41,10 +41,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\AppResources.nl.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.nl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.sv.Designer.cs</LastGenOutput>
@@ -58,14 +54,15 @@
       <DependentUpon>AppResources.resx</DependentUpon>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Compile>
-    <Compile Update="Resources\AppResources.nl.Designer.cs">
-      <DependentUpon>AppResources.nl.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\scan.png" />
+    <None Remove="Resources\mobil.png" />
+    <None Remove="Resources\flagga.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\scan.png" />
+    <BundleResource Include="Resources\flagga.png" />
+    <BundleResource Include="Resources\mobil.png" />
   </ItemGroup>
 </Project>

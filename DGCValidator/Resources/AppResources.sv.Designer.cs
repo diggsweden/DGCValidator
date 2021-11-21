@@ -71,6 +71,12 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string LinkText {
+            get {
+                return ResourceManager.GetString("LinkText", resourceCulture);
+            }
+        }
+        
         public static string ScanTopText {
             get {
                 return ResourceManager.GetString("ScanTopText", resourceCulture);

@@ -13,16 +13,19 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="HeaderText" xml:space="preserve">
-        <value>Covidbevis validering</value>
+        <value>Vaccinationsbevis</value>
     </data>
 	<data name="InformationHeader" xml:space="preserve">
-        <value>Validera Covidbevis</value>
+        <value>Verifiering</value>
     </data>
 	<data name="InformationText" xml:space="preserve">
-        <value>Här kan du validera ett covidbevis genom att skanna det med din kamera!</value>
+        <value>Här kan du verifiera ett covidbevis genom att skanna med din kamera</value>
     </data>
 	<data name="ScanButtonText" xml:space="preserve">
-        <value>Skanna</value>
+        <value>SKANNA</value>
+    </data>
+    <data name="LinkText" xml:space="preserve">
+        <value>Hur man använder vaccinationsbevis verifiering</value>
     </data>
 	<data name="ScanTopText" xml:space="preserve">
         <value>Skanna covidbevis</value>

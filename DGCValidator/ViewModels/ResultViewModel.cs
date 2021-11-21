@@ -9,12 +9,11 @@ using DGCValidator.Services;
 using DGCValidator.Services.DGC;
 using DGCValidator.Services.DGC.V1;
 using DGCValidator.Views;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DGCValidator.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class ResultViewModel : BaseViewModel
     {
         String _resultText;
         bool _resultOk = false;
@@ -24,67 +23,22 @@ namespace DGCValidator.ViewModels
         bool _hasTest = false;
         bool _hasRecovered = false;
         ObservableCollection<object> _certs;
-        //ObservableCollection<VaccineCertModel> _vaccination;
-        //ObservableCollection<TestCertModel> _test;
-        //ObservableCollection<RecoveredCertModel> _recovery;
 
         private ICommand scanCommand;
         private ICommand settingsCommand;
         private ICommand aboutCommand;
 
-        public MainViewModel()
+        public ResultViewModel()
         {
             _subject = new SubjectModel();
             _certs = new ObservableCollection<object>();
-            //_vaccination = new ObservableCollection<VaccineCertModel>();
-            //_test = new ObservableCollection<TestCertModel>();
-            //_recovery = new ObservableCollection<RecoveredCertModel>();
         }
 
-        public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
-
-        public ICommand SettingsCommand => settingsCommand ??
-                (settingsCommand = new Command(async () =>
-                {
-                    //App.CertificateManager.RefreshTrustListAsync();
-                    await Application.Current.MainPage.Navigation.PushAsync(new SettingsPage());
-                }));
-
-        public ICommand AboutCommand => aboutCommand ??
-                (aboutCommand = new Command(async () =>
-                {
-                    await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
-                }));
-
-        public ICommand ScanCommand
+        public ICommand ScanCommand => scanCommand ??
+        (scanCommand = new Command(async () =>
         {
-            get
-            {
-                return scanCommand ??
-                (scanCommand = new Command(async () => await Scan()));
-            }
-        }
-
-        private async Task Scan() {
-            try
-            {
-                Clear();
-
-                var scanner = DependencyService.Get<IQRScanningService>();
-                var result = await scanner.ScanAsync();
-
-                
-                if (result != null)
-                {
-                    UpdateFields(result);
-                }
-            }
-            catch (Exception ex)
-            {
-                ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
-                IsResultOK = false;
-            }
-        }
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }));
 
         private void UpdateFields(String scanResult)
         {
@@ -316,54 +270,6 @@ namespace DGCValidator.ViewModels
             }
         }
 
-        //public ObservableCollection<VaccineCertModel> Vaccinations
-        //{
-        //    get { return _vaccination; }
-        //    set
-        //    {
-        //        _vaccination = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-        //public void AddVacCertificate(VaccineCertModel cert)
-        //{
-        //    _vaccination.Add(cert);
-        //    AddCertificate(cert);
-        //    HasVaccinations = true;
-        //    OnPropertyChanged("Vaccinations");
-        //}
-        //public ObservableCollection<TestCertModel> Test
-        //{
-        //    get { return _test; }
-        //    set
-        //    {
-        //        _test = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-        //public void AddTestCertificate(TestCertModel cert)
-        //{
-        //    _test.Add(cert);
-        //    AddCertificate(cert);
-        //    HasTest = true;
-        //    OnPropertyChanged("Test");
-        //}
-        //public ObservableCollection<RecoveredCertModel> Recovered
-        //{
-        //    get { return _recovery; }
-        //    set
-        //    {
-        //        _recovery = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-        //public void AddRecCertificate(RecoveredCertModel cert)
-        //{
-        //    _recovery.Add(cert);
-        //    AddCertificate(cert);
-        //    HasRecovered = true;
-        //    OnPropertyChanged("Recovered");
-        //}
         public ObservableCollection<object> Certs
         {
             get { return _certs; }
@@ -389,18 +295,6 @@ namespace DGCValidator.ViewModels
             {
                 _subject.Clear();
             }
-            //if (_vaccination != null)
-            //{
-            //    _vaccination.Clear();
-            //}
-            //if (_test != null)
-            //{
-            //    _test.Clear();
-            //}
-            //if (_recovery != null)
-            //{
-            //    _recovery.Clear();
-            //}
             if (_certs != null)
             {
                 _certs.Clear();
@@ -413,70 +307,9 @@ namespace DGCValidator.ViewModels
             OnPropertyChanged("ResultText");
             OnPropertyChanged("Signature");
             OnPropertyChanged("Subject");
-            //OnPropertyChanged("Vaccinations");
-            //OnPropertyChanged("Test");
-            //OnPropertyChanged("Recovered");
         }
 
     }
 
-    public class LabelColorConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return ((bool)value?Color.Green:Color.Red);
-            }
-            return Color.Red;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class LabelVisibleConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return (bool)value;
-            }
-            return true;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class ListVisibleConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is ObservableCollection<VaccineCertModel>)
-            {
-                return ((ObservableCollection<VaccineCertModel>)value).Count > 0 ? true : false;
-            }
-            if (value is ObservableCollection<TestCertModel>)
-            {
-                return ((ObservableCollection<TestCertModel>)value).Count > 0 ? true : false;
-            }
-            if (value is ObservableCollection<RecoveredCertModel>)
-            {
-                return ((ObservableCollection<RecoveredCertModel>)value).Count > 0 ? true : false;
-            }
-
-            return false;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
+   
 }

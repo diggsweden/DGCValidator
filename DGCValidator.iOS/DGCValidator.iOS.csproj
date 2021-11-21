@@ -69,6 +69,7 @@
     <CodesignKey>iPhone Distribution: Sondaica Technology AB (2Q9643BKQ5)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -193,8 +194,14 @@
     <BundleResource Include="..\DGCValidator\Resources\Trusts\DscTrustList.json">
       <Link>Resources\Trusts\DscTrustList.json</Link>
     </BundleResource>
-    <BundleResource Include="..\DGCValidator\Resources\Info.png">
-      <Link>Resources\Info.png</Link>
+    <BundleResource Include="..\DGCValidator\Resources\mobil.png">
+      <Link>Resources\mobil.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\flagga.png">
+      <Link>Resources\flagga.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\info2.png">
+      <Link>Resources\info2.png</Link>
     </BundleResource>
   </ItemGroup>
 </Project>
