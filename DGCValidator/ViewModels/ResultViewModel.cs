@@ -37,6 +37,7 @@ namespace DGCValidator.ViewModels
         (scanCommand = new Command(async () =>
         {
             await Application.Current.MainPage.Navigation.PopAsync();
+            MessagingCenter.Send(Xamarin.Forms.Application.Current, "Scan");
         }));
 
         public void UpdateFields(String scanResult)

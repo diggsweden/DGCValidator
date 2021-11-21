@@ -33,6 +33,10 @@ namespace DGCValidator.ViewModels
         {
             _subject = new SubjectModel();
             _certs = new ObservableCollection<object>();
+            MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Scan", async (sender) =>
+            {
+                await Scan();
+            });
         }
 
         public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
@@ -64,7 +68,7 @@ namespace DGCValidator.ViewModels
             }
         }
 
-        private async Task Scan() {
+        public async Task Scan() {
             try
             {
                 //Clear();

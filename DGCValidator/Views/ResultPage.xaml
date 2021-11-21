@@ -4,11 +4,12 @@
              xmlns:resource="clr-namespace:DGCValidator.Resources"
              xmlns:local="clr-namespace:DGCValidator"
              xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
-             x:Class="DGCValidator.Views.ResultPage">
+             x:Class="DGCValidator.Views.ResultPage"
+             NavigationPage.HasBackButton="False">
     <ContentPage.BindingContext>
         <viewModels:ResultViewModel/>
     </ContentPage.BindingContext>
-        <ContentPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <viewModels:LabelColorConverter x:Key="LabelColorConverter"></viewModels:LabelColorConverter>
             <viewModels:LabelVisibleConverter x:Key="LabelVisibleConverter"></viewModels:LabelVisibleConverter>
