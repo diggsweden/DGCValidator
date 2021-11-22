@@ -17,12 +17,17 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
-        <BoxView Grid.Row="0" BackgroundColor="Black"/>
+        <BoxView Grid.Row="0" BackgroundColor="Transparent"/>
         <zxing:ZXingScannerView Grid.Row="1" x:Name="_scanView"
                                 Result="{Binding Result, Mode=TwoWay}" 
                                 ScanResultCommand="{Binding ScanCommand}" 
                                 IsScanning="true"
-                                WidthRequest="200" HeightRequest="300" />
-        <BoxView Grid.Row="2" BackgroundColor="Black" />
+                                HeightRequest="400" />
+        <!--<BoxView Grid.Row="2" BackgroundColor="Transparent"/>-->
+
+        
+        <ImageButton Grid.Row="3" Source="Info.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50" HeightRequest="50" Clicked="Handle_Clicked" BackgroundColor="Transparent" Padding="0,-50,1,0"/>
+        <Button Text="Avbryt" Grid.Row="4" Clicked="Handle_Clicked_1" WidthRequest="30" HeightRequest="30" BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1"></Button>
     </Grid>
+
 </ContentPage>
