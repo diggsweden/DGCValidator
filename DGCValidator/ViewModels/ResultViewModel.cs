@@ -379,9 +379,9 @@ namespace DGCValidator.ViewModels
         {
             if (value is bool)
             {
-                return ((bool)value ? Color.Green : Color.Red);
+                return ((bool)value ? Color.DarkGreen : Color.DarkRed );
             }
-            return Color.Red;
+            return "#695F59";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

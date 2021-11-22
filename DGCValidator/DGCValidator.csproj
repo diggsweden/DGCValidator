@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Resources\" />
     <Folder Include="Services\CWT\" />
     <Folder Include="Resources\Flags\" />
     <Folder Include="ViewModels\" />
