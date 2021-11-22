@@ -121,12 +121,20 @@
       </Generator>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\flagga.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DGCValidator\DGCValidator.csproj">
       <Project>{E3084931-0489-422D-BFBF-BAE07FBB1BA1}</Project>
       <Name>DGCValidator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\info2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mobil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

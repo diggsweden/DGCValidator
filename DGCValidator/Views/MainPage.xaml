@@ -17,7 +17,7 @@
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
             <!--<ImageButton Grid.Column="0" Source="scan.png" HeightRequest="30" WidthRequest="30" Command="{Binding SettingsCommand}" HorizontalOptions="Center"/>-->
-            <ImageButton Grid.Column="2" Source="info2.png" HeightRequest="30" WidthRequest="30" Command="{Binding AboutCommand}" HorizontalOptions="Center"/>
+            <ImageButton Grid.Column="2" Source="info2.png" HeightRequest="30" WidthRequest="30" BackgroundColor="White" CornerRadius="45" Command="{Binding AboutCommand}" HorizontalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
@@ -33,7 +33,7 @@
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,0,0,20" >
                 <Button Text="{x:Static resource:AppResources.ScanButtonText}" Margin="30" HorizontalOptions="CenterAndExpand" Command="{Binding ScanCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
-                    FontAttributes="Bold" FontSize="Large" CornerRadius="20" WidthRequest="300" />
+                    FontAttributes="Bold" FontSize="Large" CornerRadius="45" WidthRequest="300" />
                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
                     VerticalOptions="StartAndExpand" Padding="30,10,30,10" Text="{x:Static resource:AppResources.LinkText}"
                        TextColor="#5A6751" FontSize="Medium" TextDecorations="Underline" >
