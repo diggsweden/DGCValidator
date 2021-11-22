@@ -335,6 +335,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string AboutHeaderText {
+            get {
+                return ResourceManager.GetString("AboutHeaderText", resourceCulture);
+            }
+        }
+        
+        public static string FAQ {
+            get {
+                return ResourceManager.GetString("FAQ", resourceCulture);
+            }
+        }
+        
         public static string AboutText {
             get {
                 return ResourceManager.GetString("AboutText", resourceCulture);

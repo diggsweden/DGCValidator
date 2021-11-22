@@ -5,10 +5,21 @@
     xmlns:resource="clr-namespace:DGCValidator.Resources"
     xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
     x:Class="DGCValidator.Views.AboutPage">
-    <StackLayout Spacing="10" BackgroundColor="White" Padding="0,20">
-            <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="16" Padding="30,20,30,10" TextColor="Black"/>
-            <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="ehm_logo.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="fohm_logo.png" HorizontalOptions="Center" Margin="30"/>
-    </StackLayout>
+
+    <ScrollView BackgroundColor="#195A6751">
+        <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="#195A6751">
+            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50">
+                <Label Text="{x:Static resource:AppResources.AboutHeaderText}" FontSize="25" FontAttributes="Bold" TextColor="#695f59" Padding="30,20,30,10"/>
+                <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="18" TextColor="#695f59" Padding="30,20,30,10"/>
+                <Label Text="{x:Static resource:AppResources.FAQ}" TextDecorations="Underline" FontSize="18" Padding="30,20,30,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="VerifierFaq" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30" AbsoluteLayout.LayoutBounds="20, 30, 30, 0.50"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+
 </ContentPage>

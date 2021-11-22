@@ -28,6 +28,7 @@ namespace DGCValidator.ViewModels
         private ICommand scanCommand;
         private ICommand settingsCommand;
         private ICommand aboutCommand;
+        private ICommand scanPageCommand;
 
         public MainViewModel()
         {
@@ -60,6 +61,12 @@ namespace DGCValidator.ViewModels
                 {
                     await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
                 }));
+
+        public ICommand ScanPageCommand => scanPageCommand ??
+        (aboutCommand = new Command(async () =>
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ScanPage());
+        }));
 
         //public ICommand ScanCommand => scanCommand ??
         //        (scanCommand = new Command(async () =>
