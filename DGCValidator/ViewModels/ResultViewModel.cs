@@ -61,6 +61,10 @@ namespace DGCValidator.ViewModels
                 {
                     UpdateFields(result);
                 }
+                else
+                {
+                    MessagingCenter.Send(Application.Current, "Cancel");
+                }
             }
             catch (Exception ex)
             {
