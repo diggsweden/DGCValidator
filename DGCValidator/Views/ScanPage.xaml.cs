@@ -43,6 +43,7 @@ namespace DGCValidator.Views
             {
                 // Turn On Flashlight  
                 await Flashlight.TurnOnAsync();
+                
             }
             catch (FeatureNotSupportedException fnsEx)
             {

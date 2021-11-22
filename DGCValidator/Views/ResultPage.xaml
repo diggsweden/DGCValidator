@@ -33,33 +33,37 @@
     <ContentPage.Content>
         <ScrollView BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
         <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
-            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z">
-                <Path.RenderTransform>
-                    <RotateTransform CenterX="0"
-                         CenterY="0"
-                         Angle="180" />
-                </Path.RenderTransform>
-            </Path>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90">
-                <ScrollView Padding="0,40,0,0">
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.95">
+                <ScrollView Padding="0,20,0,0">
+                    <Frame HasShadow="True"
+                       BorderColor="White"
+                       CornerRadius="20"
+                       Margin="0"
+                       BackgroundColor="White" VerticalOptions="FillAndExpand" >
                     <StackLayout>
+                        <Image Source="ok.png" IsVisible="{Binding IsResultOK}" HeightRequest="100" HorizontalOptions="Center"/>
+                        <Image Source="fail.png" IsVisible="{Binding IsResultNotOK}" HeightRequest="100" HorizontalOptions="Center"/>
                         <Label x:Name="labelResultHeader" Text="{Binding ResultHeader}" FontSize="Title" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
                         <Label x:Name="labelResultText" Text="{Binding ResultText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment ="Center"/>
                         <FlexLayout Direction="Column" >
-                            <Label Text="{x:Static resource:AppResources.NameLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelName" Text="{Binding Subject.Name}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
-                            <Label Text="{x:Static resource:AppResources.TranNameLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelTranName" Text="{Binding Subject.TranName}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
-                            <Label Text="{x:Static resource:AppResources.BirthDateLabel}" FontSize="Medium" Padding="30,5,30,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
-                            <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.FirstnameLabel}" FontSize="Medium" Padding="10,5,10,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelFirstname" Text="{Binding Subject.Firstname}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="10,0,10,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.FamilynameLabel}" FontSize="Medium" Padding="10,5,10,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelFamilyname" Text="{Binding Subject.Familyname}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="10,0,10,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.TranNameLabel}" FontSize="Medium" Padding="10,5,10,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelTranName" Text="{Binding Subject.TranName}" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="10,0,10,0" Margin="0" />
+                            <Label Text="{x:Static resource:AppResources.BirthDateLabel}" FontSize="Medium" Padding="10,5,10,0" Margin="0" TextColor="Black" IsVisible="{Binding IsResultOK}"/>
+                            <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" FontSize="Large" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" TextColor="Black" Padding="10,0,10,0" Margin="0" />
                         </FlexLayout>
-                        <Button Text="{x:Static resource:AppResources.ScanAgainButtonText}" Margin="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding ScanCommand}" 
+                        <Button Text="{x:Static resource:AppResources.ScanAgainButtonText}" Margin="50" HorizontalOptions="CenterAndExpand" Command="{Binding ScanCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
                     FontAttributes="Bold" FontSize="Large" CornerRadius="20" />
-                        <Button Text="{x:Static resource:AppResources.ScanCancelText}" Margin="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding CancelCommand}" 
+                        <Button Text="{x:Static resource:AppResources.ScanCancelText}" Margin="20" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding CancelCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
-                    FontAttributes="Bold" FontSize="Large" CornerRadius="20" />                
+                    FontAttributes="Bold" FontSize="Large" CornerRadius="20" />
+                        
                     </StackLayout>
+                        </Frame>
                 </ScrollView>
             </StackLayout>
         </AbsoluteLayout>

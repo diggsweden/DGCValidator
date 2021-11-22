@@ -61,7 +61,8 @@ namespace DGCValidator.ViewModels
                         {
                             Subject = new Models.SubjectModel
                             {
-                                Name = proof.Dgc.Nam.Fn+" "+proof.Dgc.Nam.Gn,
+                                Firstname = proof.Dgc.Nam.Fn,
+                                Familyname = proof.Dgc.Nam.Gn,
                                 TranName = proof.Dgc.Nam.Fnt+"<<"+proof.Dgc.Nam.Gnt,
                                 DateOfBirth = proof.Dgc.Dob,
                             };
@@ -203,7 +204,7 @@ namespace DGCValidator.ViewModels
 
         public bool IsVisible
         {
-            get { return (_subject!=null&&_subject.Name!=null&&_subject.Name.Length>0?true:false); }
+            get { return (_subject!=null&&_subject.Firstname!=null&&_subject.Firstname.Length>0?true:false); }
         }
 
         public bool HasVaccinations

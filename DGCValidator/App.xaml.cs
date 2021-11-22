@@ -16,6 +16,8 @@ namespace DGCValidator
             InitializeComponent();
             CertificateManager = new CertificateManager(new RestService());
             MainPage = new NavigationPage(new MainPage ()){ BarBackgroundColor = Color.White };
+            Xamarin.Essentials.Preferences.Set("NoVerificationMode", false);
+            Xamarin.Essentials.Preferences.Set("ProductionMode", true);
         }
 
         protected override void OnStart()

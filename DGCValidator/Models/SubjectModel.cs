@@ -7,24 +7,35 @@ namespace DGCValidator.Models
 {
     public class SubjectModel : BaseModel
     {
-        string _name="";
+        string _firstname = "";
+        string _familyname = "";
         string _tranName = "";
         string _dateOfBirth ="";
 
         public SubjectModel()
         {
         }
-        public SubjectModel(string name)
+        public SubjectModel(string firstname, string familyname)
         {
-            _name = name;
+            _firstname = firstname;
+            _familyname = familyname;
         }
 
-        public string Name
+        public string Firstname
         {
-            get { return _name; }
+            get { return _firstname; }
             set
             {
-                _name = value;
+                _firstname = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Familyname
+        {
+            get { return _familyname; }
+            set
+            {
+                _familyname = value;
                 OnPropertyChanged();
             }
         }
@@ -57,7 +68,8 @@ namespace DGCValidator.Models
         //}
         public void Clear()
         {
-            Name = "";
+            Firstname = "";
+            Familyname = "";
             TranName = "";
             DateOfBirth = "";
         }

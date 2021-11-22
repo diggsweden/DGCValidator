@@ -89,7 +89,8 @@ namespace DGCValidator.ViewModels
                         {
                             Subject = new Models.SubjectModel
                             {
-                                Name = proof.Dgc.Nam.Fn+" "+proof.Dgc.Nam.Gn,
+                                Firstname = proof.Dgc.Nam.Gn,
+                                Familyname = proof.Dgc.Nam.Fn,
                                 TranName = proof.Dgc.Nam.Fnt+"<<"+proof.Dgc.Nam.Gnt,
                                 DateOfBirth = proof.Dgc.Dob,
                             };
@@ -231,7 +232,7 @@ namespace DGCValidator.ViewModels
 
         public bool IsVisible
         {
-            get { return (_subject!=null&&_subject.Name!=null&&_subject.Name.Length>0?true:false); }
+            get { return (_subject!=null&&_subject.Firstname!=null&&_subject.Firstname.Length>0?true:false); }
         }
 
         public bool HasVaccinations
@@ -293,10 +294,19 @@ namespace DGCValidator.ViewModels
                 {
                     _resultHeader = AppResources.ApprovedHeader;
                 }
+                else
+                {
+                    _resultHeader = AppResources.NotApprovedHeader;
+                }
                 OnPropertyChanged();
+                OnPropertyChanged("IsResultNotOK");
+                OnPropertyChanged("ResultHeader");
             }
         }
-
+        public bool IsResultNotOK
+        {
+            get { return !_resultOk; }
+        }
         public SignatureModel Signature
         {
             get { return _signature; }
@@ -334,6 +344,7 @@ namespace DGCValidator.ViewModels
         }
         public void Clear()
         {
+            _resultHeader = null;
             _resultText = null;
             if (_signature != null)
             {
@@ -352,6 +363,9 @@ namespace DGCValidator.ViewModels
             HasTest = false;
             HasRecovered = false;
             OnPropertyChanged("IsVisible");
+            OnPropertyChanged("IsResultOK");
+            OnPropertyChanged("IsResultNotOK");
+            OnPropertyChanged("ResultHeader");
             OnPropertyChanged("ResultText");
             OnPropertyChanged("Signature");
             OnPropertyChanged("Subject");

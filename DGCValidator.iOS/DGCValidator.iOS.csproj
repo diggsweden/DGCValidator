@@ -219,5 +219,11 @@
     <BundleResource Include="..\DGCValidator\Resources\info2.png">
       <Link>Resources\info2.png</Link>
     </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\ok.png">
+      <Link>Resources\ok.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\fail.png">
+      <Link>Resources\fail.png</Link>
+    </BundleResource>
   </ItemGroup>
 </Project>

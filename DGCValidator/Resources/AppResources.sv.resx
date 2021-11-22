@@ -75,8 +75,11 @@
 
 
     <!-- Subject Resources -->
-    <data name="NameLabel" xml:space="preserve">
-        <value>Namn: </value>
+    <data name="FirstnameLabel" xml:space="preserve">
+        <value>Förnamn: </value>
+    </data>
+    <data name="FamilynameLabel" xml:space="preserve">
+        <value>Efternamn: </value>
     </data>
     <data name="TranNameLabel" xml:space="preserve">
         <value>Translitererat namn: </value>

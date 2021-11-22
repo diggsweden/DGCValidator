@@ -177,9 +177,12 @@
   <data name="NotApprovedHeader" xml:space="preserve">
     <value>Not valid</value>
   </data>
-  <data name="NameLabel" xml:space="preserve">
-    <value>Name: </value>
-  </data>
+    <data name="FirstnameLabel" xml:space="preserve">
+        <value>First name: </value>
+    </data>
+    <data name="FamilynameLabel" xml:space="preserve">
+        <value>Family name: </value>
+    </data>
   <data name="TranNameLabel" xml:space="preserve">
     <value>Transliterated name: </value>
   </data>

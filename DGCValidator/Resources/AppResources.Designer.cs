@@ -167,9 +167,15 @@ namespace DGCValidator.Resources {
             }
         }
         
-        public static string NameLabel {
+        public static string FirstnameLabel {
             get {
-                return ResourceManager.GetString("NameLabel", resourceCulture);
+                return ResourceManager.GetString("FirstnameLabel", resourceCulture);
+            }
+        }
+        
+        public static string FamilynameLabel {
+            get {
+                return ResourceManager.GetString("FamilynameLabel", resourceCulture);
             }
         }
         
