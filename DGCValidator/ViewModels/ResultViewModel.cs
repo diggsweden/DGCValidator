@@ -51,6 +51,7 @@ namespace DGCValidator.ViewModels
 
         public async Task Scan()
         {
+            Clear();
             try
             {
                 var scanner = DependencyService.Get<IQRScanningService>();

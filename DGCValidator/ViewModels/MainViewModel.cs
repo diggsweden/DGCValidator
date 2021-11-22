@@ -91,16 +91,14 @@ namespace DGCValidator.ViewModels
                 var scanner = DependencyService.Get<IQRScanningService>();
                 var result = await scanner.ScanAsync();
 
-                ResultViewModel resultModel = new ResultViewModel();
-                resultModel.UpdateFields(result);
-                ResultPage resultPage = new ResultPage();
-                resultPage.BindingContext = resultModel;
-                await Application.Current.MainPage.Navigation.PushAsync(resultPage);
-
-                //if (result != null)
-                //{
-                //    UpdateFields(result);
-                //}
+                if( result !=null)
+                {
+                    ResultViewModel resultModel = new ResultViewModel();
+                    resultModel.UpdateFields(result);
+                    ResultPage resultPage = new ResultPage();
+                    resultPage.BindingContext = resultModel;
+                    await Application.Current.MainPage.Navigation.PushAsync(resultPage);
+                }
             }
             catch (Exception ex)
             {

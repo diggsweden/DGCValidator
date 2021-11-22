@@ -33,8 +33,14 @@
     <ContentPage.Content>
         <ScrollView BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
         <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
-            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.10" Fill="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Stroke="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Aspect="Fill" Data="m0.43509,-0.01324l254,0c-0.16669,37.36761 -0.33331,70.23521 -0.5,107.60283c-125.00131,32.25 -124.75131,32.03235 -253.5,0.23456l0,-107.83739z"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90" BackgroundColor="White" >
+            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z">
+                <Path.RenderTransform>
+                    <RotateTransform CenterX="0"
+                         CenterY="0"
+                         Angle="180" />
+                </Path.RenderTransform>
+            </Path>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.90">
                 <ScrollView Padding="0,40,0,0">
                     <StackLayout>
                         <Label x:Name="labelResultHeader" Text="{Binding ResultHeader}" FontSize="Title" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>

@@ -23,15 +23,15 @@
     <ContentPage.Content>
         <ScrollView BackgroundColor="#195A6751">
         <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="#195A6751">
-                <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z"/>
+            <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.65" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z"/>
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50">
                 <Label Text="{x:Static resource:AppResources.HeaderText}" HorizontalOptions="Center" FontSize="26" TextColor="#695f59" Padding="40,30,40,0" />
-                    <Label Text="{x:Static resource:AppResources.InformationHeader}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="32" TextColor="#695f59" Padding="40,-10,40,0" />
+                    <Label Text="{x:Static resource:AppResources.InformationHeader}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="32" TextColor="#695f59" Padding="40,10,40,0" />
                     <Label Text="{x:Static resource:AppResources.InformationText}" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#695f59" Padding="40,30,40,20" />
                 <Image Source="mobil.png" HeightRequest="150" HorizontalOptions="Center"/>
             </StackLayout>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.50" Padding="0,0,0,20" >
-                <Button Text="{x:Static resource:AppResources.ScanButtonText}" Margin="30" HorizontalOptions="CenterAndExpand" Command="{Binding ScanPageCommand}" 
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,0,0,20" >
+                <Button Text="{x:Static resource:AppResources.ScanButtonText}" Margin="30" HorizontalOptions="CenterAndExpand" Command="{Binding ScanCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
                     FontAttributes="Bold" FontSize="Large" CornerRadius="20" WidthRequest="300" />
                 <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
