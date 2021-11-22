@@ -26,6 +26,7 @@ namespace DGCValidator.ViewModels
         ObservableCollection<object> _certs;
 
         private ICommand scanCommand;
+        private ICommand cancelCommand;
 
         public ResultViewModel()
         {
@@ -33,12 +34,39 @@ namespace DGCValidator.ViewModels
             _certs = new ObservableCollection<object>();
         }
 
-        public ICommand ScanCommand => scanCommand ??
-        (scanCommand = new Command(async () =>
+        public ICommand ScanCommand
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
-            MessagingCenter.Send(Xamarin.Forms.Application.Current, "Scan");
+            get
+            {
+                return scanCommand ??
+                (scanCommand = new Command(async () => await Scan()));
+            }
+        }
+
+        public ICommand CancelCommand => cancelCommand ??
+        (cancelCommand = new Command(async () =>
+        {
+            MessagingCenter.Send(Application.Current, "Cancel");
         }));
+
+        public async Task Scan()
+        {
+            try
+            {
+                var scanner = DependencyService.Get<IQRScanningService>();
+                var result = await scanner.ScanAsync();
+
+                if (result != null)
+                {
+                    UpdateFields(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
+                IsResultOK = false;
+            }
+        }
 
         public void UpdateFields(String scanResult)
         {

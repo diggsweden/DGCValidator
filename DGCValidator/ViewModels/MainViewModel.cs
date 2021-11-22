@@ -35,7 +35,15 @@ namespace DGCValidator.ViewModels
             _certs = new ObservableCollection<object>();
             MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Scan", async (sender) =>
             {
-                await Scan();
+                await Application.Current.MainPage.Navigation.PopToRootAsync();
+                // await Application.Current.MainPage.Navigation.PopAsync();
+                scanCommand = new Command(async () => await Scan());
+            });
+            MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Cancel", async (sender) =>
+            {
+                await Application.Current.MainPage.Navigation.PopToRootAsync();
+                // await Application.Current.MainPage.Navigation.PopAsync();
+               //await Scan();
             });
         }
 

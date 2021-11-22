@@ -50,7 +50,9 @@
                         <Button Text="{x:Static resource:AppResources.ScanAgainButtonText}" Margin="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding ScanCommand}" 
                     BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
                     FontAttributes="Bold" FontSize="Large" CornerRadius="20" />
-                
+                        <Button Text="{x:Static resource:AppResources.ScanCancelText}" Margin="50" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Command="{Binding CancelCommand}" 
+                    BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
+                    FontAttributes="Bold" FontSize="Large" CornerRadius="20" />                
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
