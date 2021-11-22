@@ -268,7 +268,7 @@
     <value>About this app</value>
   </data>
   <data name="AboutText" xml:space="preserve">
-    <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government , The Swedish eHealth Agency and Public Health Agency of Sweden.</value>
+    <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government.</value>
   </data>
   <data name="SettingsText" xml:space="preserve">
     <value>Settings</value>

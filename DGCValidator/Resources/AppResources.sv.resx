@@ -174,7 +174,7 @@
         <value>Vanliga frågor</value>
     </data> 
     <data name="AboutText" xml:space="preserve">
-        <value>Verifieringsapp för Covidbevis utvecklad av Myndigheten för Digital förvaltning (DIGG), E-hälsomyndigheten och Folkhälsomyndigheten.</value>
+        <value>Verifieringsapp för Covidbevis utvecklad av Myndigheten för Digital förvaltning (DIGG).</value>
     </data>
     <data name="SettingsText" xml:space="preserve">
         <value>Inställningar</value>
