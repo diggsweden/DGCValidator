@@ -167,6 +167,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string AppVersion {
+            get {
+                return ResourceManager.GetString("AppVersion", resourceCulture);
+            }
+        }
+        
+        public static string KeyVersion {
+            get {
+                return ResourceManager.GetString("KeyVersion", resourceCulture);
+            }
+        }
+        
         public static string FirstnameLabel {
             get {
                 return ResourceManager.GetString("FirstnameLabel", resourceCulture);

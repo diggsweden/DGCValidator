@@ -5,6 +5,9 @@
     xmlns:resource="clr-namespace:DGCValidator.Resources"
     xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
     x:Class="DGCValidator.Views.AboutPage">
+    <ContentPage.BindingContext>
+        <viewModels:AboutViewModel/>
+    </ContentPage.BindingContext>
     <NavigationPage.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,6 +29,8 @@
                         <TapGestureRecognizer Tapped="VerifierFaq" />
                     </Label.GestureRecognizers>
                 </Label>
+                <Label x:Name="labelAppVersion" Text="{Binding AppVersion}" FontSize="18" TextColor="#695f59" Padding="30,20,30,0"/>
+                <Label x:Name="labelPublicKeyVersion" Text="{Binding PublicKeyVersion}" FontSize="18" TextColor="#695f59" Padding="30,5,30,10"/>
             </StackLayout>
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,30,0,0" >
                 <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30" AbsoluteLayout.LayoutBounds="20, 40, 50, 0.50"/>

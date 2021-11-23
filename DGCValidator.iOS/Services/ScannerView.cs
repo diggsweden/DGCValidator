@@ -27,7 +27,7 @@ namespace DGCValidator.iOS.Services
 			Opaque = false;
 			BackgroundColor = UIColor.Clear;
 
-			var picFrameWidth = Math.Round(Frame.Width * 0.90); // screenFrame.Width;
+			var picFrameWidth = Math.Round(Frame.Width * 0.90);
 			var picFrameHeight = Math.Round(Frame.Height * 0.90);
 			var picFrameX = (Frame.Width - picFrameWidth) / 2;
 			var picFrameY = (Frame.Height - picFrameHeight) / 2;

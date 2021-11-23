@@ -72,6 +72,12 @@
     <data name="NotApprovedHeader" xml:space="preserve">
         <value>Ej godkänd</value>
     </data>
+    <data name="AppVersion" xml:space="preserve">
+        <value>Version: </value>
+    </data>
+    <data name="KeyVersion" xml:space="preserve">
+        <value>Nycklar hämtade: </value>
+    </data>
 
 
     <!-- Subject Resources -->
