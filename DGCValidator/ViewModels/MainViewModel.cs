@@ -42,7 +42,7 @@ namespace DGCValidator.ViewModels
             });
             MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Cancel", async (sender) =>
             {
-                await Application.Current.MainPage.Navigation.PopToRootAsync();
+                await Application.Current.MainPage.Navigation.PopModalAsync();
                 // await Application.Current.MainPage.Navigation.PopAsync();
                //await Scan();
             });
