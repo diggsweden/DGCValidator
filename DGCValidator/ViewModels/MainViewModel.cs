@@ -97,7 +97,7 @@ namespace DGCValidator.ViewModels
                     resultModel.UpdateFields(result);
                     ResultPage resultPage = new ResultPage();
                     resultPage.BindingContext = resultModel;
-                    await Application.Current.MainPage.Navigation.PushAsync(resultPage);
+                    await Application.Current.MainPage.Navigation.PushModalAsync(resultPage);
                 }
             }
             catch (Exception ex)
