@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Input;
 using DGCValidator.Models;
 using DGCValidator.Resources;
@@ -24,6 +25,7 @@ namespace DGCValidator.ViewModels
         bool _hasTest = false;
         bool _hasRecovered = false;
         ObservableCollection<object> _certs;
+        System.Timers.Timer timer;
 
         private ICommand scanCommand;
         private ICommand cancelCommand;
@@ -46,6 +48,11 @@ namespace DGCValidator.ViewModels
         public ICommand CancelCommand => cancelCommand ??
         (cancelCommand = new Command(async () =>
         {
+            if( timer != null)
+            {
+                timer.Stop();
+                timer = null;
+            }
             MessagingCenter.Send(Application.Current, "Cancel");
         }));
 
@@ -73,8 +80,23 @@ namespace DGCValidator.ViewModels
             }
         }
 
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Task.Delay(200);
+                MessagingCenter.Send(Application.Current, "Cancel");
+            });
+            
+        }
+
         public void UpdateFields(String scanResult)
         {
+            if (timer != null)
+            {
+                timer.Stop();
+                timer = null;
+            }
             try
             {
                 Clear();
@@ -230,6 +252,11 @@ namespace DGCValidator.ViewModels
                 ResultText = ex.Message;
                 IsResultOK = false;
             }
+            timer = new System.Timers.Timer();
+            timer.AutoReset = false;
+            timer.Interval = 60000;
+            timer.Elapsed += OnTimedEvent;
+            timer.Start();
         }
 
         public bool IsVisible

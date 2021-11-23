@@ -16,35 +16,16 @@ namespace DGCValidator.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        String _resultText;
-        bool _resultOk = false;
-        SignatureModel _signature;
-        SubjectModel _subject;
-        bool _hasVaccination = false;
-        bool _hasTest = false;
-        bool _hasRecovered = false;
-        ObservableCollection<object> _certs;
 
         private ICommand scanCommand;
         private ICommand settingsCommand;
         private ICommand aboutCommand;
-        private ICommand scanPageCommand;
 
         public MainViewModel()
         {
-            _subject = new SubjectModel();
-            _certs = new ObservableCollection<object>();
-            MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Scan", async (sender) =>
-            {
-                await Application.Current.MainPage.Navigation.PopToRootAsync();
-                // await Application.Current.MainPage.Navigation.PopAsync();
-                scanCommand = new Command(async () => await Scan());
-            });
             MessagingCenter.Subscribe<Xamarin.Forms.Application>(Xamarin.Forms.Application.Current, "Cancel", async (sender) =>
             {
                 await Application.Current.MainPage.Navigation.PopModalAsync();
-                // await Application.Current.MainPage.Navigation.PopAsync();
-               //await Scan();
             });
         }
 
@@ -62,16 +43,11 @@ namespace DGCValidator.ViewModels
                     await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
                 }));
 
-        public ICommand ScanPageCommand => scanPageCommand ??
-        (aboutCommand = new Command(async () =>
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new ScanPage());
-        }));
-
         //public ICommand ScanCommand => scanCommand ??
         //        (scanCommand = new Command(async () =>
         //        {
-        //            await Application.Current.MainPage.Navigation.PushAsync(new ScanPage());
+        //            await Application.Current.MainPage.Navigation.PushModalAsync(new ResultPage());
+        //            MessagingCenter.Send(Xamarin.Forms.Application.Current, "Scan");
         //        }));
 
         public ICommand ScanCommand
@@ -86,8 +62,6 @@ namespace DGCValidator.ViewModels
         public async Task Scan() {
             try
             {
-                //Clear();
-
                 var scanner = DependencyService.Get<IQRScanningService>();
                 var result = await scanner.ScanAsync();
 
@@ -102,8 +76,6 @@ namespace DGCValidator.ViewModels
             }
             catch (Exception ex)
             {
-               // ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
-                //IsResultOK = false;
             }
         }
 

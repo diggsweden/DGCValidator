@@ -11,7 +11,6 @@ namespace DGCValidator.Views
         public ResultPage()
         {
             InitializeComponent();
-            
         }
 
     }
