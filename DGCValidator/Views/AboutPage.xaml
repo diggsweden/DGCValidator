@@ -21,10 +21,10 @@
     <ScrollView BackgroundColor="#195A6751">
         <AbsoluteLayout x:Name="ViewLayout" BackgroundColor="#195A6751">
             <Path AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.65" Fill="#ffffff" Stroke="#ffffff" Aspect="Fill" Data="m259.19002,205.23077l265,0l0,216.88349c-93.81707,47.19512 -182.76829,47.90488 -265.02439,3.87911l0.02439,-220.76259z"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.50">
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1,0.50">
                 <Label Text="{x:Static resource:AppResources.AboutHeaderText}" FontSize="25" FontAttributes="Bold" TextColor="#695f59" Padding="30,20,30,10"/>
                 <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="18" TextColor="#695f59" Padding="30,20,30,10"/>
-                <Label Text="{x:Static resource:AppResources.FAQ}" TextDecorations="Underline" FontSize="18" Padding="30,20,30,10">
+                <Label Text="{x:Static resource:AppResources.FAQ}" TextDecorations="Underline" FontAttributes="Bold" FontSize="18" Padding="30,20,30,10">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="VerifierFaq" />
                     </Label.GestureRecognizers>
@@ -32,8 +32,8 @@
                 <Label x:Name="labelAppVersion" Text="{Binding AppVersion}" FontSize="18" TextColor="#695f59" Padding="30,20,30,0"/>
                 <Label x:Name="labelPublicKeyVersion" Text="{Binding PublicKeyVersion}" FontSize="18" TextColor="#695f59" Padding="30,5,30,10"/>
             </StackLayout>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,30,0,0" >
-                <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30" AbsoluteLayout.LayoutBounds="20, 40, 50, 0.50"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,0,0,0" >
+                <Image Source="digg_centered_2.png" WidthRequest="200" HorizontalOptions="Center" Margin="30" AbsoluteLayout.LayoutBounds="20, 40, 50, 0.50"/>
                 <Image Source="flagga.png" HeightRequest="30" VerticalOptions="End" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </AbsoluteLayout>

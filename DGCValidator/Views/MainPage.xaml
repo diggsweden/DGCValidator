@@ -31,7 +31,7 @@
             </StackLayout>
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" Padding="0,0,0,20" >
                 <Button Text="{x:Static resource:AppResources.ScanButtonText}" Margin="30" HorizontalOptions="CenterAndExpand" Command="{Binding ScanCommand}" 
-                    BackgroundColor="#B25A6751" TextColor="White" Padding="30,20,30,20"
+                    BackgroundColor="#5A6751" TextColor="White" Padding="30,20,30,20"
                     FontAttributes="Bold" FontSize="Large" CornerRadius="35" WidthRequest="300" />
                 <Label Text="{x:Static resource:AppResources.LinkText}" HorizontalOptions="Center" HorizontalTextAlignment="Center" 
                     VerticalOptions="StartAndExpand" Padding="30,10,30,10" TextColor="#5A6751" FontSize="Medium" TextDecorations="Underline" >
