@@ -31,7 +31,7 @@
         <value>Hur man använder vaccinationsbevis verifiering</value>
     </data>
 	<data name="ScanTopText" xml:space="preserve">
-        <value>Skanna covidbevis</value>
+        <value>Skanna QR kod</value>
     </data>
     <data name="ScanBottomText" xml:space="preserve">
         <value></value>

@@ -139,7 +139,7 @@
     <value>Scan certificate</value>
   </data>
   <data name="ScanBottomText" xml:space="preserve">
-    <value />
+    <value></value>
   </data>
   <data name="ScanFlashText" xml:space="preserve">
     <value>Flash</value>
@@ -271,7 +271,7 @@
     <value>About this app</value>
   </data>
   <data name="AboutText" xml:space="preserve">
-    <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government.</value>
+    <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government (DIGG).</value>
   </data>
   <data name="SettingsText" xml:space="preserve">
     <value>Settings</value>

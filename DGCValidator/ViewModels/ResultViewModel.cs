@@ -80,8 +80,8 @@ namespace DGCValidator.ViewModels
                 Clear();
                 if (scanResult != null)
                 {
+                    ResultHeader = AppResources.NotApprovedHeader;
                     var result = VerificationService.VerifyData(scanResult);
-                    _resultHeader = AppResources.NotApprovedHeader;
                     if (result != null)
                     {
                         SignedDGC proof = result;
@@ -175,6 +175,7 @@ namespace DGCValidator.ViewModels
                             {
                                 if( fullyVaccinated)
                                 {
+                                    ResultHeader = AppResources.ApprovedHeader;
                                     texts.Add(AppResources.VaccinatedText);
                                     IsResultOK = true;
                                 }
@@ -209,6 +210,7 @@ namespace DGCValidator.ViewModels
                         }
                         else
                         {
+
                             ResultText = AppResources.ErrorReadingText;
                             IsResultOK = false;
 
@@ -224,7 +226,7 @@ namespace DGCValidator.ViewModels
             }
             catch (Exception ex)
             {
-                //ResultText = AppResources.ErrorReadingText + ", " + ex.Message;
+                ResultHeader = AppResources.NotApprovedHeader;
                 ResultText = ex.Message;
                 IsResultOK = false;
             }
@@ -232,7 +234,7 @@ namespace DGCValidator.ViewModels
 
         public bool IsVisible
         {
-            get { return (_subject!=null&&_subject.Firstname!=null&&_subject.Firstname.Length>0?true:false); }
+            get { return (_resultHeader!=null?true:false); }
         }
 
         public bool HasVaccinations
@@ -282,6 +284,7 @@ namespace DGCValidator.ViewModels
             {
                 _resultHeader = value;
                 OnPropertyChanged();
+                OnPropertyChanged("IsVisible");
             }
         }
         public bool IsResultOK

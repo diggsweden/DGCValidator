@@ -79,6 +79,7 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\QRScanningService.cs" />
+    <Compile Include="Services\ScannerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -224,6 +225,15 @@
     </BundleResource>
     <BundleResource Include="..\DGCValidator\Resources\fail.png">
       <Link>Resources\fail.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\flash.png">
+      <Link>Resources\flash.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\avbryt.png">
+      <Link>Resources\avbryt.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\flash_off.png">
+      <Link>Resources\flash_off.png</Link>
     </BundleResource>
   </ItemGroup>
 </Project>

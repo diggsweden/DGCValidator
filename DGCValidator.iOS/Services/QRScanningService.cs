@@ -38,38 +38,17 @@ namespace DGCValidator.iOS.Services
                 CancelButtonText = AppResources.ScanCancelText,
             };
 
-            //scanner.UseCustomOverlay = true;
-            //UIView view = new UIView();
-            //view.Frame = new CoreGraphics.CGRect(
-            //   0,
-            //   0,
-            //   (float)UIScreen.MainScreen.Bounds.Size.Width,
-            //   (float)UIScreen.MainScreen.Bounds.Size.Height
-            //);
-            //view.BackgroundColor = UIColor.Clear;
-            //scanner.CustomOverlay = view;
-            //try
-            //{
-            //    // Turn On
-            //    //await Flashlight.TurnOnAsync();
+            scanner.UseCustomOverlay = true;
+            ScannerView view = new ScannerView(AppResources.ScanTopText,AppResources.ScanCancelText);
 
-            //    // Turn Off
-            //    //await Flashlight.TurnOffAsync();
-            //}
-            //catch (FeatureNotSupportedException fnsEx)
-            //{
-            //    // Handle not supported on device exception
-            //}
-            //catch (PermissionException pEx)
-            //{
-            //    // Handle permission exception
-            //}
-            //catch (Exception ex)
-            //{
-            //    // Unable to turn on/off flashlight
-            //}
+            view.CancelButton.TouchUpInside += delegate {
+                scanner.Cancel();
+            };
+            view.TorchButton.TouchUpInside += delegate {
+                scanner.ToggleTorch();
+            };
+            scanner.CustomOverlay = view;
 
-            
             try
             {
                 var scanResult = await scanner.Scan(optionsCustom,true);
@@ -83,5 +62,6 @@ namespace DGCValidator.iOS.Services
             }
             return null;
         }
+
     }
 }
