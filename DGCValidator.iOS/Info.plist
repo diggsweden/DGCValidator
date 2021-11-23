@@ -24,15 +24,15 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>VaccinbevisValidator</string>
+	<string>Vaccinationsbevis Verifiering</string>
 	<key>CFBundleIdentifier</key>
-	<string>se.sondaica.dgcvalidator</string>
+	<string>se.sondaica.vacbevisvalidator</string>
 	<key>CFBundleVersion</key>
 	<string>1.3.8</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
-	<string>DCCValidator</string>
+	<string>VacbevisValidator</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSCameraUsageDescription</key>

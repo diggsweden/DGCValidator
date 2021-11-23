@@ -107,10 +107,14 @@ namespace DGCValidator.iOS.Services
 				scanTextLabel.RemoveFromSuperview();
 				topBg.RemoveFromSuperview();
 				bottomBg.RemoveFromSuperview();
+				torchButton.RemoveFromSuperview();
+				cancelButton.RemoveFromSuperview();
 				
 				scanTextLabel = null;
 				topBg = null;
 				bottomBg = null;
+				torchButton = null;
+				cancelButton = null;
 			});
 
 		public UIButton TorchButton
