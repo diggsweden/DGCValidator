@@ -52,12 +52,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <CodesignKey>Apple Development: Henrik Bengtsson (J583H872S3)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignProvision>Vaccinationsbevis verifiering</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -71,6 +71,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <DeviceSpecificBuild>
     </DeviceSpecificBuild>
+    <CodesignProvision>Vaccinationsbevis Verifiering</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -234,6 +235,9 @@
     </BundleResource>
     <BundleResource Include="..\DGCValidator\Resources\flash_off.png">
       <Link>Resources\flash_off.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\Vaccinationsregler.json">
+      <Link>Resources\Vaccinationsregler.json</Link>
     </BundleResource>
   </ItemGroup>
 </Project>
