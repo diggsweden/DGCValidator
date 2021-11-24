@@ -43,13 +43,6 @@ namespace DGCValidator.ViewModels
                     await Application.Current.MainPage.Navigation.PushAsync(new AboutPage());
                 }));
 
-        //public ICommand ScanCommand => scanCommand ??
-        //        (scanCommand = new Command(async () =>
-        //        {
-        //            await Application.Current.MainPage.Navigation.PushModalAsync(new ResultPage());
-        //            MessagingCenter.Send(Xamarin.Forms.Application.Current, "Scan");
-        //        }));
-
         public ICommand ScanCommand
         {
             get
