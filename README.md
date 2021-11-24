@@ -50,7 +50,7 @@ The following certificates can be used in the QA-environment.
 
 ### Vaccination certificates
 
-#### Valid Signature (_Signture public key present at [DGCG-QA](https://dccg-qa.covidbevis.se/tp/)_)
+#### Valid Signature (_Signature public key present at [DGCG-QA](https://dccg-qa.covidbevis.se/tp/)_)
 
 __Valid through 2023-07-01, Vaccine Comirnaty, Dose 1/2__
 
@@ -76,7 +76,7 @@ __Expired, Vaccine Comirnaty, Dose 2/2__
 
 ![Dose 2 of 2](readme-resources/expired.png)
 
-#### Invalid Signature (_Signture public key __not__ present at [DGCG-QA](https://dccg-qa.covidbevis.se/tp/)_)
+#### Invalid Signature (_Signature public key __not__ present at [DGCG-QA](https://dccg-qa.covidbevis.se/tp/)_)
 
 __Invalid signer & expired__
 
