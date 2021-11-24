@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using DGCValidator.Services.CWT.Certificates;
 using DGCValidator.Services.DGC.ValueSet;
+using DGCValidator.Services.Vaccinregler.ValueSet;
 using Org.BouncyCastle.Asn1.X9;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -25,7 +26,9 @@ namespace DGCValidator.Services
         private readonly IRestService _restService;
         public Dictionary<string, ValueSet> ValueSets { get; private set; }
         public DSC_TL TrustList { get; private set; }
+        public VaccinRules VaccinRules { get; private set; }
         private readonly string TrustListFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DscTrustList.json");
+        private readonly string VaccinRulesFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Vaccinationsregler.json");
         private readonly string ValueSetPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         public CertificateManager(IRestService service)
@@ -41,6 +44,25 @@ namespace DGCValidator.Services
                 await File.WriteAllTextAsync(TrustListFileName, DSC_TLSerialize.ToJson(trustList));
             }
         }
+
+        public async void RefreshVaccineRulesAsync()
+        {
+            VaccinRules vaccineRules = await _restService.RefreshVaccinRulesAsync();
+            if (vaccineRules != null && vaccineRules.ValidVaccines != null && vaccineRules.ValidVaccines.Count > 0 )
+            {
+                VaccinRules = vaccineRules;
+                await File.WriteAllTextAsync(VaccinRulesFileName, VaccinRulesSerialize.ToJson(vaccineRules));
+            }
+            else
+            {
+                if( !File.Exists(VaccinRulesFileName))
+                {
+                    string json = await File.ReadAllTextAsync("Vaccinationsregler.json");
+                    VaccinRules = VaccinRules.FromJson(json);
+                }
+            }
+        }
+
 
         public async void RefreshValueSetsAsync()
         {
@@ -75,15 +97,6 @@ namespace DGCValidator.Services
                 {
                     RefreshValueSetsAsync();
                     break;
-                    //if (Device.RuntimePlatform == Device.Android)
-                    //{
-                    //}
-                    //else if (Device.RuntimePlatform == Device.iOS)
-                    //{
-                    //    // Load default files within package
-                    //    ValueSet valueSet = ValueSet.FromJson(File.ReadAllText("ValueSets/" + file));
-                    //    ValueSets[file] = valueSet;
-                    //}
                 }
             }
         }
@@ -103,6 +116,18 @@ namespace DGCValidator.Services
             if (TrustList == null || (TrustList.Iat + 86400) < GetSecondsFromEpoc())
             {
                 RefreshTrustListAsync();
+            }
+        }
+
+        public void LoadVaccineRules()
+        {
+            if (VaccinRules == null && File.Exists(VaccinRulesFileName))
+            {
+                VaccinRules = VaccinRules.FromJson(File.ReadAllText(VaccinRulesFileName));
+            }
+            else
+            {
+                RefreshVaccineRulesAsync();
             }
         }
 

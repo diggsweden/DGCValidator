@@ -24,6 +24,7 @@ namespace DGCValidator
         {
             CertificateManager.LoadCertificates();
             CertificateManager.LoadValueSets();
+            CertificateManager.LoadVaccineRules();
         }
 
         protected override void OnSleep()

@@ -9,6 +9,7 @@ using DGCValidator.Resources;
 using DGCValidator.Services;
 using DGCValidator.Services.DGC;
 using DGCValidator.Services.DGC.V1;
+using DGCValidator.Services.Vaccinregler.ValueSet;
 using DGCValidator.Views;
 using Xamarin.Forms;
 
@@ -130,11 +131,8 @@ namespace DGCValidator.ViewModels
                                 HasVaccinations = true;
                                 foreach (VElement vac in proof.Dgc.V)
                                 {
-                                    if( vac.Dn >= vac.Sd)
-                                    {
-                                        fullyVaccinated = true;
-                                    }
-                                     AddCertificate(new Models.VaccineCertModel
+                                    fullyVaccinated = VerifyVaccinationRules(vac);
+                                    AddCertificate(new Models.VaccineCertModel
                                     {
                                         Type = Models.CertType.VACCINE,
                                         Tg = CodeMapperUtil.GetDiseaseAgentTargeted(vac.Tg),
@@ -257,6 +255,31 @@ namespace DGCValidator.ViewModels
             timer.Interval = 60000;
             timer.Elapsed += OnTimedEvent;
             timer.Start();
+        }
+
+        private bool VerifyVaccinationRules(VElement vac)
+        {
+            bool verified = false;
+
+            _ = App.CertificateManager.VaccinRules.ValidVaccines.TryGetValue(vac.Mp, out ValidVaccineValue rule);
+
+            if( rule != null)
+            {
+                // Vaccine are valid, check min dose and days since min dose
+                if (vac.Dn > rule.MinDose)
+                {
+                    verified = true;
+                }else if (vac.Dn == rule.MinDose)
+                {
+                    var timespan = DateTimeOffset.Now - vac.Dt;
+                    if ( timespan.TotalDays>=rule.DaysSinceMinDose)
+                    {
+                        verified = true;
+                    }
+                }
+            }
+
+            return verified;
         }
 
         public bool IsVisible

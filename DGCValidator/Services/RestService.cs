@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DGCValidator.Services.CWT;
 using DGCValidator.Services.CWT.Certificates;
 using DGCValidator.Services.DGC.ValueSet;
+using DGCValidator.Services.Vaccinregler.ValueSet;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
@@ -149,6 +150,27 @@ namespace DGCValidator.Services
 
             return valueSets;
         }
+
+        public async Task<VaccinRules> RefreshVaccinRulesAsync()
+        {
+            VaccinRules vaccinRules = new VaccinRules();
+            Uri uri = new Uri(Constants.GetVaccinRulesUrl());
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    vaccinRules = VaccinRules.FromJson(content);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("ERROR " + ex.Message);
+            }
+
+            return vaccinRules;
+        }
     }
 
     public class Constants
@@ -159,6 +181,9 @@ namespace DGCValidator.Services
         private static readonly string TestValueSetRestUrl = "https://dgcg-qa.covidbevis.se/tp/valuesets/{0}";
         private static readonly string ProductionValueSetRestUrl = "https://dgcg.covidbevis.se/tp/valuesets/{0}";
         public static readonly List<string> ValueSets;
+
+        private static readonly string TestVaccinRuleRestUrl = "https://dgcg-qa.covidbevis.se/tp/vaccinrules/Vaccinationsregler.json";
+        private static readonly string ProductionVaccinRuleRestUrl = "https://dgcg.covidbevis.se/tp/vaccinrules/Vaccinationsregler.json}";
 
         public static readonly string Disesase = "disease-agent-targeted.json";
         public static readonly string TestManufacturer = "test-manf.json";
@@ -183,6 +208,17 @@ namespace DGCValidator.Services
             else
             {
                 return TestTrustListRestUrl;
+            }
+        }
+        public static string GetVaccinRulesUrl()
+        {
+            if (Xamarin.Essentials.Preferences.Get("ProductionMode", true))
+            {
+                return ProductionVaccinRuleRestUrl;
+            }
+            else
+            {
+                return TestVaccinRuleRestUrl;
             }
         }
         public static string GetValueSetBaseUrl()
