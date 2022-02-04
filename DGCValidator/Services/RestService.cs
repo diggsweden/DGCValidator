@@ -182,8 +182,8 @@ namespace DGCValidator.Services
         private static readonly string ProductionValueSetRestUrl = "https://dgcg.covidbevis.se/tp/valuesets/{0}";
         public static readonly List<string> ValueSets;
 
-        private static readonly string TestVaccinRuleRestUrl = "https://dgcg-qa.covidbevis.se/tp/vaccinrules/Vaccinationsregler.json";
-        private static readonly string ProductionVaccinRuleRestUrl = "https://dgcg.covidbevis.se/tp/vaccinrules/Vaccinationsregler.json}";
+        private static readonly string TestVaccinRuleRestUrl = "https://dgcg-qa.covidbevis.se/tp/apprules/dccvalidator.json";
+        private static readonly string ProductionVaccinRuleRestUrl = "https://dgcg.covidbevis.se/tp/apprules/dccvalidator.json";
 
         public static readonly string Disesase = "disease-agent-targeted.json";
         public static readonly string TestManufacturer = "test-manf.json";

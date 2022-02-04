@@ -179,6 +179,72 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string ValidationRulesVersion {
+            get {
+                return ResourceManager.GetString("ValidationRulesVersion", resourceCulture);
+            }
+        }
+        
+        public static string InvalidSigningCertificate {
+            get {
+                return ResourceManager.GetString("InvalidSigningCertificate", resourceCulture);
+            }
+        }
+        
+        public static string NoSigningCertifcateCouldBeFound {
+            get {
+                return ResourceManager.GetString("NoSigningCertifcateCouldBeFound", resourceCulture);
+            }
+        }
+        
+        public static string DCCExpired {
+            get {
+                return ResourceManager.GetString("DCCExpired", resourceCulture);
+            }
+        }
+        
+        public static string UnvalidCode {
+            get {
+                return ResourceManager.GetString("UnvalidCode", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedDaysSinceLastDose {
+            get {
+                return ResourceManager.GetString("NotApprovedDaysSinceLastDose", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedNoOfDoses {
+            get {
+                return ResourceManager.GetString("NotApprovedNoOfDoses", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedVaccine {
+            get {
+                return ResourceManager.GetString("NotApprovedVaccine", resourceCulture);
+            }
+        }
+        
+        public static string NoPublicKeys {
+            get {
+                return ResourceManager.GetString("NoPublicKeys", resourceCulture);
+            }
+        }
+        
+        public static string OldPublicKeys {
+            get {
+                return ResourceManager.GetString("OldPublicKeys", resourceCulture);
+            }
+        }
+        
+        public static string UpdatePublicKeys {
+            get {
+                return ResourceManager.GetString("UpdatePublicKeys", resourceCulture);
+            }
+        }
+        
         public static string FirstnameLabel {
             get {
                 return ResourceManager.GetString("FirstnameLabel", resourceCulture);
@@ -398,6 +464,11 @@ namespace DGCValidator.Resources {
         public static string NoVerificationText {
             get {
                 return ResourceManager.GetString("NoVerificationText", resourceCulture);
+            }
+        }
+        public static string PrivacyPolicyLink {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyLink", resourceCulture);
             }
         }
     }

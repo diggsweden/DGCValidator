@@ -10,6 +10,7 @@ namespace DGCValidator.Views
         public SettingsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void OnProductionToggled(object sender, ToggledEventArgs e)

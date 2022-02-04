@@ -12,6 +12,7 @@ using DGCValidator.Services.DGC.V1;
 using DGCValidator.Services.Vaccinregler.ValueSet;
 using DGCValidator.Views;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace DGCValidator.ViewModels
 {
@@ -19,6 +20,7 @@ namespace DGCValidator.ViewModels
     {
         String _resultText;
         String _resultHeader;
+        String _jsonString;
         bool _resultOk = false;
         SignatureModel _signature;
         SubjectModel _subject;
@@ -26,25 +28,33 @@ namespace DGCValidator.ViewModels
         bool _hasTest = false;
         bool _hasRecovered = false;
         ObservableCollection<object> _certs;
+
         System.Timers.Timer timer;
 
         private ICommand scanCommand;
         private ICommand cancelCommand;
+        private ICommand debugCommand;
 
         public ResultViewModel()
         {
             _subject = new SubjectModel();
             _certs = new ObservableCollection<object>();
         }
-
-        public ICommand ScanCommand
+        public ICommand DebugCommand => debugCommand ??
+(debugCommand = new Command(async () =>
+{
+await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_jsonString));
+}));
+        public ICommand ScanCommand => scanCommand ??
+        (scanCommand = new Command(async () =>
         {
-            get
+            if (timer != null)
             {
-                return scanCommand ??
-                (scanCommand = new Command(async () => await Scan()));
+                timer.Stop();
+                timer = null;
             }
-        }
+            MessagingCenter.Send(Application.Current, "Scan");
+        }));
 
         public ICommand CancelCommand => cancelCommand ??
         (cancelCommand = new Command(async () =>
@@ -108,6 +118,7 @@ namespace DGCValidator.ViewModels
                     if (result != null)
                     {
                         SignedDGC proof = result;
+                        _jsonString = JsonConvert.SerializeObject(proof, Formatting.Indented);
                         if (proof != null)
                         {
                             Subject = new Models.SubjectModel
@@ -190,43 +201,53 @@ namespace DGCValidator.ViewModels
                                 }
                             }
 
-                            List<string> texts = new List<string>();
-                            if(_hasVaccination)
+                            if (_hasVaccination)
                             {
-                                if( fullyVaccinated)
-                                {
-                                    ResultHeader = AppResources.ApprovedHeader;
-                                    texts.Add(AppResources.VaccinatedText);
-                                    IsResultOK = true;
-                                }
-                                else
-                                {
-                                    texts.Add(AppResources.NotFullyVaccinatedText);
-                                    IsResultOK = false;
-                                }
+
+                                if (App.CertificateManager.VaccinRules.RevokedCertificates.Contains(proof.Dgc.V[0].Ci))
+                                    {
+                                        ResultHeader = AppResources.NotApprovedHeader;
+                                        ResultText = AppResources.RevokedCertificateText;
+                                        IsResultOK = false;
+                                    }
+
+
+                                    else if (fullyVaccinated)
+                                    {
+                                        ResultHeader = AppResources.ApprovedHeader;
+                                        ResultText = AppResources.VaccinatedText;
+                                        IsResultOK = true;
+                                    }
+
+                                    else
+                                    {
+                                        //texts.Add(AppResources.NotFullyVaccinatedText);
+                                        IsResultOK = false;
+                                    }
+                                
                             }
-                            if(_hasTest)
+                            if (_hasTest)
                             {
-                                texts.Add(AppResources.TestedText);
-                                IsResultOK = false;
+                                ResultText = AppResources.TestedText;
+                                IsResultOK = true;
                             }
                             if (_hasRecovered)
                             {
-                                texts.Add(AppResources.RecoveredText);
-                                IsResultOK = false;
+                                ResultText = AppResources.RecoveredText;
+                                IsResultOK = true;
                             }
-                            if( !_hasVaccination && !_hasTest && !_hasRecovered)
+                            if ( !_hasVaccination && !_hasTest && !_hasRecovered)
                             {
-                                texts.Add(AppResources.MissingDataText);
+                                ResultText = AppResources.MissingDataText;
                                 IsResultOK = false;
                             }
                             if( proof.Message != null)
                             {
-                                texts.Add(" " + proof.Message);
+                                ResultText = ResultText+" " + proof.Message;
                                 IsResultOK = false;
                             }
 
-                            ResultText = string.Join(", ", texts.ToArray());
+                            //ResultText = string.Join(", ", texts.ToArray());
                         }
                         else
                         {
@@ -238,7 +259,7 @@ namespace DGCValidator.ViewModels
                     }
                     else
                     {
-                        ResultText = AppResources.ErrorReadingText + ", " + scanResult;
+                        ResultText = AppResources.ErrorReadingText;
                         IsResultOK = false;
 
                     }
@@ -262,21 +283,49 @@ namespace DGCValidator.ViewModels
             bool verified = false;
 
             _ = App.CertificateManager.VaccinRules.ValidVaccines.TryGetValue(vac.Mp, out ValidVaccineValue rule);
+ 
 
-            if( rule != null)
+            if ( rule != null)
             {
-                // Vaccine are valid, check min dose and days since min dose
-                if (vac.Dn > rule.MinDose)
+                //Vaccine is valid. Check time past since last dose
+                var timespan = DateTimeOffset.Now - vac.Dt;
+                //Check if latest dose is a booster dose
+                if (vac.Dn > rule.MinDose )
                 {
-                    verified = true;
-                }else if (vac.Dn == rule.MinDose)
-                {
-                    var timespan = DateTimeOffset.Now - vac.Dt;
-                    if ( timespan.TotalDays>=rule.DaysSinceMinDose)
-                    {
+                    //Check acceptance period for last dose
+                    if (rule.MaxDaysLastdose == 0 || timespan.TotalDays <= rule.MaxDaysLastdose)
                         verified = true;
+                    else
+                        ResultText = AppResources.NotApprovedMaxDaysSinceLastDosePartOne + rule.MaxDaysLastdose + AppResources.NotApprovedMaxDaysSinceLastDosePartTwo;
+                }
+                //Check for completed vaccination serie
+                else if (vac.Dn == rule.MinDose)
+                {
+                    // Check minimum days since last dose in completed serie 
+                    if (timespan.TotalDays >= rule.DaysSinceMinDose)
+                    {
+                        //Check acceptance period for last dose
+                        if (rule.MaxDaysLastdose == 0 || timespan.TotalDays <= rule.MaxDaysLastdose)
+                            verified = true;
+                        else
+                            ResultText = AppResources.NotApprovedMaxDaysSinceLastDosePartOne + rule.MaxDaysLastdose + AppResources.NotApprovedMaxDaysSinceLastDosePartTwo;
+                    }
+                    else
+                    {
+                        // Not correct amount of days since last dose
+                        ResultText = AppResources.NotApprovedDaysSinceLastDose;
                     }
                 }
+                else
+                {
+                    // To few doses
+                    ResultText = AppResources.NotApprovedNoOfDoses;
+                }
+            }
+            else
+            {
+                // Not approved vaccines
+                ResultText = AppResources.NotApprovedVaccine;
             }
 
             return verified;
@@ -432,7 +481,7 @@ namespace DGCValidator.ViewModels
         {
             if (value is bool)
             {
-                return ((bool)value ? Color.DarkGreen : Color.DarkRed );
+                return ((bool)value ? "#008204" : "#C32C0F");
             }
             return "#695F59";
         }

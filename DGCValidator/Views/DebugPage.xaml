@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resource="clr-namespace:DGCValidator.Resources"
+    xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
+    x:Class="DGCValidator.Views.DebugPage">
+    <ContentPage.BindingContext>
+        <viewModels:DebugViewModel/>
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    <ScrollView BackgroundColor="White">
+        <StackLayout>
+            <ImageButton AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewCancelButtonText}" Source="abort.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding BackCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
+            <Label Style="{StaticResource Text}" Text="{Binding JsonText}" FontAttributes="Bold" Margin="30,0,30,0"/>
+            <Label />
+            </StackLayout>
+    </ScrollView>
+
+</ContentPage>

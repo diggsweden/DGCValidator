@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using DGCValidator.Services.CWT.Certificates;
 using DGCValidator.Services.DGC.ValueSet;
 using DGCValidator.Services.Vaccinregler.ValueSet;
@@ -28,7 +29,7 @@ namespace DGCValidator.Services
         public DSC_TL TrustList { get; private set; }
         public VaccinRules VaccinRules { get; private set; }
         private readonly string TrustListFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DscTrustList.json");
-        private readonly string VaccinRulesFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Vaccinationsregler.json");
+        private readonly string VaccinRulesFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "dccvalidator.json");
         private readonly string ValueSetPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         public CertificateManager(IRestService service)
@@ -43,21 +44,37 @@ namespace DGCValidator.Services
                 TrustList = trustList;
                 await File.WriteAllTextAsync(TrustListFileName, DSC_TLSerialize.ToJson(trustList));
             }
+            MessagingCenter.Send(Application.Current, "PublicKeysUpdated");
         }
 
-        public async void RefreshVaccineRulesAsync()
+        public async Task RefreshVaccineRulesAsync()
         {
             VaccinRules vaccineRules = await _restService.RefreshVaccinRulesAsync();
-            if (vaccineRules != null && vaccineRules.ValidVaccines != null && vaccineRules.ValidVaccines.Count > 0 )
+            if (vaccineRules != null && vaccineRules.ValidVaccines != null && vaccineRules.ValidVaccines.Count > 0)
             {
                 VaccinRules = vaccineRules;
                 await File.WriteAllTextAsync(VaccinRulesFileName, VaccinRulesSerialize.ToJson(vaccineRules));
             }
             else
             {
-                if( !File.Exists(VaccinRulesFileName))
+                if (!File.Exists(VaccinRulesFileName))
                 {
-                    string json = await File.ReadAllTextAsync("Vaccinationsregler.json");
+                    string json = "";
+                    if (Device.RuntimePlatform == Device.Android)
+                    {
+                        var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CertificateManager)).Assembly;
+                        Stream stream = assembly.GetManifestResourceStream("DGCValidator.Resources.dccvalidator.json");
+
+                        using (var reader = new StreamReader(stream))
+                        {
+                            json = reader.ReadToEnd();
+                        }
+                    }
+                    else if (Device.RuntimePlatform == Device.iOS)
+                    {
+                        json = await File.ReadAllTextAsync("dccvalidator.json");
+                    }
+
                     VaccinRules = VaccinRules.FromJson(json);
                 }
             }
@@ -73,7 +90,7 @@ namespace DGCValidator.Services
             Dictionary<string, string> valueSets = await _restService.RefreshValueSetAsync();
             if (valueSets != null && valueSets.Keys != null && valueSets.Keys.Count > 0)
             {
-                foreach(KeyValuePair<string, string> entry in valueSets)
+                foreach (KeyValuePair<string, string> entry in valueSets)
                 {
                     _ = File.WriteAllTextAsync(Path.Combine(ValueSetPath, entry.Key), entry.Value);
                     ValueSets[entry.Key] = ValueSet.FromJson(entry.Value);
@@ -88,7 +105,7 @@ namespace DGCValidator.Services
             }
             foreach (string file in Constants.ValueSets)
             {
-                if(File.Exists(Path.Combine(ValueSetPath, file)))
+                if (File.Exists(Path.Combine(ValueSetPath, file)))
                 {
                     ValueSet valueSet = ValueSet.FromJson(File.ReadAllText(Path.Combine(ValueSetPath, file)));
                     ValueSets[file] = valueSet;
@@ -110,6 +127,7 @@ namespace DGCValidator.Services
                 if (trustList.Exp > GetSecondsFromEpoc())
                 {
                     TrustList = trustList;
+                    MessagingCenter.Send(Application.Current, "PublicKeysUpdated");
                 }
             }
             // If trustlist is not set or it´s older than 24 hours refresh it
@@ -119,7 +137,7 @@ namespace DGCValidator.Services
             }
         }
 
-        public void LoadVaccineRules()
+        public async Task LoadVaccineRules()
         {
             if (VaccinRules == null && File.Exists(VaccinRulesFileName))
             {
@@ -127,11 +145,11 @@ namespace DGCValidator.Services
             }
             else
             {
-                RefreshVaccineRulesAsync();
+                await RefreshVaccineRulesAsync();
             }
         }
 
-        private long GetSecondsFromEpoc()
+        public long GetSecondsFromEpoc()
         {
             return DateTimeOffset.Now.ToUnixTimeSeconds();
         }
@@ -142,16 +160,16 @@ namespace DGCValidator.Services
             List<AsymmetricKeyParameter> publicKeys = new List<AsymmetricKeyParameter>();
 
             // No TrustList means no keys to match with
-            if( TrustList == null)
+            if (TrustList == null)
             {
                 return publicKeys;
             }
 
-            List<DscTrust> trusts=new List<DscTrust>();
-            if( country != null && country.Length > 0 && TrustList.DscTrustList.ContainsKey(country) )
+            List<DscTrust> trusts = new List<DscTrust>();
+            if (country != null && country.Length > 0 && TrustList.DscTrustList.ContainsKey(country))
             {
                 DscTrust dscTrust = TrustList.DscTrustList.GetValueOrDefault(country);
-                if( dscTrust != null)
+                if (dscTrust != null)
                 {
                     trusts.Add(dscTrust);
                 }
@@ -161,16 +179,16 @@ namespace DGCValidator.Services
                 trusts.AddRange(TrustList.DscTrustList.Values);
             }
 
-            foreach( DscTrust trust in trusts)
+            foreach (DscTrust trust in trusts)
             {
                 foreach (Key key in trust.Keys)
                 {
                     string kidStr = Convert.ToBase64String(kid);
-                        //.Replace('+', '-')
-                        //.Replace('/', '_');
+                    //.Replace('+', '-')
+                    //.Replace('/', '_');
                     if (kid == null || key.Kid == null || key.Kid.Equals(kidStr))
                     {
-                        if( key.Kty.Equals("EC"))
+                        if (key.Kty.Equals("EC"))
                         {
                             X9ECParameters x9 = ECNamedCurveTable.GetByName(key.Crv);
                             ECPoint point = x9.Curve.CreatePoint(Base64UrlDecodeToBigInt(key.X), Base64UrlDecodeToBigInt(key.Y));
@@ -179,7 +197,7 @@ namespace DGCValidator.Services
                             ECPublicKeyParameters pubKey = new ECPublicKeyParameters(point, dParams);
                             publicKeys.Add(pubKey);
                         }
-                        else if( key.Kty.Equals("RSA"))
+                        else if (key.Kty.Equals("RSA"))
                         {
                             RsaKeyParameters pubKey = new RsaKeyParameters(false, Base64UrlDecodeToBigInt(key.N), Base64UrlDecodeToBigInt(key.E));
                             publicKeys.Add(pubKey);
@@ -202,7 +220,7 @@ namespace DGCValidator.Services
                 default:
                     throw new Exception("Illegal base64url string!");
             }
-            return new BigInteger(1,Convert.FromBase64String(value));
+            return new BigInteger(1, Convert.FromBase64String(value));
         }
     }
 }

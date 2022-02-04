@@ -17,6 +17,12 @@ namespace DGCValidator.Services.Vaccinregler.ValueSet
 
         [JsonProperty("validVaccines")]
         public Dictionary<string, ValidVaccineValue> ValidVaccines { get; set; }
+
+        [JsonProperty("revokedCertificates")]
+        public List<string> RevokedCertificates { get; set; }
+
+        [JsonProperty("appVersion")]
+        public AppVersion AppVersion { get; set; }
     }
 
     public partial class VaccinRules
@@ -51,6 +57,14 @@ namespace DGCValidator.Services.Vaccinregler.ValueSet
 
         [JsonProperty("dayssincemindose")]
         public int DaysSinceMinDose { get; set; }
+        [JsonProperty("maxdayslastdose")]
+        public int MaxDaysLastdose { get; set; }
+    }
+
+    public class AppVersion
+    {
+        public string IOS { get; set; }
+        public string Android { get; set; }
     }
 
     public partial class ValidVaccineValue

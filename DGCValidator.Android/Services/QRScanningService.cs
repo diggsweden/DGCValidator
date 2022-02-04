@@ -13,6 +13,7 @@ using ZXing.Mobile;
 using Xamarin.Forms;
 using DGCValidator.Services;
 using DGCValidator.Resources;
+using Application = Android.App.Application;
 
 [assembly: Dependency(typeof(DGCValidator.Droid.Services.QRScanningService))]
 
@@ -25,12 +26,14 @@ namespace DGCValidator.Droid.Services
             var optionsCustom = new MobileBarcodeScanningOptions
             {
                 PossibleFormats = new List<ZXing.BarcodeFormat>() {
-                    ZXing.BarcodeFormat.AZTEC,
                     ZXing.BarcodeFormat.QR_CODE
                 },
                 UseNativeScanning = true,
+                TryHarder = false,
                 AutoRotate = true
+                //CameraResolutionSelector = CameraResolutionSelector.SelectLowestResolutionMatchingDisplayAspectRatio
             };
+        
 
             var scanner = new MobileBarcodeScanner()
             {
@@ -40,9 +43,12 @@ namespace DGCValidator.Droid.Services
                 CancelButtonText = AppResources.ScanCancelText,
             };
 
+            scanner.UseCustomOverlay = true;
+            var customOverlay = new ScannerView(Application.Context, AppResources.ScanTopText, scanner);
+            scanner.CustomOverlay = customOverlay;
             try
             {
-                var scanResult = await scanner.Scan();
+                var scanResult = await scanner.Scan(optionsCustom);
                 if (scanResult != null)
                 {
                     return scanResult.Text;
@@ -50,7 +56,7 @@ namespace DGCValidator.Droid.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                //Console.WriteLine(e.Message);
             }
             return null;
         }

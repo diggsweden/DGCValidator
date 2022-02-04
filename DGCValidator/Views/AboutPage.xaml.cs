@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DGCValidator.Views
@@ -10,14 +10,15 @@ namespace DGCValidator.Views
         public AboutPage()
         {
             InitializeComponent();
-        }
-        private async void NavigateButton_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MainPage());
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         protected void VerifierFaq(object sender, EventArgs e)
         {
-            Device.OpenUri(new Uri("https://www.digg.se/utveckling-av-digital-forvaltning/verifieringslosning-for-vaccinationsbevis"));
+            Launcher.OpenAsync(new Uri("https://www.digg.se/utveckling-av-digital-forvaltning/verifieringslosning-for-vaccinationsbevis"));
+        }
+        protected void PrivacyPolicyLink(object sender, EventArgs e)
+        {
+            Launcher.OpenAsync(new Uri("https://www.digg.se/vaccinationsbevis-verifiering/integritetspolicy"));
         }
     }
 }

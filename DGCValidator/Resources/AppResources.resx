@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HeaderText" xml:space="preserve">
-    <value>Vaccination certificate</value>
+    <value>DCC</value>
   </data>
   <data name="InformationHeader" xml:space="preserve">
-    <value>Verifier</value>
+    <value>Validator</value>
   </data>
   <data name="InformationText" xml:space="preserve">
-    <value>Here you can validate a vaccination certificate by scanning it with the camera</value>
+    <value>Here you can validate a Covid certificate by scanning it with the camera</value>
   </data>
   <data name="ScanButtonText" xml:space="preserve">
     <value>Scan</value>
@@ -139,7 +139,7 @@
     <value>Scan certificate</value>
   </data>
   <data name="ScanBottomText" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="ScanFlashText" xml:space="preserve">
     <value>Flash</value>
@@ -183,7 +183,39 @@
   <data name="KeyVersion" xml:space="preserve">
     <value>Keys retrived: </value>
   </data>
-
+  <data name="ValidationRulesVersion" xml:space="preserve">
+    <value>Validarion rule version: </value>
+  </data>
+  <data name="InvalidSigningCertificate" xml:space="preserve">
+    <value>Invalid signing certificate</value>
+  </data>
+  <data name="NoSigningCertifcateCouldBeFound" xml:space="preserve">
+    <value>No signing certificate could be found</value>
+  </data>
+  <data name="DCCExpired" xml:space="preserve">
+    <value>Vaccination certificate expired</value>
+  </data>
+  <data name="UnvalidCode" xml:space="preserve">
+    <value>Unvalid QR code</value>
+  </data>
+  <data name="NotApprovedDaysSinceLastDose" xml:space="preserve">
+    <value>Less than 14 days since last dose</value>
+  </data>
+  <data name="NotApprovedNoOfDoses" xml:space="preserve">
+    <value>Not fully vaccinated</value>
+  </data>
+  <data name="NotApprovedVaccine" xml:space="preserve">
+    <value>Not valid vaccination</value>
+  </data>
+  <data name="NoPublicKeys" xml:space="preserve">
+    <value>No public keys</value>
+  </data>
+  <data name="OldPublicKeys" xml:space="preserve">
+    <value>Public keys are old</value>
+  </data>
+  <data name="UpdatePublicKeys" xml:space="preserve">
+    <value>Public keys needs to be updated</value>
+  </data>
   <data name="FirstnameLabel" xml:space="preserve">
     <value>First name: </value>
   </data>
@@ -278,7 +310,7 @@
     <value>About this app</value>
   </data>
   <data name="AboutText" xml:space="preserve">
-    <value>Verification App for Digital Covid Certificate developed by Swedish Agency for Digital Government (DIGG).</value>
+    <value>Verification app for EU Digital Covid Certificates (DCC), developed by the Agency for Digital Government (DIGG)</value>
   </data>
   <data name="SettingsText" xml:space="preserve">
     <value>Settings</value>
@@ -294,5 +326,53 @@
   </data>
   <data name="NoVerificationText" xml:space="preserve">
     <value>No verification</value>
+  </data>
+  <data name="PrivacyPolicyLink" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="AboutViewCancelButtonText" xml:space="preserve">
+    <value>Cancel button</value>
+  </data>
+  <data name="AboutViewLogotypeText" xml:space="preserve">
+    <value>DIGG logotype</value>
+  </data>
+  <data name="MainViewImageText" xml:space="preserve">
+    <value>Picture of a mobile device with a QR code</value>
+  </data>
+  <data name="MainViewInfoButtonText" xml:space="preserve">
+    <value>Info button</value>
+  </data>
+  <data name="ResultViewFailedImageText" xml:space="preserve">
+    <value>Not valid icon</value>
+  </data>
+  <data name="ResultViewValidImageText" xml:space="preserve">
+    <value>Valid icon</value>
+  </data>
+  <data name="RevokedCertificateText" xml:space="preserve">
+    <value>Fraudulent certificate</value>
+  </data>
+  <data name="KeyModalErrorMessage" xml:space="preserve">
+    <value>Connect the app to internet and the keys will be downloaded automatically</value>
+  </data>
+  <data name="UpdateViewButtonText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateViewCurrentVersionText" xml:space="preserve">
+    <value>Installed version:</value>
+  </data>
+  <data name="UpdateViewLatestVersionText" xml:space="preserve">
+    <value>Latest version:</value>
+  </data>
+  <data name="UpdateViewTitle" xml:space="preserve">
+    <value>Update your app</value>
+  </data>
+  <data name="NotApprovedMaxDaysSinceLastDosePartOne" xml:space="preserve">
+    <value>More than </value>
+  </data>
+  <data name="NotApprovedMaxDaysSinceLastDosePartTwo" xml:space="preserve">
+    <value> days since the last vaccine dose</value>
+  </data>
+  <data name="UpdateViewPageText" xml:space="preserve">
+    <value>Back button deactivated, update is mandatory</value>
   </data>
 </root>

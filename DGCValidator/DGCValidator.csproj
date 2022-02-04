@@ -25,8 +25,6 @@
     <Folder Include="Services\" />
     <Folder Include="Services\CWT\" />
     <Folder Include="Resources\Flags\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
     <Folder Include="Models\" />
     <Folder Include="Services\DGC\" />
     <Folder Include="Services\CWT\Cose\" />
@@ -39,7 +37,7 @@
     <Folder Include="Services\Vaccinregler\ValueSet\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Vaccinationsregler.json" />
+    <EmbeddedResource Include="Resources\dccvalidator.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.resx">
@@ -49,6 +47,12 @@
     <EmbeddedResource Update="Resources\AppResources.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\UpdatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -63,13 +67,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\dccvalidator.json" />
     <None Remove="Resources\scan.png" />
     <None Remove="Resources\mobil.png" />
     <None Remove="Resources\flagga.png" />
     <None Remove="ZXing.Net.Mobile.Forms" />
     <None Remove="Services\Vaccinregler\" />
     <None Remove="Services\Vaccinregler\ValueSet\" />
-    <None Remove="Resources\Vaccinationsregler.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\scan.png" />
