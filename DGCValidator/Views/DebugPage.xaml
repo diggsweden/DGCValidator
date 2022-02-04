@@ -8,6 +8,7 @@
     <ContentPage.BindingContext>
         <viewModels:DebugViewModel/>
     </ContentPage.BindingContext>
+
     <NavigationPage.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>

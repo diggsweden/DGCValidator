@@ -7,28 +7,29 @@
     x:Class="DGCValidator.Views.SettingsPage">
     <ContentPage.BindingContext>
         <viewModels:SettingsViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>   
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            <ImageButton AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewCancelButtonText}" Source="abort.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding BackCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
-            <Label Style="{StaticResource SubTitle}" Text="{x:Static resource:AppResources.SettingsText}" FontAttributes="Bold" Padding="30,20,30,10" />
-            <StackLayout Orientation="Horizontal" Margin="0,0,30,0">
-                <Label Style="{StaticResource LargeText}" x:Name="labelNoVerification" Text="{x:Static resource:AppResources.NoVerificationText}" IsVisible="true" Padding="30,0,30,0" HorizontalOptions="Start"/>
-                <Switch IsToggled="{Binding NoVerificationMode, Mode=TwoWay}"  Toggled="OnNoVerificationToggled" OnColor="#008204" ThumbColor="LightGray" HorizontalOptions="EndAndExpand" />
+        <ScrollView BackgroundColor="White">
+            <StackLayout BackgroundColor="White">
+                <ImageButton AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewCancelButtonText}" Source="abort.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding BackCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
+                <Label Style="{StaticResource SubTitle}" Text="{x:Static resource:AppResources.SettingsText}" FontAttributes="Bold" Padding="30,20,30,10" />
+                <StackLayout Orientation="Horizontal" Margin="0,0,30,0">
+                    <Label Style="{StaticResource LargeText}" x:Name="labelNoVerification" Text="{x:Static resource:AppResources.NoVerificationText}" IsVisible="true" Padding="30,0,30,0" HorizontalOptions="Start"/>
+                    <Switch IsToggled="{Binding NoVerificationMode, Mode=TwoWay}"  Toggled="OnNoVerificationToggled" OnColor="#008204" ThumbColor="LightGray" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,30,0">
+                    <Label Style="{StaticResource LargeText}" x:Name="labelProduction" Text="{x:Static resource:AppResources.ProductionText}" IsVisible="true" Padding="30,0,30,0" HorizontalOptions="Start"/>
+                    <Switch IsToggled="{Binding ProductionMode, Mode=TwoWay}"  Toggled="OnProductionToggled" OnColor="#008204" ThumbColor="LightGray" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Label Style="{StaticResource Text}" x:Name="labelIssuer" Text="{Binding Trust.Issuer}" IsVisible="true" Margin="30,0,30,0"/>
+                <Label Style="{StaticResource Text}" x:Name="labelIssuedDate" Text="{Binding Trust.IssuedDateString}" IsVisible="true" Margin="30,0,30,0"/>
+                <Label Style="{StaticResource Text}" x:Name="labelExpirationDate" Text="{Binding Trust.ExpirationDateString}" IsVisible="true" Margin="30,0,30,0"/>
+                <Button Text="{x:Static resource:AppResources.RefreshText}" 
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#5A6751" TextColor="White"
+                    FontAttributes="Bold" FontSize="Medium" CornerRadius="25" Margin="30,20,30,0"
+                    Command="{Binding RefreshTrustListCommand}"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="0,0,30,0">
-                <Label Style="{StaticResource LargeText}" x:Name="labelProduction" Text="{x:Static resource:AppResources.ProductionText}" IsVisible="true" Padding="30,0,30,0" HorizontalOptions="Start"/>
-                <Switch IsToggled="{Binding ProductionMode, Mode=TwoWay}"  Toggled="OnProductionToggled" OnColor="#008204" ThumbColor="LightGray" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
-            <Label Style="{StaticResource Text}" x:Name="labelIssuer" Text="{Binding Trust.Issuer}" IsVisible="true" Margin="30,0,30,0"/>
-            <Label Style="{StaticResource Text}" x:Name="labelIssuedDate" Text="{Binding Trust.IssuedDateString}" IsVisible="true" Margin="30,0,30,0"/>
-            <Label Style="{StaticResource Text}" x:Name="labelExpirationDate" Text="{Binding Trust.ExpirationDateString}" IsVisible="true" Margin="30,0,30,0"/>
-            <Button Text="{x:Static resource:AppResources.RefreshText}" 
-                HorizontalOptions="FillAndExpand"
-                BackgroundColor="#5A6751" TextColor="White"
-                FontAttributes="Bold" FontSize="Medium" CornerRadius="30" Margin="30,20,30,0"
-                Command="{Binding RefreshTrustListCommand}"/>
-
-        </StackLayout>
+         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

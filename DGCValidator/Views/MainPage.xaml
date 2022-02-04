@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
 
-            </Grid>
+        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView BackgroundColor="White">
@@ -37,8 +37,7 @@
                     <Label Style="{StaticResource Text}" Text="{x:Static resource:AppResources.InformationText}" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="30,10,30,0"/>
                     <Image AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.MainViewImageText}" Source="mobil.png" HeightRequest="150" HorizontalOptions="Center" Margin="0,30,10,10"/>
                     <Label x:Name="labelValidKeysText" IsVisible="{Binding ValidKeysTextVisible}" Text="{Binding ValidKeysText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="Color.Red" Margin="10,20,10,20" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                 </StackLayout>
-                
+                 </StackLayout>               
                 <Path Grid.Row="1" Fill="#195A6751" Stroke="#195A6751" StrokeThickness="0" Aspect="Fill" Data="m485.9263,382.49569c6.48247,6.3858 27.64979,5.93851 34.68626,0l0,31.60021l-34.68626,0l0,-31.60021z" Margin="0,-50,0,-50"></Path>
                 <StackLayout Grid.Row="1" Margin="0,70,0,0">
                     <Button Text="{x:Static resource:AppResources.ScanButtonText}" HorizontalOptions="FillAndExpand" Command="{Binding ScanCommand}"

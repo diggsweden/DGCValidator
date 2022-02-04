@@ -236,8 +236,17 @@
     <BundleResource Include="..\DGCValidator\Resources\flash_off.png">
       <Link>Resources\flash_off.png</Link>
     </BundleResource>
-    <BundleResource Include="..\DGCValidator\Resources\Vaccinationsregler.json">
-      <Link>Resources\Vaccinationsregler.json</Link>
+    <BundleResource Include="..\DGCValidator\Resources\dccvalidator.json">
+      <Link>Resources\dccvalidator.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\abort.png">
+      <Link>Resources\abort.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\settings.png">
+      <Link>Resources\settings.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\DGCValidator\Resources\digg_centered_2.png">
+      <Link>Resources\digg_centered_2.png</Link>
     </BundleResource>
   </ItemGroup>
 </Project>

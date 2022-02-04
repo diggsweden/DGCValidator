@@ -30,7 +30,5 @@
             </StackLayout>
             <Button Text="{x:Static resource:AppResources.UpdateViewButtonText}" FontSize="Medium" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked" TextColor="White" BackgroundColor="black" CornerRadius="25" Margin="0,30,0,0"/>
         </StackLayout>
-
     </ScrollView>
-
 </ContentPage>
