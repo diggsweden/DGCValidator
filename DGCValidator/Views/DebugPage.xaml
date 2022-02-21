@@ -19,7 +19,7 @@
 
         </Grid>
     </NavigationPage.TitleView>
-    <ScrollView BackgroundColor="White">
+    <ScrollView Padding="0,30,0,30" BackgroundColor="White">
         <StackLayout>
             <ImageButton AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewCancelButtonText}" Source="abort.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding BackCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
             <Label Style="{StaticResource Text}" Text="{Binding JsonText}" FontAttributes="Bold" Margin="30,0,30,0"/>

@@ -40,11 +40,12 @@ namespace DGCValidator.ViewModels
             _subject = new SubjectModel();
             _certs = new ObservableCollection<object>();
         }
+
         public ICommand DebugCommand => debugCommand ??
-(debugCommand = new Command(async () =>
-{
-await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_jsonString));
-}));
+        (debugCommand = new Command(async () =>
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_jsonString));
+        }));
         public ICommand ScanCommand => scanCommand ??
         (scanCommand = new Command(async () =>
         {
@@ -135,14 +136,11 @@ await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_json
                                 IssuerCountry = proof.IssuingCountry
                             };
 
-                            bool fullyVaccinated = false;
-
                             if (proof.Dgc.V != null && proof.Dgc.V.Length > 0)
                             {
                                 HasVaccinations = true;
                                 foreach (VElement vac in proof.Dgc.V)
                                 {
-                                    fullyVaccinated = VerifyVaccinationRules(vac);
                                     AddCertificate(new Models.VaccineCertModel
                                     {
                                         Type = Models.CertType.VACCINE,
@@ -201,53 +199,46 @@ await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_json
                                 }
                             }
 
+                            List<string> texts = new List<string>();
                             if (_hasVaccination)
                             {
 
                                 if (App.CertificateManager.VaccinRules.RevokedCertificates.Contains(proof.Dgc.V[0].Ci))
-                                    {
-                                        ResultHeader = AppResources.NotApprovedHeader;
-                                        ResultText = AppResources.RevokedCertificateText;
-                                        IsResultOK = false;
-                                    }
-
-
-                                    else if (fullyVaccinated)
-                                    {
-                                        ResultHeader = AppResources.ApprovedHeader;
-                                        ResultText = AppResources.VaccinatedText;
-                                        IsResultOK = true;
-                                    }
-
-                                    else
-                                    {
-                                        //texts.Add(AppResources.NotFullyVaccinatedText);
-                                        IsResultOK = false;
-                                    }
+                                {
+                                    ResultHeader = AppResources.NotApprovedHeader;
+                                    texts.Add(AppResources.RevokedCertificateText);
+                                    IsResultOK = false;
+                                }
+                                else
+                                {
+                                    ResultHeader = AppResources.ApprovedHeader;
+                                    texts.Add(AppResources.VaccinatedText);
+                                    IsResultOK = true;
+                                }
                                 
                             }
                             if (_hasTest)
                             {
-                                ResultText = AppResources.TestedText;
+                                texts.Add(AppResources.TestedText);
                                 IsResultOK = true;
                             }
                             if (_hasRecovered)
                             {
-                                ResultText = AppResources.RecoveredText;
+                                texts.Add(AppResources.RecoveredText);
                                 IsResultOK = true;
                             }
                             if ( !_hasVaccination && !_hasTest && !_hasRecovered)
                             {
-                                ResultText = AppResources.MissingDataText;
+                                texts.Add(AppResources.MissingDataText);
                                 IsResultOK = false;
                             }
                             if( proof.Message != null)
                             {
-                                ResultText = ResultText+" " + proof.Message;
+                                texts.Add(" " + proof.Message);
                                 IsResultOK = false;
                             }
 
-                            //ResultText = string.Join(", ", texts.ToArray());
+                            ResultText = string.Join(", ", texts.ToArray());
                         }
                         else
                         {
@@ -271,11 +262,11 @@ await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_json
                 ResultText = ex.Message;
                 IsResultOK = false;
             }
-            timer = new System.Timers.Timer();
-            timer.AutoReset = false;
-            timer.Interval = 60000;
-            timer.Elapsed += OnTimedEvent;
-            timer.Start();
+            //timer = new System.Timers.Timer();
+            //timer.AutoReset = false;
+            //timer.Interval = 60000;
+            //timer.Elapsed += OnTimedEvent;
+            //timer.Start();
         }
 
         private bool VerifyVaccinationRules(VElement vac)
@@ -438,6 +429,11 @@ await Application.Current.MainPage.Navigation.PushModalAsync(new DebugPage(_json
                 _certs = value;
                 OnPropertyChanged();
             }
+        }
+
+        public String CertsHeight
+        {
+            get { return _certs != null && _certs.Count>0 ? "500" : "0"; }
         }
         public void AddCertificate(object cert)
         {

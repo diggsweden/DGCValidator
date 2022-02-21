@@ -154,6 +154,9 @@
     <value>Expire: </value>
   </data>
   <data name="VaccinatedText" xml:space="preserve">
+    <value>Vaccinated</value>
+  </data>
+  <data name="FullyVaccinatedText" xml:space="preserve">
     <value>Fully vaccinated</value>
   </data>
   <data name="NotFullyVaccinatedText" xml:space="preserve">

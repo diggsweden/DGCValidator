@@ -154,6 +154,9 @@
     <value>Giltig tom: </value>
   </data>
   <data name="VaccinatedText" xml:space="preserve">
+    <value>Vaccinerad</value>
+  </data>
+  <data name="FullyVaccinatedText" xml:space="preserve">
     <value>Fullvaccinerad</value>
   </data>
   <data name="NotFullyVaccinatedText" xml:space="preserve">
