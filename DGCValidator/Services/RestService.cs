@@ -202,7 +202,7 @@ namespace DGCValidator.Services
 
         public static string GetTrustListUrl()
         {
-            if( Xamarin.Essentials.Preferences.Get("ProductionMode", true)){
+            if( Xamarin.Essentials.Preferences.Get("ProductionMode", false)){
                 return ProductionTrustListRestUrl;
             }
             else
@@ -212,7 +212,7 @@ namespace DGCValidator.Services
         }
         public static string GetVaccinRulesUrl()
         {
-            if (Xamarin.Essentials.Preferences.Get("ProductionMode", true))
+            if (Xamarin.Essentials.Preferences.Get("ProductionMode", false))
             {
                 return ProductionVaccinRuleRestUrl;
             }
@@ -223,7 +223,7 @@ namespace DGCValidator.Services
         }
         public static string GetValueSetBaseUrl()
         {
-            if (Xamarin.Essentials.Preferences.Get("ProductionMode", true))
+            if (Xamarin.Essentials.Preferences.Get("ProductionMode", false))
             {
                 return ProductionValueSetRestUrl;
             }
