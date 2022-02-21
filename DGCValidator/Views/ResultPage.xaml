@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:DGCValidator.Resources"
+             xmlns:local="clr-namespace:DGCValidator"
+             xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
+             x:Class="DGCValidator.Views.ResultPage"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.BindingContext>
+        <viewModels:ResultViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="VaccineTemplate">
+                <StackLayout Padding="0,0,0,0">
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       BackgroundColor="White" >
+                                <FlexLayout Direction="Column" >
+                                    <Label Text="{x:Static resource:AppResources.VaccinatedText}" FontSize="Large" FontAttributes="Bold" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label Text="{Binding DoseHeader}" FontSize="Medium" FontAttributes="Bold" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label Text="{x:Static resource:AppResources.DiseaseLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label Text="{Binding Tg}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.VaccineDescriptionLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="vpName" Text="{Binding Vp}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.VaccineNameLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="mpName" Text="{Binding Mp}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.VaccineAuthLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="maName" Text="{Binding Ma}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.VaccinationDateLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="dtName" Text="{Binding Dt}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CountryLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="coName" Text="{Binding Co}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.IssuerLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="isName" Text="{Binding Is}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CertificateIdentifierLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="ciName" Text="{Binding Ci}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                </FlexLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="RecoveredTemplate">
+                <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       BackgroundColor="White" >
+                                <FlexLayout Direction="Column">
+                                    <Label Text="{x:Static resource:AppResources.RecoveredText}" FontSize="Large" FontAttributes="Bold" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label Text="{x:Static resource:AppResources.DiseaseLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="tgName" Text="{Binding Tg}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.RecTestDateLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="frName" Text="{Binding Fr}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CountryLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="coName" Text="{Binding Co}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.IssuerLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="isName" Text="{Binding Is}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.ValidFromLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="dfName" Text="{Binding Df}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.ValidUntilLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="duName" Text="{Binding Du}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CertificateIdentifierLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="ciName" Text="{Binding Ci}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                </FlexLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="TestTemplate">
+                <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       BackgroundColor="White" >
+                                <FlexLayout Direction="Column">
+                                    <Label Text="{x:Static resource:AppResources.TestedText}" FontSize="Large" FontAttributes="Bold" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label Text="{x:Static resource:AppResources.DiseaseLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="tgName" Text="{Binding Tg}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.TestTypeLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="ttName" Text="{Binding Tt}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.TestSampleOriginLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="nmName" Text="{Binding Nm}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.TestManifacturerLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="maName" Text="{Binding Ma}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.TestDateLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="scName" Text="{Binding Sc}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                  <!--  <Label Text="{x:Static resource:AppResources.TestResultDateLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="drName" Text="{Binding Dr}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" /> -->
+                                    <Label Text="{x:Static resource:AppResources.TestResultLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="trName" Text="{Binding Tr}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.TestingCentreLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="tcName" Text="{Binding Tc}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CountryLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="coName" Text="{Binding Co}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.IssuerLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="isName" Text="{Binding Is}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                    <Label Text="{x:Static resource:AppResources.CertificateIdentifierLabel}" FontSize="Small" Padding="30,5,30,0" Margin="0" TextColor="Black"/>
+                                    <Label x:Name="ciName" Text="{Binding Ci}" FontSize="Medium" FontAttributes="Bold" IsVisible="true" TextColor="Black" Padding="30,0,30,0" Margin="0" />
+                                </FlexLayout>
+                </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <local:CertTypeTemplateSelector x:Key="CertTypeTemplateSelector"
+                VaccineTemplate="{StaticResource VaccineTemplate}"
+                RecoveredTemplate="{StaticResource RecoveredTemplate}"
+                TestTemplate="{StaticResource TestTemplate}"/>
+            <viewModels:LabelColorConverter x:Key="LabelColorConverter"></viewModels:LabelColorConverter>
+            <viewModels:LabelVisibleConverter x:Key="LabelVisibleConverter"></viewModels:LabelVisibleConverter>
+            <viewModels:ListVisibleConverter x:Key="ListVisibleConverter"></viewModels:ListVisibleConverter>
+
+            <Thickness x:Key="SmallTopMargin">0,10,0,0</Thickness> 
+
+            <Color x:Key="ThemeBackgroundDetailColor">#F0F0F0</Color>
+            <Color x:Key="ThemeTextColor">#000000</Color>
+
+            <Style TargetType="BoxView" x:Key="HorizontalSeparatorBoxViewStyle">
+                <Setter Property="HeightRequest" Value="1.5"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource ThemeBackgroundDetailColor}"/>
+            </Style>
+
+            <Style TargetType="Label" >
+                <Setter Property="TextColor" Value="{StaticResource ThemeTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView Padding="0,30,0,20" IsVisible="{Binding IsVisible}" x:Name="ViewLayout" BackgroundColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}">
+            <Frame HasShadow="True"
+                       BorderColor="White"
+                       CornerRadius="20"
+                       Margin="10"
+                       BackgroundColor="White" VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <ImageButton AutomationProperties.IsInAccessibleTree="True" Source="info2.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding DebugCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
+                    <Image AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.ResultViewValidImageText}" Source="ok.png" IsVisible="{Binding IsResultOK}" HeightRequest="80" HorizontalOptions="Center"/>
+                    <Image AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.ResultViewFailedImageText}" Source="fail.png" IsVisible="{Binding IsResultNotOK}" HeightRequest="80" HorizontalOptions="Center"/>
+                    <Label x:Name="labelResultHeader" IsVisible="{Binding IsVisible}" Text="{Binding ResultHeader}" FontSize="Title" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="labelResultText" IsVisible="{Binding IsVisible}" Text="{Binding ResultText}" FontSize="Large" BackgroundColor="White" FontAttributes="Bold" TextColor="{Binding IsResultOK, Converter={StaticResource LabelColorConverter}}" Padding="30,0,30,0" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment ="Center"/>
+                    <FlexLayout Direction="Column" >
+                        <Label Text="{x:Static resource:AppResources.FirstnameLabel}" Style="{StaticResource Text}" Margin="10,5,10,0" IsVisible="{Binding IsResultOK}"/>
+                        <Label x:Name="labelFirstname" Text="{Binding Subject.Firstname}" Style="{StaticResource LargeText}" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" Margin="10,0,10,0"/>
+                        <Label Text="{x:Static resource:AppResources.FamilynameLabel}" Style="{StaticResource Text}" Margin="10,5,10,0" IsVisible="{Binding IsResultOK}"/>
+                        <Label x:Name="labelFamilyname" Text="{Binding Subject.Familyname}" Style="{StaticResource LargeText}" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" Margin="10,0,10,0"/>
+                        <Label Text="{x:Static resource:AppResources.TranNameLabel}" Style="{StaticResource Text}" Margin="10,5,10,0" IsVisible="{Binding IsResultOK}"/>
+                        <Label x:Name="labelTranName" Text="{Binding Subject.TranName}" Style="{StaticResource Text}" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" Margin="10,0,10,0" />
+                        <Label Text="{x:Static resource:AppResources.BirthDateLabel}" Style="{StaticResource Text}" Margin="10,5,10,0" IsVisible="{Binding IsResultOK}"/>
+                        <Label x:Name="labelBirthDate" Text="{Binding Subject.DateOfBirth}" Style="{StaticResource LargeText}" FontAttributes="Bold" IsVisible="{Binding IsResultOK}" Margin="10,0,10,0" />
+                    </FlexLayout>
+                    <CollectionView HeightRequest="{Binding CertsHeight}" x:Name="CertsCollection" ItemsSource="{Binding Certs}" HorizontalOptions="Center" ItemTemplate="{StaticResource CertTypeTemplateSelector}"/> 
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Text="{x:Static resource:AppResources.ScanAgainButtonText}" Margin="5" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding ScanCommand}" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" FontSize="Large" CornerRadius="30" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="60">
+                            <ImageButton Source="abort.png" HeightRequest="30" VerticalOptions="Center" Padding="5,5,5,5" Command="{Binding CancelCommand}" BackgroundColor="Transparent"/>
+                            <Label Text="Avbryt" Style="{StaticResource Text}" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CancelCommand}"></TapGestureRecognizer>
+                         </Label.GestureRecognizers>
+                         </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

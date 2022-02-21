@@ -8,6 +8,7 @@ using DGCValidator.Services.DGC.V1;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using PeterO.Cbor;
+using DGCValidator.Resources;
 
 namespace DGCValidator.Services
 {
@@ -47,10 +48,14 @@ namespace DGCValidator.Services
                     vacProof.Dgc = eU_DGC;
                     return vacProof;
                 }
+                else
+                {
+                    throw new CertificateValidationException(AppResources.UnvalidCode);
+                }
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.ToString());
+                //Console.WriteLine(e.ToString());
                 throw e;
             }
             return null;

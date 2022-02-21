@@ -71,6 +71,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string ScanAgainButtonText {
+            get {
+                return ResourceManager.GetString("ScanAgainButtonText", resourceCulture);
+            }
+        }
+        
+        public static string LinkText {
+            get {
+                return ResourceManager.GetString("LinkText", resourceCulture);
+            }
+        }
+        
         public static string ScanTopText {
             get {
                 return ResourceManager.GetString("ScanTopText", resourceCulture);
@@ -113,6 +125,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string FullyVaccinatedText {
+            get {
+                return ResourceManager.GetString("FullyVaccinatedText", resourceCulture);
+            }
+        }
+        
+        public static string NotFullyVaccinatedText {
+            get {
+                return ResourceManager.GetString("NotFullyVaccinatedText", resourceCulture);
+            }
+        }
+        
         public static string TestedText {
             get {
                 return ResourceManager.GetString("TestedText", resourceCulture);
@@ -137,9 +161,105 @@ namespace DGCValidator.Resources {
             }
         }
         
-        public static string NameLabel {
+        public static string ApprovedHeader {
             get {
-                return ResourceManager.GetString("NameLabel", resourceCulture);
+                return ResourceManager.GetString("ApprovedHeader", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedHeader {
+            get {
+                return ResourceManager.GetString("NotApprovedHeader", resourceCulture);
+            }
+        }
+        
+        public static string AppVersion {
+            get {
+                return ResourceManager.GetString("AppVersion", resourceCulture);
+            }
+        }
+        
+        public static string KeyVersion {
+            get {
+                return ResourceManager.GetString("KeyVersion", resourceCulture);
+            }
+        }
+        
+        public static string ValidationRulesVersion {
+            get {
+                return ResourceManager.GetString("ValidationRulesVersion", resourceCulture);
+            }
+        }
+        
+        public static string InvalidSigningCertificate {
+            get {
+                return ResourceManager.GetString("InvalidSigningCertificate", resourceCulture);
+            }
+        }
+        
+        public static string NoSigningCertifcateCouldBeFound {
+            get {
+                return ResourceManager.GetString("NoSigningCertifcateCouldBeFound", resourceCulture);
+            }
+        }
+        
+        public static string DCCExpired {
+            get {
+                return ResourceManager.GetString("DCCExpired", resourceCulture);
+            }
+        }
+        
+        public static string UnvalidCode {
+            get {
+                return ResourceManager.GetString("UnvalidCode", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedDaysSinceLastDose {
+            get {
+                return ResourceManager.GetString("NotApprovedDaysSinceLastDose", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedNoOfDoses {
+            get {
+                return ResourceManager.GetString("NotApprovedNoOfDoses", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedVaccine {
+            get {
+                return ResourceManager.GetString("NotApprovedVaccine", resourceCulture);
+            }
+        }
+        
+        public static string NoPublicKeys {
+            get {
+                return ResourceManager.GetString("NoPublicKeys", resourceCulture);
+            }
+        }
+        
+        public static string OldPublicKeys {
+            get {
+                return ResourceManager.GetString("OldPublicKeys", resourceCulture);
+            }
+        }
+        
+        public static string UpdatePublicKeys {
+            get {
+                return ResourceManager.GetString("UpdatePublicKeys", resourceCulture);
+            }
+        }
+        
+        public static string FirstnameLabel {
+            get {
+                return ResourceManager.GetString("FirstnameLabel", resourceCulture);
+            }
+        }
+        
+        public static string FamilynameLabel {
+            get {
+                return ResourceManager.GetString("FamilynameLabel", resourceCulture);
             }
         }
         
@@ -305,6 +425,18 @@ namespace DGCValidator.Resources {
             }
         }
         
+        public static string FAQ {
+            get {
+                return ResourceManager.GetString("FAQ", resourceCulture);
+            }
+        }
+        
+        public static string AboutHeaderText {
+            get {
+                return ResourceManager.GetString("AboutHeaderText", resourceCulture);
+            }
+        }
+        
         public static string AboutText {
             get {
                 return ResourceManager.GetString("AboutText", resourceCulture);
@@ -338,6 +470,102 @@ namespace DGCValidator.Resources {
         public static string NoVerificationText {
             get {
                 return ResourceManager.GetString("NoVerificationText", resourceCulture);
+            }
+        }
+        
+        public static string PrivacyPolicyLink {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyLink", resourceCulture);
+            }
+        }
+        
+        public static string AboutViewCancelButtonText {
+            get {
+                return ResourceManager.GetString("AboutViewCancelButtonText", resourceCulture);
+            }
+        }
+        
+        public static string AboutViewLogotypeText {
+            get {
+                return ResourceManager.GetString("AboutViewLogotypeText", resourceCulture);
+            }
+        }
+        
+        public static string MainViewImageText {
+            get {
+                return ResourceManager.GetString("MainViewImageText", resourceCulture);
+            }
+        }
+        
+        public static string MainViewInfoButtonText {
+            get {
+                return ResourceManager.GetString("MainViewInfoButtonText", resourceCulture);
+            }
+        }
+        
+        public static string ResultViewFailedImageText {
+            get {
+                return ResourceManager.GetString("ResultViewFailedImageText", resourceCulture);
+            }
+        }
+        
+        public static string ResultViewValidImageText {
+            get {
+                return ResourceManager.GetString("ResultViewValidImageText", resourceCulture);
+            }
+        }
+        
+        public static string RevokedCertificateText {
+            get {
+                return ResourceManager.GetString("RevokedCertificateText", resourceCulture);
+            }
+        }
+        
+        public static string KeyModalErrorMessage {
+            get {
+                return ResourceManager.GetString("KeyModalErrorMessage", resourceCulture);
+            }
+        }
+        
+        public static string UpdateViewButtonText {
+            get {
+                return ResourceManager.GetString("UpdateViewButtonText", resourceCulture);
+            }
+        }
+        
+        public static string UpdateViewCurrentVersionText {
+            get {
+                return ResourceManager.GetString("UpdateViewCurrentVersionText", resourceCulture);
+            }
+        }
+        
+        public static string UpdateViewLatestVersionText {
+            get {
+                return ResourceManager.GetString("UpdateViewLatestVersionText", resourceCulture);
+            }
+        }
+        
+        public static string UpdateViewTitle {
+            get {
+                return ResourceManager.GetString("UpdateViewTitle", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedMaxDaysSinceLastDosePartOne {
+            get {
+                return ResourceManager.GetString("NotApprovedMaxDaysSinceLastDosePartOne", resourceCulture);
+            }
+        }
+        
+        public static string NotApprovedMaxDaysSinceLastDosePartTwo {
+            get {
+                return ResourceManager.GetString("NotApprovedMaxDaysSinceLastDosePartTwo", resourceCulture);
+            }
+        }
+        
+        public static string UpdateViewPageText {
+            get {
+                return ResourceManager.GetString("UpdateViewPageText", resourceCulture);
             }
         }
     }

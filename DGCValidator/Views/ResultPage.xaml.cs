@@ -1,16 +1,16 @@
 ﻿using DGCValidator.Resources;
+using DGCValidator.ViewModels;
 using Xamarin.Forms;
 
 namespace DGCValidator.Views
 {
     
-    public partial class MainPageOld : ContentPage
+    public partial class ResultPage : ContentPage
     {
- 
-        public MainPageOld()
+
+        public ResultPage()
         {
             InitializeComponent();
-           // Title = AppResources.HeaderText;
         }
 
     }

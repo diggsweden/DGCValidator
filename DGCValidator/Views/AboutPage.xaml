@@ -4,11 +4,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resource="clr-namespace:DGCValidator.Resources"
     xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
-    x:Class="DGCValidator.Views.AboutPage">
-    <StackLayout Spacing="10" BackgroundColor="White" Padding="0,20">
-            <Label Text="{x:Static resource:AppResources.AboutText}" FontSize="16" Padding="30,20,30,10" TextColor="Black"/>
-            <Image Source="digg_centered.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="ehm_logo.png" HorizontalOptions="Center" Margin="30"/>
-            <Image Source="fohm_logo.png" HorizontalOptions="Center" Margin="30"/>
-    </StackLayout>
+    x:Class="DGCValidator.Views.AboutPage"
+    NavigationPage.HasBackButton="False">
+    <ContentPage.BindingContext>
+        <viewModels:AboutViewModel/>
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    <ScrollView BackgroundColor="White">
+        <Grid>
+            <StackLayout Grid.Row="0">
+                <ImageButton AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewCancelButtonText}" Source="abort.png" HeightRequest="60" WidthRequest="60" BackgroundColor="Transparent" CornerRadius="22" Command="{Binding BackCommand}" HorizontalOptions="End" Padding="15,15,15,15"/>
+                <Label Style="{StaticResource SubTitle}" Text="{x:Static resource:AppResources.AboutHeaderText}" FontAttributes="Bold" Margin="30,0,30,0"/>
+                <Label Style="{StaticResource Text}" Text="{x:Static resource:AppResources.AboutText}" Margin="30,20,30,10"/>
+                <Label Style="{StaticResource Text}" x:Name="labelAppVersion" Text="{Binding AppVersion}" Margin="30,20,30,0"/>
+                <Label Style="{StaticResource Text}" x:Name="labelPublicKeyVersion" Text="{Binding PublicKeyVersion}" Margin="30,5,30,0" />
+                <Label Style="{StaticResource Text}" x:Name="labelValidationRuleVersion" Text="{Binding ValidationRulesVersion}" Margin="30,5,30,10" />
+                <Label />
+                </StackLayout>
+            <Path Grid.Row="1" Fill="#195A6751" Stroke="#195A6751" StrokeThickness="0" Aspect="Fill" Data="m485.9263,382.49569c6.48247,6.3858 27.64979,5.93851 34.68626,0l0,31.60021l-34.68626,0l0,-31.60021z" Margin="0,0,0,20"></Path>
+                <StackLayout Grid.Row="1">
+                <Image Source="digg_centered_2.png" AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="{x:Static resource:AppResources.AboutViewLogotypeText}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="70"/>
+                </StackLayout>
+                
+            </Grid>
+    </ScrollView>
+
 </ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resource="clr-namespace:DGCValidator.Resources"
+    xmlns:viewModels="clr-namespace:DGCValidator.ViewModels"
+    x:Class="DGCValidator.Views.UpdatePage">
+    <ContentPage.BindingContext>
+        <viewModels:UpdateViewModel/>
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ScrollView BackgroundColor="White">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Style="{StaticResource SubTitle}" Text="{x:Static resource:AppResources.UpdateViewTitle}" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Style="{StaticResource Text}" Text="{x:Static resource:AppResources.UpdateViewCurrentVersionText}" />
+                <Label Style="{StaticResource Text}" x:Name="labelCurrentVersion" Text="{Binding CurrentVersion}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Style="{StaticResource Text}" Text="{x:Static resource:AppResources.UpdateViewLatestVersionText}" />
+                <Label Style="{StaticResource Text}" x:Name="labelLatestVersion" Text="{Binding LatestVersion}" />
+            </StackLayout>
+            <Button Text="{x:Static resource:AppResources.UpdateViewButtonText}" FontSize="Medium" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked" TextColor="White" BackgroundColor="black" CornerRadius="25" Margin="0,30,0,0"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

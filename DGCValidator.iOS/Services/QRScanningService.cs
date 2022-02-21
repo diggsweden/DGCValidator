@@ -5,6 +5,8 @@ using DGCValidator.Services;
 using DGCValidator.Resources;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Xamarin.Essentials;
+using UIKit;
 
 [assembly: Dependency(typeof(DGCValidator.iOS.Services.QRScanningService))]
 
@@ -36,6 +38,17 @@ namespace DGCValidator.iOS.Services
                 CancelButtonText = AppResources.ScanCancelText,
             };
 
+            scanner.UseCustomOverlay = true;
+            ScannerView view = new ScannerView(AppResources.ScanTopText,AppResources.ScanCancelText);
+
+            view.CancelButton.TouchUpInside += delegate {
+                scanner.Cancel();
+            };
+            view.TorchButton.TouchUpInside += delegate {
+                scanner.ToggleTorch();
+            };
+            scanner.CustomOverlay = view;
+
             try
             {
                 var scanResult = await scanner.Scan(optionsCustom,true);
@@ -49,5 +62,6 @@ namespace DGCValidator.iOS.Services
             }
             return null;
         }
+
     }
 }

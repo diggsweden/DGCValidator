@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using DGCValidator.Models;
+using DGCValidator.Views;
 using Xamarin.Forms;
 
 namespace DGCValidator.ViewModels
@@ -10,6 +11,7 @@ namespace DGCValidator.ViewModels
         private TrustModel _trustModel;
 
         private ICommand refreshTrustListCommand;
+        private Command backCommand;
 
         public SettingsViewModel()
         {
@@ -19,6 +21,11 @@ namespace DGCValidator.ViewModels
                 ExpirationDate = SecondsFromEpocToDateTime(App.CertificateManager.TrustList.Exp)
             };
         }
+        public ICommand BackCommand => backCommand ??
+        (backCommand = new Command(async () =>
+        {
+         await App.Current.MainPage.Navigation.PopAsync();
+        }));
 
         public ICommand RefreshTrustListCommand => refreshTrustListCommand ??
                 (refreshTrustListCommand = new Command(async () =>
