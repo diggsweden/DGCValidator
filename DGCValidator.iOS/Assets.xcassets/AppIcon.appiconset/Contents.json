@@ -37,7 +37,7 @@
       "idiom": "iphone"
     },
     {
-      "filename": "120-1.png",
+      "filename": "120.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "iphone"
@@ -55,7 +55,7 @@
       "idiom": "ipad"
     },
     {
-      "filename": "40-1.png",
+      "filename": "40.png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "ipad"
@@ -67,19 +67,19 @@
       "idiom": "ipad"
     },
     {
-      "filename": "58-1.png",
+      "filename": "58.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "40-2.png",
+      "filename": "40.png",
       "size": "40x40",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "80-1.png",
+      "filename": "80.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "ipad"
@@ -109,11 +109,13 @@
       "idiom": "ios-marketing"
     },
     {
+      "filename": "120.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "car"
     },
     {
+      "filename": "180.png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "car"
@@ -215,56 +217,67 @@
       "idiom": "watch"
     },
     {
+      "filename": "1024.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "watch-marketing"
     },
     {
+      "filename": "16.png",
       "size": "16x16",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "32.png",
       "size": "16x16",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "32.png",
       "size": "32x32",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "64.png",
       "size": "32x32",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "128.png",
       "size": "128x128",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "256.png",
       "size": "128x128",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "256.png",
       "size": "256x256",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "512.png",
       "size": "256x256",
       "scale": "2x",
       "idiom": "mac"
     },
     {
+      "filename": "512.png",
       "size": "512x512",
       "scale": "1x",
       "idiom": "mac"
     },
     {
+      "filename": "1024.png",
       "size": "512x512",
       "scale": "2x",
       "idiom": "mac"
